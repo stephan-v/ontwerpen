@@ -1,0 +1,102 @@
+* {
+	margin: 0;
+	padding: 0;
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+html {
+	font-size: 14px;
+}
+body {
+	font-family: Arial;
+	color: #454545;
+	font-size: 1em;
+}
+a {
+	text-decoration: none;
+	color: #19aacf;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 0.75em;
+	font-weight: normal;
+}
+.btn {
+	background: #6abe59;
+	padding: 10px;
+	border-radius: 3px;
+	color: white;
+}
+.btn:hover {
+	background: rgb(125, 201, 109);
+}
+.container {
+	margin: 0 auto;
+	width: 960px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.container:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+#main-container {
+	padding-top: 25px;
+}
+header {
+	background: #323232;
+	color: #a6a6a6;
+}
+ul li {
+	float: left;
+	list-style: none;
+	margin-right: 20px;	
+}
+.primary-nav {
+	float: left;
+}
+.nav-user {
+	float: right;
+	vertical-align: middle;
+}
+.primary-nav a, .nav-user a{
+	color: #a6a6a6;
+}
+.primary-nav li, .nav-user li {
+	padding: 1em 0;
+}
+.header-branding {
+	background-color: #2daacd;
+	height: 75px;
+}
+.homepage-marketing-heading {
+	font-size: 2.5em;
+	text-align: center;
+}
+.homepage-mast-actions {
+	text-align: center;
+}
+
+/*----- Form Styles -----*/
+form {
+	width: 960px;
+}
+form input[type=text], form input[type=password] {
+	padding: 5px;
+	width: 500px;
+	margin-bottom: 20px;
+}
+form select {
+	height: 30px;
+	width: 500px;
+	margin-bottom: 20px;
+}
+form input[type=submit] {
+	width: 500px;
+	padding: 5px;
+}
+label {
+	display: block;
+	margin-bottom: 8px;
+}
