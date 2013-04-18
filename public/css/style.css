@@ -48,7 +48,7 @@ header {
 	background: #323232;
 	color: #a6a6a6;
 }
-ul li {
+.primary-nav li, .nav-user li {
 	float: left;
 	list-style: none;
 	margin-right: 20px;	
@@ -80,23 +80,47 @@ ul li {
 
 /*----- Form Styles -----*/
 form {
-	width: 960px;
+	width: 500px;
+	margin: 0 auto;
 }
-form input[type=text], form input[type=password] {
+form input[type=text], form input[type=password], form textarea {
 	padding: 5px;
 	width: 500px;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
 form select {
 	height: 30px;
 	width: 500px;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
 form input[type=submit] {
 	width: 500px;
 	padding: 5px;
+	margin: 10px 0;
 }
 label {
 	display: block;
 	margin-bottom: 8px;
+}
+.validation-error {
+	color: #D8000C;
+	background-color: #FFBABA;
+	list-style: none;
+	padding: 10px;
+	border: 1px solid;
+	margin: 5px 0;
+}
+.validation-errors {
+	margin: 0 auto;
+	width: 500px;
+}
+
+/*----- Frontpage -----*/
+.contests-loop {
+	list-style: none;
+}
+.contests-loop li {
+	background: #ebebeb;
+	margin-bottom: 20px;
+	padding: 10px;
 }

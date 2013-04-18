@@ -8,19 +8,21 @@ Route::get('/', function() {
 // Wedstrijden index
 Route::get('contests', array('as' => 'contests', 'uses' => 'contests@index'));
 
-// Een wedstrijd laten zien
+// Een single wedstrijd laten zien
 Route::get('contests/(:any)', array('as' => 'contest', 'uses' => 'contests@show'));
 
 // Nieuwe Wedstrijd
 Route::get('contests/new', array('as' => 'new_contest', 'uses' => 'contests@new'));
+Route::post('contests/new', 'contests@create');
 
 // Wedstrijd bewerken
 Route::get('contests/(:any)/edit', array('as' => 'edit_contest', 'uses' => 'contests@edit'));
 
 // Maak een nieuw account aan
 Route::get('users/new', array('as' => 'new_user', 'uses' => 'users@new'));
+Route::post('users/new', 'users@create');
 
-// Laat een user zien
+// Laat een single user zien
 Route::get('users/(:any)', array('as' => 'user', 'uses' => 'users@show'));
 
 
