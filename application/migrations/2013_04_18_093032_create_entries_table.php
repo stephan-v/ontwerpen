@@ -1,6 +1,6 @@
 <?php
 
-class Create_Users_Table {
+class Create_Entries_Table {
 
 	/**
 	 * Make changes to the database.
@@ -9,12 +9,11 @@ class Create_Users_Table {
 	 */
 	public function up()
 	{
-		Schema::create('users', function($table) {
+		Schema::create('entries', function($table) {
 			$table->increments('id');
-			$table->string('name');
-			$table->string('email');
-			$table->string('password');
-			$table->boolean('activated')->default(0);
+			$table->integer('user_id');
+			$table->integer('contest_id');
+			$table->string('title');
 			$table->timestamps();
 		});
 	}
@@ -26,8 +25,7 @@ class Create_Users_Table {
 	 */
 	public function down()
 	{
-		Schema::drop('users');
+		Schema::drop('entries');
 	}
 
 }
-

@@ -13,9 +13,12 @@ class Contests_Controller extends Base_Controller {
 	public function get_show($id)
 	{
 		$contest = Contest::find((int)$id);
+		$entries = Contest::find((int)$id)->entries;
+
 		return View::make('contests.show_contest')
 			->with('title', $contest->title)
-			->with('description', $contest->description);
+			->with('description', $contest->description)
+			->with('entries', $entries);
 	}
 
 	public function get_new()

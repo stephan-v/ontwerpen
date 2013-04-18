@@ -25,6 +25,11 @@ Route::post('users/new', 'users@create');
 // Laat een single user zien
 Route::get('users/(:any)', array('as' => 'user', 'uses' => 'users@show'));
 
+// Voorbeeld om de entries van een contest te krijgen.
+Route::get('test', function() {
+	User::find(1)->entries()->get();
+});
+
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +56,7 @@ Event::listen('500', function($exception)
 {
 	return Response::error('500');
 });
+
 
 /*
 |--------------------------------------------------------------------------

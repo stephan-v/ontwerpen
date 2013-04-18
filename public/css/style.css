@@ -17,6 +17,9 @@ a {
 	text-decoration: none;
 	color: #19aacf;
 }
+p {
+	margin-bottom: 1em;
+}
 h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 0.75em;
 	font-weight: normal;
@@ -123,4 +126,17 @@ label {
 	background: #ebebeb;
 	margin-bottom: 20px;
 	padding: 10px;
+}
+
+/*----- Entries -----*/
+
+.entry-item {
+	width: 200px;
+	height: 200px;
+	float: left;
+	background: #2daacd;
+	text-align: center;
+	margin-right: 40px;
+	list-style: none;
+	color: #FFF;
 }
