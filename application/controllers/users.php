@@ -8,10 +8,12 @@ class Users_Controller extends Base_Controller {
 	}
 
 	public function get_show($id) {
+		$user_entries = User::find((int)$id)->entries;
 		$user = User::find((int)$id);
 		return View::make('users.show_user')
 			->with('name', $user->name)
-			->with('email', $user->email);
+			->with('email', $user->email)
+			->with('entries', $user_entries);
 	}
 
 	public function get_new() {

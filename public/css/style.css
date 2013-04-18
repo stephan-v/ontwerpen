@@ -33,6 +33,12 @@ h1, h2, h3, h4, h5, h6 {
 .btn:hover {
 	background: rgb(125, 201, 109);
 }
+.btn-entry {
+	float: left;
+	width: 100%;
+	margin-top: 20px;
+	text-align: center;
+}
 .container {
 	margin: 0 auto;
 	width: 960px;
@@ -71,7 +77,12 @@ header {
 }
 .header-branding {
 	background-color: #2daacd;
-	height: 75px;
+	color: #FFF;
+
+	padding: 1.5em 0;
+}
+.header-branding h1 {
+	margin: 0;
 }
 .homepage-marketing-heading {
 	font-size: 2.5em;

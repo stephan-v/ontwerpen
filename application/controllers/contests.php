@@ -15,9 +15,12 @@ class Contests_Controller extends Base_Controller {
 		$contest = Contest::find((int)$id);
 		$entries = Contest::find((int)$id)->entries;
 
+		// Get the username from users
+
 		return View::make('contests.show_contest')
 			->with('title', $contest->title)
 			->with('description', $contest->description)
+			->with('contest_id', $contest->id)
 			->with('entries', $entries);
 	}
 

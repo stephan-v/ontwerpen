@@ -22,7 +22,11 @@
 		</div>
 	</header>
 
-	<header class="header-branding"></header>
+	<header class="header-branding">
+		<div class="container">
+			<h1>Ontwerpwedstrijden</h1>
+		</div>
+	</header>
 
 	<div id="main-container">
 		<div class="container">

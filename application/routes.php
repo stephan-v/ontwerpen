@@ -11,12 +11,16 @@ Route::get('contests', array('as' => 'contests', 'uses' => 'contests@index'));
 // Een single wedstrijd laten zien
 Route::get('contests/(:any)', array('as' => 'contest', 'uses' => 'contests@show'));
 
-// Nieuwe Wedstrijd
+// Nieuwe Wedstrijd maken
 Route::get('contests/new', array('as' => 'new_contest', 'uses' => 'contests@new'));
 Route::post('contests/new', 'contests@create');
 
 // Wedstrijd bewerken
 Route::get('contests/(:any)/edit', array('as' => 'edit_contest', 'uses' => 'contests@edit'));
+
+// Maak een nieuwe entry aan
+Route::get('contests/(:any)/add', array('as' => 'new_entry', 'uses' => 'entry@new'));
+Route::post('contests/(:any)/add', 'entry@create');
 
 // Maak een nieuw account aan
 Route::get('users/new', array('as' => 'new_user', 'uses' => 'users@new'));
@@ -25,9 +29,10 @@ Route::post('users/new', 'users@create');
 // Laat een single user zien
 Route::get('users/(:any)', array('as' => 'user', 'uses' => 'users@show'));
 
-// Voorbeeld om de entries van een contest te krijgen.
+// Testroute
 Route::get('test', function() {
-	User::find(1)->entries()->get();
+	$user = User::find(2)->entries;
+	dd($user);
 });
 
 
