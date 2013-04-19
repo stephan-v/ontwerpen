@@ -141,13 +141,15 @@ label {
 
 /*----- Entries -----*/
 
-.entry-item {
-	width: 200px;
-	height: 200px;
-	float: left;
-	background: #2daacd;
-	text-align: center;
-	margin-right: 40px;
-	list-style: none;
-	color: #FFF;
-}
+	/*----- Tempory placeholder for contest entry image -----*/
+	.entry-item {
+		width: 200px;
+		height: 200px;
+		float: left;
+		background: #2daacd;
+		text-align: center;
+		margin-right: 40px;
+		list-style: none;
+		color: #FFF;
+		padding-top: 75px;
+	}
