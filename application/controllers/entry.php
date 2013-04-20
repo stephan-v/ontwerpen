@@ -12,7 +12,8 @@ class Entry_Controller extends Base_Controller {
 	{
 		$entry = Entry::create(array(
 			'title' => Input::get('title'),
-			'contest_id' => $id
+			'contest_id' => $id,
+			'user_id' => Auth::user()->id
 		));
 
 		return Redirect::to_route('contest', $id);

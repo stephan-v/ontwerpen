@@ -7,7 +7,8 @@
 			<li>
 				<!-- link naar single page met de id van deze contest -->
 				<h1>{{ HTML::link_to_route('contest', $contest->title, $contest->id) }}</h1>
-				<p>{{ $contest->description }}</p>
+				<p>{{ $contest->category }}</p>
+				<p>Inzendingen: {{ Entry::where('contest_id', '=', $contest->id)->count() }}</p>
 			</li>
 		@endforeach
 	</ul>

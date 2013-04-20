@@ -57,10 +57,15 @@ header {
 	background: #323232;
 	color: #a6a6a6;
 }
-.primary-nav li, .nav-user li {
+.primary-nav li {
 	float: left;
 	list-style: none;
 	margin-right: 20px;	
+}
+.nav-user li {
+	float: left;
+	list-style: none;
+	margin-left: 20px;
 }
 .primary-nav {
 	float: left;
@@ -151,5 +156,5 @@ label {
 		margin-right: 40px;
 		list-style: none;
 		color: #FFF;
-		padding-top: 75px;
+		padding-top: 90px;
 	}
