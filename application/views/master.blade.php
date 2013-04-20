@@ -14,9 +14,13 @@
 				<li><a href="#">Contact Us</a></li>
 			</ul>
 			<nav class="nav-user">
-				<ul class="nav-userlist">					
-					<li>{{ HTML::link_to_route('new_user', 'Sign Up') }}</li>
-					<li>{{ HTML::link_to_route('new_user', 'Sign In') }}</li>
+				<ul class="nav-userlist">
+					@if(Auth::check())				
+						<li>{{ HTML::link_to_route('logout_user', 'Log out') }}</li>	
+					@else
+						<li>{{ HTML::link_to_route('new_user', 'Sign Up') }}</li>
+						<li>{{ HTML::link_to_route('login_user', 'Sign In') }}</li>						
+					@endif
 				</ul>
 			</nav>
 		</div>

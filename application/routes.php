@@ -29,6 +29,13 @@ Route::post('users/new', 'users@create');
 // Laat een single user zien
 Route::get('users/(:any)', array('as' => 'user', 'uses' => 'users@show'));
 
+// User Login
+Route::get('users/login', array('as' => 'login_user', 'uses' => 'users@login'));
+Route::post('users/login', 'users@login');
+
+// User Logout
+Route::get('users/logout', array('as' => 'logout_user', 'uses' => 'users@logout'));
+
 // Testroute
 Route::get('test', function() {
 	$user = User::find(2)->entries;
@@ -60,6 +67,11 @@ Event::listen('404', function()
 Event::listen('500', function($exception)
 {
 	return Response::error('500');
+});
+
+Event::listen('laravel.query', function($sql) 
+{
+	
 });
 
 
