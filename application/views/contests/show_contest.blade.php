@@ -10,13 +10,21 @@
 	<h2>Briefing:</h2>
 	<p>{{ nl2br($description) }}</p>
 
+
+	<h2>Inzendingen:</h2>
 	<!-- ul class om alle entries te laten -->
 	<ul class="contest-entries">
+		<?php $i = 1; ?>
 		@foreach($entries as $entry)
+			@if($i % 4 == 0)
+			<li class="entry-item last">
+			@else
 			<li class="entry-item">
-				<img src="http://ontwerpwedstrijden.dev/uploads/{{ $entry->filename }}" width="200">
-				<p>Ontwerper: {{ User::find($entry->user_id)->name }}</p>
+			@endif
+				<img src="http://ontwerpwedstrijden.dev/uploads/{{ $entry->filename }}">
+				<p>Ontwerper: {{ HTML::link_to_route('user', User::find($entry->user_id)->name, array(User::find($entry->user_id)->id)) }}</p>
 			</li>
+			<?php $i++; ?>
 		@endforeach
 	</ul>
 

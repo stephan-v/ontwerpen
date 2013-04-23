@@ -36,6 +36,9 @@ Route::post('users/login', 'users@login');
 // User Logout
 Route::get('users/logout', array('as' => 'logout_user', 'uses' => 'users@logout'));
 
+// Contactform
+Route::get('contacts/new', array('as' => 'new_contact', 'uses' => 'contacts@new'));
+
 // Testroute
 Route::get('test', function() {
 	$user = User::find(2)->entries;

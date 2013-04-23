@@ -37,13 +37,6 @@ class Entry_Controller extends Base_Controller {
 				'user_id' => Auth::user()->id
 			));
 
-			$img = Input::file('image');
-
-		    // Save a thumbnail
-		    $success = Resizer::open( $img )
-		        ->resize( 200 , 200 , 'crop' )
-		        ->save( 'public/uploads/my-new-filename.jpg' , 90 );
-
 			return Redirect::to_route('contest', $id);
 		}	
 	}

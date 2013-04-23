@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Ontwerpen</title>
+	<title>Microlancer.nl | Snelle en Goedkope Creative Diensten</title>
 	{{ HTML::style('css/style.css') }}
 </head>
 <body>
@@ -11,7 +11,7 @@
 			<ul class="primary-nav">
 				<li>{{ HTML::link('/', 'Home') }}</li>
 				<li><a href="#">Help</a></li>
-				<li><a href="#">Contact</a></li>
+				<li>{{ HTML::link_to_route('new_contact', 'Contact') }}</li>
 			</ul>
 			<nav class="nav-user">
 				<ul class="nav-userlist">
@@ -23,7 +23,7 @@
 							{{ HTML::link_to_route('logout_user', 'Uitloggen') }}
 						</li>	
 					@else
-						<li>
+						<li class="item1">
 							{{ HTML::link_to_route('new_user', 'Registreer') }}
 						</li>
 						<li>

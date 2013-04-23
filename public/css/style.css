@@ -6,16 +6,15 @@
 	box-sizing: border-box;
 }
 html {
-	font-size: 14px;
 	position: relative;
 	min-height: 100%;
 }
 body {
 	font-family: Arial;
 	color: #454545;
-	font-size: 1em;
+	font-size: 12px;
 	line-height: 160%;
-	margin: 0 0 200px; /* bottom = footer height */
+	margin: 0 0 250px; /* bottom = footer height + 50px margin*/
 }
 a {
 	text-decoration: none;
@@ -33,6 +32,9 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 10px;
 	border-radius: 3px;
 	color: white;
+}
+.btn.left {
+	margin-right: 10px;
 }
 .btn:hover {
 	background: rgb(125, 201, 109);
@@ -110,9 +112,11 @@ header {
 .homepage-marketing-heading {
 	font-size: 2.5em;
 	text-align: center;
+	margin-top: 0.75em;
 }
 .homepage-mast-actions {
 	text-align: center;
+	padding-top: 0.75em;
 }
 
 /*----- Form Styles -----*/
@@ -156,7 +160,6 @@ label {
 
 table {
 	width: 100%;
-	font-family: 'Open sans';
 	font-size: 12px;
 	border-collapse: collapse;
 }
@@ -179,6 +182,10 @@ table .column-20 {
 	text-align: center;
 	width: 20%;
 }
+table .column-10 {
+	text-align: center;
+	width: 10%;
+}
 table .cat {
 	font-size: 12px;
 }
@@ -189,17 +196,27 @@ table .cat {
 	.entry-item {
 		width: 200px;
 		height: 200px;
-		float: left;
-		background: #2daacd;
+		float: left;		
 		text-align: center;
 		margin-right: 40px;
 		list-style: none;
-		color: #FFF;
+		background: #FFF;
+		border: 1px solid #e6e6e6;
+		-moz-box-shadow: 0 0 10px rgba(50,50,50,0.2);
+		-webkit-box-shadow: 0 0 10px rgba(50,50,50,0.2);
+		box-shadow: 0 0 10px rgba(50,50,50,0.2);
+		margin-bottom: 20px;
+	}
+	.entry-item img {
+		max-width: 200px;
+		max-height: 140px;
+		margin-bottom: 20px;
+		padding: 10px;
+	}
+	.entry-item.last {
+		margin-right: 0; 
 	}
 
-	.entry-item img {
-		border: 1px solid grey;
-	}
 
 /*----- Single Contest Styles -----*/
 

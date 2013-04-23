@@ -5,7 +5,7 @@ class Contests_Controller extends Base_Controller {
 
 	public function get_index() 
 	{
-		$contests = Contest::all();
+		$contests = Contest::all();		
 		return View::make('contests.index')
 			->with('contests', $contests);
 	}
