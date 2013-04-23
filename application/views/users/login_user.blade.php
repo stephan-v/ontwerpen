@@ -17,7 +17,11 @@
 	<ul class="validation-errors">
 		@foreach($errors->all() as $error)
 			<li class="validation-error">{{ $error }}</li>
-		@endforeach
+		@endforeach	
+
+		@if(Session::has('login_errors'))
+			<li class="validation-error">Username or password incorrect</li>
+		@endif
 	</ul>
 
 @endsection

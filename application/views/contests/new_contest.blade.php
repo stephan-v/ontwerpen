@@ -18,6 +18,9 @@
 		{{ Form::label('budget', 'Wedstrijd budget')}}
 		{{ Form::text('budget', '', array('placeholder' => 'Geef een budget op voor uw wedstrijd'))}}
 
+		{{ Form::label('enddate', 'Kies eind datum') }}
+		{{ Form::select('enddate', array('1week' => '1 Week (Min)', '2week' => '2 Weken', '3week' => '3 Weken', '4week' => '4 Weken', '5week' => '5 Weken', '6week' => '6 Weken (Max)')) }}
+
 		{{ Form::submit('Ga naar stap 2') }}
 
 	{{ Form::close() }}

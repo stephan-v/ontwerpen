@@ -80,7 +80,7 @@ class Users_Controller extends Base_Controller {
 				if ( Auth::check() ) return Redirect::home();
 			} else {
 				return Redirect::to_route('login_user')
-		    	->with('login', 'Login failed');
+		    	->with('login_errors', true);
 			}
 		}	
 

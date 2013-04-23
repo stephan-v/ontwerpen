@@ -6,10 +6,10 @@
 
 	{{ Form::open() }}
 
-		{{ Form::label('name', 'Uw naam') }}
+		{{ Form::label('name', 'Gebruikersnaam') }}
 		{{ Form::text('name', '', array('placeholder' => 'naam')) }}
 
-		{{ Form::label('email', 'Uw email') }}
+		{{ Form::label('email', 'E-mail') }}
 		{{ Form::text('email', '', array('placeholder' => 'email')) }}
 
 		{{ Form::label('email', 'Uw wachtwoord') }}

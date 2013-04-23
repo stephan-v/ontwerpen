@@ -13,7 +13,7 @@ class Create_Entries_Table {
 			$table->increments('id');
 			$table->integer('user_id');
 			$table->integer('contest_id');
-			$table->string('title');
+			$table->string('filename');
 			$table->timestamps();
 		});
 	}

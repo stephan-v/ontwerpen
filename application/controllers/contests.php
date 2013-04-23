@@ -15,13 +15,21 @@ class Contests_Controller extends Base_Controller {
 		$contest = Contest::find((int)$id);
 		$entries = Contest::find((int)$id)->entries;
 
-		// Get the username from users
+		// Timestamp date conversion for startdate
+		$original_date = $contest->created_at;
+		$startdate = date("d-m-Y", strtotime($original_date));
+
+		// Timestamp date conversion for enddate
+		$original_date = $contest->expires_at;
+		$enddate = date("d-m-Y", strtotime($original_date));
 
 		return View::make('contests.show_contest')
 			->with('title', $contest->title)
 			->with('description', $contest->description)
 			->with('contest_id', $contest->id)
-			->with('entries', $entries);
+			->with('entries', $entries)
+			->with('startdate', $startdate)
+			->with('enddate', $enddate);
 	}
 
 	public function get_new()
@@ -44,6 +52,7 @@ class Contests_Controller extends Base_Controller {
 			'title' => 'required',
 			'description' => 'required',
 			'budget' => 'required|numeric',
+			'enddate' => 'required'
 		);
 
 		$validation = Validator::make($input, $rules);
@@ -53,12 +62,39 @@ class Contests_Controller extends Base_Controller {
 				->with_errors($validation->errors);
 		}
 
+		// Get enddate input
+		$enddate = Input::get('enddate');
+
+		// Check selected enddate and input expirationdate based on enddate weeks
+		switch($enddate) 
+		{
+		case "1week":
+			$enddate = date('Y-m-d H:i:s', strtotime('+1 weeks'));
+			break;
+		case "2week":
+			$enddate = date('Y-m-d H:i:s', strtotime('+2 weeks'));
+			break;
+		case "3week":
+			$enddate = date('Y-m-d H:i:s', strtotime('+3 weeks'));
+			break;
+		case "4week":
+			$enddate = date('Y-m-d H:i:s', strtotime('+4 weeks'));
+			break;
+		case "5week":
+			$enddate = date('Y-m-d H:i:s', strtotime('+5 weeks'));
+			break;
+		case "6week":
+			$enddate = date('Y-m-d H:i:s', strtotime('+6 weeks'));
+			break;
+		}
+
 		// Get inputdata and insert into table users
 		$new_contest = Contest::create(array(
 			'category' => Input::get('category'), 
 			'title' => Input::get('title'), 
 			'description' => Input::get('description'),
-			'budget' => Input::get('budget') 
+			'budget' => Input::get('budget') ,
+			'expires_at' => $enddate
 		));
 
 		if ( $new_contest) {

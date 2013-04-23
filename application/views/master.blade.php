@@ -10,17 +10,25 @@
 		<div class="container">
 			<ul class="primary-nav">
 				<li>{{ HTML::link('/', 'Home') }}</li>
-				<li><a href="#">Faq</a></li>
-				<li><a href="#">Contact Us</a></li>
+				<li><a href="#">Help</a></li>
+				<li><a href="#">Contact</a></li>
 			</ul>
 			<nav class="nav-user">
 				<ul class="nav-userlist">
 					@if(Auth::check())
-						<li>{{ HTML::link_to_route('user', 'Mijn Account', array(Auth::user()->id)) }}</li>				
-						<li>{{ HTML::link_to_route('logout_user', 'Log out') }}</li>	
+						<li class="item1">
+							{{ HTML::link_to_route('user', 'Mijn Account', array(Auth::user()->id)) }}
+						</li>				
+						<li>
+							{{ HTML::link_to_route('logout_user', 'Uitloggen') }}
+						</li>	
 					@else
-						<li>{{ HTML::link_to_route('new_user', 'Sign Up') }}</li>
-						<li>{{ HTML::link_to_route('login_user', 'Sign In') }}</li>						
+						<li>
+							{{ HTML::link_to_route('new_user', 'Registreer') }}
+						</li>
+						<li>
+							{{ HTML::link_to_route('login_user', 'Login') }}
+						</li>						
 					@endif
 				</ul>
 			</nav>
@@ -29,7 +37,7 @@
 
 	<header class="header-branding">
 		<div class="container">
-			<h1>Ontwerpwedstrijden</h1>
+			<div class="logo"><a href="{{ URL::home() }}">{{ HTML::image('img/logo.png') }}</a></div>
 		</div>
 	</header>
 
@@ -38,6 +46,10 @@
 			@yield('content')
 		</div>
 	</div>
+
+	<footer>
+		
+	</footer>
 
 </body>
 </html>

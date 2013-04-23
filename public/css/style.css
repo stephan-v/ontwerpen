@@ -7,11 +7,15 @@
 }
 html {
 	font-size: 14px;
+	position: relative;
+	min-height: 100%;
 }
 body {
 	font-family: Arial;
 	color: #454545;
 	font-size: 1em;
+	line-height: 160%;
+	margin: 0 0 200px; /* bottom = footer height */
 }
 a {
 	text-decoration: none;
@@ -53,19 +57,33 @@ h1, h2, h3, h4, h5, h6 {
 #main-container {
 	padding-top: 25px;
 }
+
+/*----- Navigation Styles -----*/
+
 header {
 	background: #323232;
 	color: #a6a6a6;
 }
-.primary-nav li {
+.primary-nav li, .nav-user li {
 	float: left;
 	list-style: none;
-	margin-right: 20px;	
+	margin-right: 10px;	
 }
 .nav-user li {
-	float: left;
-	list-style: none;
-	margin-left: 20px;
+	margin-right: 0;
+	margin-left: 10px;
+}
+.nav-user li a:hover {
+	background: #2daacd;
+	color: #FFF;
+	border-radius: 3px;
+}
+.primary-nav a:hover {
+	color: #FFF;
+}
+.nav-userlist .item1:after {
+	content: "|";
+	padding-left: 8px;
 }
 .primary-nav {
 	float: left;
@@ -76,14 +94,14 @@ header {
 }
 .primary-nav a, .nav-user a{
 	color: #a6a6a6;
+	padding: 5px;
 }
 .primary-nav li, .nav-user li {
 	padding: 1em 0;
 }
 .header-branding {
-	background-color: #2daacd;
+	background: url('../img/background.png') #2daacd;;
 	color: #FFF;
-
 	padding: 1.5em 0;
 }
 .header-branding h1 {
@@ -134,14 +152,35 @@ label {
 	width: 500px;
 }
 
-/*----- Frontpage -----*/
-.contests-loop {
-	list-style: none;
+/*----- Frontpage Table Style -----*/
+
+table {
+	width: 100%;
+	font-family: 'Open sans';
+	font-size: 12px;
+	border-collapse: collapse;
 }
-.contests-loop li {
-	background: #ebebeb;
-	margin-bottom: 20px;
-	padding: 10px;
+table th {
+	background: #868E9D;
+	color: #FFF;
+	font-size: 11px;
+	padding: 3px 0;
+}
+table td {
+	border: 1px solid #eaeaea;
+	padding: 15px 0;
+}
+table .column-40 {
+	text-align: left;
+	width: 40%;
+	padding-left: 15px;
+}
+table .column-20 {
+	text-align: center;
+	width: 20%;
+}
+table .cat {
+	font-size: 12px;
 }
 
 /*----- Entries -----*/
@@ -156,5 +195,28 @@ label {
 		margin-right: 40px;
 		list-style: none;
 		color: #FFF;
-		padding-top: 90px;
 	}
+
+	.entry-item img {
+		border: 1px solid grey;
+	}
+
+/*----- Single Contest Styles -----*/
+
+.startdate {
+	color: #6abe59;
+}
+.enddate {
+	color: red;
+}
+
+/*----- Footer Styles -----*/
+footer {
+	position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 200px;
+    width: 100%;
+    background: #f5f8f9;
+    border-top: 1px dashed grey;
+}
