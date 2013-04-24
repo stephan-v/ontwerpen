@@ -38,6 +38,10 @@ Route::get('users/logout', array('as' => 'logout_user', 'uses' => 'users@logout'
 
 // Contactform
 Route::get('contacts/new', array('as' => 'new_contact', 'uses' => 'contacts@new'));
+Route::post('contacts/new', 'contacts@new');
+
+// Contactform confirmation
+Route::get('contacts', array('as' => 'contacts', 'uses' => 'contacts@index'));
 
 // Testroute
 Route::get('test', function() {

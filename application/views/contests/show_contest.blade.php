@@ -21,7 +21,7 @@
 			@else
 			<li class="entry-item">
 			@endif
-				<img src="http://ontwerpwedstrijden.dev/uploads/{{ $entry->filename }}">
+				<a href="http://ontwerpwedstrijden.dev/uploads/{{ $entry->filename }}" class="preview"><img src="http://ontwerpwedstrijden.dev/uploads/{{ $entry->filename }}" /></a>
 				<p>Ontwerper: {{ HTML::link_to_route('user', User::find($entry->user_id)->name, array(User::find($entry->user_id)->id)) }}</p>
 			</li>
 			<?php $i++; ?>

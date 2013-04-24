@@ -27,23 +27,30 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 0.75em;
 	font-weight: normal;
 }
+/*----- Button Styles -----*/
 .btn {
-	background: #6abe59;
+	background: #9fc343;
 	padding: 10px;
 	border-radius: 3px;
 	color: white;
+	moz-box-shadow: 0 1px 1px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.75);
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.75);
+	box-shadow: 0 1px 1px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.75);
+	text-shadow: 0px 1px 1px #555555;
+	border: 1px solid #538301;
+	font-size: 14px;
 }
 .btn.left {
 	margin-right: 10px;
 }
 .btn:hover {
-	background: rgb(125, 201, 109);
+	background: #8eb932;
 }
 .btn-entry {
 	float: left;
 	width: 100%;
 	margin-top: 20px;
-	text-align: center;
+	text-align: center;	
 }
 .container {
 	margin: 0 auto;
@@ -181,6 +188,7 @@ table .column-40 {
 table .column-20 {
 	text-align: center;
 	width: 20%;
+	font-weight: bold;
 }
 table .column-10 {
 	text-align: center;
@@ -215,6 +223,18 @@ table .cat {
 	}
 	.entry-item.last {
 		margin-right: 0; 
+	}
+
+	#preview {
+		position:absolute;
+		background:#000;
+		padding:5px;
+		display:none;
+		color:#fff;
+	}
+	#preview img {
+		max-width: 500px;
+		max-height: 400px;
 	}
 
 

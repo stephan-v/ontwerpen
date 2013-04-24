@@ -11,8 +11,8 @@
 		{{ Form::label('email', 'Email') }}
 		{{ Form::text('email', '', array('placeholder' => 'Uw email'))}}
 
-		{{ Form::label('comment', 'Opmerking') }}
-		{{ Form::textarea('comment', '', array('placeholder' => 'Uw opmerking'))}}
+		{{ Form::label('body', 'Opmerking') }}
+		{{ Form::textarea('body', '', array('placeholder' => 'Uw opmerking'))}}
 
 		{{ Form::submit('verstuur') }}
 

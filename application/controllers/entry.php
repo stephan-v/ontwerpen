@@ -11,7 +11,7 @@ class Entry_Controller extends Base_Controller {
 	public function post_create($id)
 	{
 		$rules = array(
-			'image' => 'image|max:1500'
+			'image' => 'image|max:2000'
 		);
 
 		$inputs = array(
