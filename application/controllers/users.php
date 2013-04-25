@@ -11,7 +11,7 @@ class Users_Controller extends Base_Controller {
 		$user_entries = User::find((int)$id)->entries;
 		$user = User::find((int)$id);
 		return View::make('users.show_user')
-			->with('name', $user->name)
+			->with('username', $user->username)
 			->with('email', $user->email)
 			->with('entries', $user_entries);
 	}
@@ -26,7 +26,7 @@ class Users_Controller extends Base_Controller {
 		$input = Input::all();
 
 		$rules = array(
-			'name' => 'required',
+			'username' => 'required|unique:users',
 			'email' => 'required|email|unique:users'
 		);
 
@@ -39,7 +39,7 @@ class Users_Controller extends Base_Controller {
 
 		// Get inputdata and insert into table users
 		$new_user = User::create(array(
-			'name' => Input::get('name'), 
+			'username' => Input::get('username'), 
 			'email' => Input::get('email'), 
 			'password' => Hash::make(Input::get('password')) 
 		));

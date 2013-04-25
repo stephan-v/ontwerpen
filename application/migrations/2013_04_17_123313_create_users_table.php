@@ -11,7 +11,7 @@ class Create_Users_Table {
 	{
 		Schema::create('users', function($table) {
 			$table->increments('id');
-			$table->string('name');
+			$table->string('username');
 			$table->string('email');
 			$table->string('password');
 			$table->boolean('activated')->default(0);

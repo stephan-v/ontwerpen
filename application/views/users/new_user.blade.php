@@ -6,8 +6,8 @@
 
 	{{ Form::open() }}
 
-		{{ Form::label('name', 'Gebruikersnaam') }}
-		{{ Form::text('name', '', array('placeholder' => 'naam')) }}
+		{{ Form::label('username', 'Gebruikersnaam') }}
+		{{ Form::text('username', '', array('placeholder' => 'De naam die zichtbaar is op de website')) }}
 
 		{{ Form::label('email', 'E-mail') }}
 		{{ Form::text('email', '', array('placeholder' => 'email')) }}
