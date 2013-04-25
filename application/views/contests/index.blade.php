@@ -22,7 +22,7 @@
 
 				$interval = $future_date->diff($now);
 
-				$enddate = $interval->format("%m maand, %d dagen, %h uren, %i minuten");
+				$enddate = $interval->format("%a dagen, %h uren, %i minuten");
 
 				// if current time is higher than expiration date set contest to finished.
 				if($now > $future_date) {
