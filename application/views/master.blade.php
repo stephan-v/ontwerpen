@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>Microlancer.nl | Snelle en Goedkope Creative Diensten</title>
 	{{ HTML::style('css/style.css') }}	
+	{{ HTML::style('css/slider.css') }}	
 	{{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js') }}
 	{{ HTML::script('js/hover-preview.js') }}
 </head>

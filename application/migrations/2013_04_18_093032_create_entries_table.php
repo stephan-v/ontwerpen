@@ -14,6 +14,7 @@ class Create_Entries_Table {
 			$table->integer('user_id');
 			$table->integer('contest_id');
 			$table->string('filename');
+			$table->integer('rating');
 			$table->timestamps();
 		});
 	}
