@@ -43,6 +43,9 @@ Route::post('contacts/new', 'contacts@new');
 // Contactform confirmation
 Route::get('contacts', array('as' => 'contacts', 'uses' => 'contacts@index'));
 
+// Entry updated
+Route::post('contests/(:any)', 'entry@update');
+
 // Testroute
 Route::get('test', function() {
 	$user = User::find(2)->entries;

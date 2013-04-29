@@ -7,6 +7,7 @@
 	{{ HTML::style('css/slider.css') }}	
 	{{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js') }}
 	{{ HTML::script('js/hover-preview.js') }}
+	{{ HTML::script('js/update-rating.js') }}
 </head>
 <body>
 	<header class="header-navigation">
@@ -44,7 +45,9 @@
 		</div>
 	</header>
 
-	<div id="main-container">
+	@yield('banner')
+
+	<div id="main-content">
 		<div class="container">
 			@yield('content')
 		</div>

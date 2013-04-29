@@ -2,44 +2,56 @@
 
 @section('content')
 
-	<h1>{{ $title }}</h1>
+	<section id="contest-details">
+		<h1>{{ $title }}</h1>
+		<p class="startdate">Begin wedstrijd: {{ $startdate }}</p>
+		<p class="enddate">Einde wedstrijd: {{ $enddate }}</p>
+		<p>Wedstrijd aangemaakt door:</p>
+	</section>
 
-	<p class="startdate">Begin wedstrijd: {{ $startdate }}</p>
-	<p class="enddate">Einde wedstrijd: {{ $enddate }}</p>
+	<section id="contest-briefing">
+		<h2>Briefing:</h2>
+		<p>{{ nl2br($description) }}</p>
+	</section>
 
-	<h2>Briefing:</h2>
-	<p>{{ nl2br($description) }}</p>
-
-
-	<h2>Inzendingen:</h2>
+	<div class="entries-header">
+		<h2>Inzendingen</h2>
+	</div>
 	<!-- ul class om alle entries te laten -->
 	<ul class="contest-entries">
 		<?php $i = 1; ?>		
 		@foreach($entries as $entry)
-		<?php echo $num = Entry::find($entry->id)->rating; ?>
+		<?php $num = Entry::find($entry->id)->rating; ?>
 			@if($i % 4 == 0)
-			<li class="entry-item last">
+			<li class="entry-item last" id="{{ $entry->id }}">
 			@else
-			<li class="entry-item">
+			<li class="entry-item" id="{{ $entry->id }}">
 			@endif
 				<a href="http://ontwerpwedstrijden.dev/uploads/{{ $entry->filename }}" class="preview"><img src="http://ontwerpwedstrijden.dev/uploads/{{ $entry->filename }}" /></a>
 				<p>Ontwerper: {{ HTML::link_to_route('user', User::find($entry->user_id)->username, array(User::find($entry->user_id)->id)) }}</p>
 				
 				<section class="rating">
-					<input type="radio" class="radio twenty" name="progress-<?php echo $i; ?>" value="twenty" id="twenty-<?php echo $i; ?>" <?php if($num === 1) { echo 'checked'; } ?>>
-					<label for="twenty-<?php echo $i; ?>" class="label">1</label>
+					{{-- If the logged in user is not the owner of the contest hide the ratinglabels --}}
+					@if( isset(Auth::user()->username) != $contest_owner)
+						<?php $displaystatus = 'display:none'; ?>
+					@else
+						<?php $displaystatus = 'display:inline-block'; ?>
+					@endif
 
-					<input type="radio" class="radio fourty" name="progress-<?php echo $i; ?>" value="fourty" id="fourty-<?php echo $i; ?>" <?php if($num === 2) { echo 'checked'; } ?>>
-					<label for="fourty-<?php echo $i; ?>" class="label">2</label>
+					<input type="radio" class="radio twenty" name="progress-{{ $i }}" value="1" id="twenty-{{ $i }}" <?php if($num === 1) { echo 'checked'; } ?>>
+					<label for="twenty-<?php echo $i; ?>" class="label" style="{{ $displaystatus }}">1</label>
 
-					<input type="radio" class="radio sixty" name="progress-<?php echo $i; ?>" value="sixty" id="sixty-<?php echo $i; ?>" <?php if($num === 3) { echo 'checked'; } ?>>
-					<label for="sixty-<?php echo $i; ?>" class="label">3</label>
+					<input type="radio" class="radio fourty" name="progress-{{ $i }}" value="2" id="fourty-{{ $i }}" <?php if($num === 2) { echo 'checked'; } ?>>
+					<label for="fourty-<?php echo $i; ?>" class="label" style="{{ $displaystatus }}">2</label>
 
-					<input type="radio" class="radio eighty" name="progress-<?php echo $i; ?>" value="eighty" id="eighty-<?php echo $i; ?>"<?php if($num === 4) { echo 'checked'; } ?>>
-					<label for="eighty-<?php echo $i; ?>" class="label">4</label>
+					<input type="radio" class="radio sixty" name="progress-{{ $i }}" value="3" id="sixty-{{ $i }}" <?php if($num === 3) { echo 'checked'; } ?>>
+					<label for="sixty-<?php echo $i; ?>" class="label" style="{{ $displaystatus }}">3</label>
 
-					<input type="radio" class="radio onehundred" name="progress-<?php echo $i; ?>" value="onehundred" id="onehundred-<?php echo $i; ?>" <?php if($num === 5) { echo 'checked'; } ?>>
-					<label for="onehundred-<?php echo $i; ?>" class="label">5</label>
+					<input type="radio" class="radio eighty" name="progress-{{ $i }}" value="4" id="eighty-{{ $i }}"<?php if($num === 4) { echo 'checked'; } ?>>
+					<label for="eighty-<?php echo $i; ?>" class="label" style="{{ $displaystatus }}">4</label>
+
+					<input type="radio" class="radio onehundred" name="progress-{{ $i }}" value="5" id="onehundred-{{ $i }}" <?php if($num === 5) { echo 'checked'; } ?>>
+					<label for="onehundred-<?php echo $i; ?>" class="label" style="{{ $displaystatus }}">5</label>
 
 					<div class="progress">
 					 	<div class="progress-bar"></div>

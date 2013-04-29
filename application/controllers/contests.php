@@ -27,6 +27,7 @@ class Contests_Controller extends Base_Controller {
 			->with('title', $contest->title)
 			->with('description', $contest->description)
 			->with('contest_id', $contest->id)
+			->with('contest_owner', $contest->owner)
 			->with('entries', $entries)
 			->with('startdate', $startdate)
 			->with('enddate', $enddate);
@@ -93,7 +94,8 @@ class Contests_Controller extends Base_Controller {
 			'category' => Input::get('category'), 
 			'title' => Input::get('title'), 
 			'description' => Input::get('description'),
-			'budget' => Input::get('budget') ,
+			'budget' => Input::get('budget'),
+			'owner' => Auth::user()->username,
 			'expires_at' => $enddate
 		));
 

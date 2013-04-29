@@ -15,6 +15,7 @@ class Create_Contests_Table {
 			$table->string('title');
 			$table->text('description');
 			$table->float('budget');
+			$table->string('owner');
 			$table->timestamps();
 			$table->timestamp('expires_at');
 		});

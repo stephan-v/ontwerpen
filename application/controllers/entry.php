@@ -11,7 +11,7 @@ class Entry_Controller extends Base_Controller {
 	public function post_create($id)
 	{
 		$rules = array(
-			'image' => 'image|max:2000'
+			'image' => 'image|max:2000|required'
 		);
 
 		$inputs = array(
@@ -39,5 +39,12 @@ class Entry_Controller extends Base_Controller {
 
 			return Redirect::to_route('contest', $id);
 		}	
+	}
+
+	public function post_update() {
+		$entry = Entry::find(Input::get('entry_id'));
+		$entry->rating = Input::get('rating');
+		$entry->save();
+		return 'succesfully updated';
 	}
 }

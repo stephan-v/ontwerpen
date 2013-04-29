@@ -4,11 +4,11 @@
 	<h1>Login</h1>
 	{{ Form::open() }}
 
-		{{ Form::label('email', 'Your email')}}
-		{{ Form::text('email') }}
+		{{ Form::label('email', 'Uw email')}}
+		{{ Form::text('email', '', array('placeholder' => 'Uw email')) }}
 
-		{{ Form::label('password', 'Your password') }}
-		{{ Form::password('password') }}
+		{{ Form::label('password', 'Uw password') }}
+		{{ Form::password('password', array('placeholder' => 'Uw wachtwoord')) }}
 
 		{{ Form::submit('login') }}
 
