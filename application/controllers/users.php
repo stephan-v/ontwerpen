@@ -10,10 +10,14 @@ class Users_Controller extends Base_Controller {
 	public function get_show($id) {
 		$user_entries = User::find((int)$id)->entries;
 		$user = User::find((int)$id);
+
+		$contests = Contest::where('owner', '=', $user->username)->get();
+
 		return View::make('users.show_user')
 			->with('username', $user->username)
 			->with('email', $user->email)
-			->with('entries', $user_entries);
+			->with('entries', $user_entries)
+			->with('contests', $contests);
 	}
 
 	public function get_new() {

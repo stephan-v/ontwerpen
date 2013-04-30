@@ -48,8 +48,8 @@ Route::post('contests/(:any)', 'entry@update');
 
 // Testroute
 Route::get('test', function() {
-	$user = User::find(2)->entries;
-	dd($user);
+	$user_address = User::find(1)->address()->first();
+	dd($user_address);
 });
 
 
