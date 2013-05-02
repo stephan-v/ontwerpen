@@ -34,7 +34,11 @@ class Contests_Controller extends Base_Controller {
 	}
 
 	public function get_new()
-	{
+	{	
+		if (!Auth::check())
+		{
+		     return View::make('contests.new_contest')->with('login_status', 'Je moet ingelogd zijn om een wedstrijd aan te maken');
+		}
 		return View::make('contests.new_contest');
 	}
 
@@ -99,7 +103,7 @@ class Contests_Controller extends Base_Controller {
 			'expires_at' => $enddate
 		));
 
-		if ( $new_contest) {
+		if ( $new_contest ) {
 			return Redirect::to_route('contest', $new_contest->id);
 		}
 	}

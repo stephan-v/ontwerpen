@@ -6,7 +6,7 @@
 		<h1>{{ $title }}</h1>
 		<p class="startdate">Begin wedstrijd: {{ $startdate }}</p>
 		<p class="enddate">Einde wedstrijd: {{ $enddate }}</p>
-		<p>Wedstrijd aangemaakt door:</p>
+		<p>Wedstrijd aangemaakt door: {{ $contest_owner }}</p>
 	</section>
 
 	<section id="contest-briefing">

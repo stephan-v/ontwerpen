@@ -2,6 +2,10 @@
 
 @section('content')
 
+	@if(isset($login_status))
+		{{ $login_status }}
+	@else
+
 	<h1>Maak een nieuwe wedstrijd aan!</h1>
 
 	{{ Form::open() }}
@@ -30,5 +34,7 @@
 			<li class="validation-error">{{ $error }}</li>
 		@endforeach
 	</ul>
+
+	@endif
 
 @endsection
