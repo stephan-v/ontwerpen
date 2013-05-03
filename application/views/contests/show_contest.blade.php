@@ -28,6 +28,13 @@
 				@else
 				<li class="entry-item" id="{{ $entry->id }}">
 				@endif
+
+					@if( isset(Auth::user()->username) )
+						@if( Auth::user()->username === User::find($entry->user_id)->username)
+							<div class="delete-entry"></div>
+						@endif
+					@endif
+
 					<a href="http://ontwerpwedstrijden.dev/uploads/{{ $entry->filename }}" class="preview"><img src="http://ontwerpwedstrijden.dev/uploads/{{ $entry->filename }}" /></a>
 					<p>Ontwerper: {{ HTML::link_to_route('user', User::find($entry->user_id)->username, array(User::find($entry->user_id)->id)) }}</p>
 					

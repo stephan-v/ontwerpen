@@ -47,4 +47,9 @@ class Entry_Controller extends Base_Controller {
 		$entry->save();
 		return 'succesfully updated';
 	}
+
+	public function delete_destroy() {
+		$entry = Entry::find(Input::get('entry_id'));
+		Entry::find($entry->id)->delete();
+	}
 }

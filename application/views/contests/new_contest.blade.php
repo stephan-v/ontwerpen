@@ -6,7 +6,7 @@
 		{{ $login_status }}
 	@else
 
-	<h1>Maak een nieuwe wedstrijd aan!</h1>
+	<div id="form-header">Omschrijf uw wedstrijd</div>
 
 	{{ Form::open() }}
 

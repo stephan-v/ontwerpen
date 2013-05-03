@@ -93,7 +93,7 @@ class Contests_Controller extends Base_Controller {
 			break;
 		}
 
-		// Get inputdata and insert into table users
+		// Get inputdata for the creation of the contest and insert into table contest
 		$new_contest = Contest::create(array(
 			'category' => Input::get('category'), 
 			'title' => Input::get('title'), 

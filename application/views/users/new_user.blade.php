@@ -2,18 +2,15 @@
 
 @section('content')
 	
-	<h1>Maak een account aan!</h1>
+	<div id="form-header">Nieuw account</div>
 
 	{{ Form::open() }}
 
-		{{ Form::label('username', 'Gebruikersnaam') }}
-		{{ Form::text('username', '', array('placeholder' => 'De naam die zichtbaar is op de website')) }}
+		{{ Form::text('username', '', array('placeholder' => 'Uw gebruikersnaam', 'id' => 'email')) }}
 
-		{{ Form::label('email', 'E-mail') }}
-		{{ Form::text('email', '', array('placeholder' => 'email')) }}
+		{{ Form::text('email', '', array('placeholder' => 'Uw email', 'id' => 'email')) }}
 
-		{{ Form::label('email', 'Uw wachtwoord') }}
-		{{ Form::password('password', array('placeholder' => 'password')) }}
+		{{ Form::password('password', array('placeholder' => 'Uw wachtwoord', 'id' => 'password')) }}
 
 		{{ Form::submit('Maak uw account aan!') }}
 

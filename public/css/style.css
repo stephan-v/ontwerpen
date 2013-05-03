@@ -141,28 +141,78 @@ header {
 }
 
 /*----- Form Styles -----*/
+form, #register-now, #form-header {
+	margin: 75px auto 0 auto;
+	width: 410px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background: #f5f5f5;
+	text-align: center;
+}
 form {
-	width: 500px;
-	margin: 0 auto;
+	margin-top: 0;
 }
 form input[type=text], form input[type=password], form textarea {
-	padding: 5px;
-	width: 500px;
+	color: #a9a9bc;
+	height: 50px;
+	padding-left: 20px;
+	width: 380px;
 	margin-bottom: 15px;
+	border: 1px solid #cdd9de;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+form textarea {
+	height: 200px;
+	padding: 20px;
 }
 form select {
 	height: 30px;
-	width: 500px;
+	width: 380px;
 	margin-bottom: 15px;
+	border: 1px solid #cdd9de;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
 }
 form input[type=submit] {
-	width: 500px;
+	background: #2daacd;
+	border: none;
+	color: #FFF;
+	width: 380px;
 	padding: 5px;
-	margin: 10px 0;
-}
-label {
 	display: block;
-	margin-bottom: 8px;
+	margin: 0 auto;
+	height: 40px;
+	font-weight: bold;
+}
+form label {
+	display: block;
+	margin: 0 0 8px 15px;
+	float: left;
+}
+#form-header {
+	border-radius: 3px 3px 0 0;
+	-webkit-border-radius: 3px 3px 0 0;
+	-moz-border-radius: 3px 3px 0 0;
+	background: #2daacd;
+	text-align: left;
+	padding-left: 20px;
+	color: #FFF;
+	padding: 20px;
+}
+#register-now {
+	margin-top: 10px;
+	padding: 10px;	
+}
+form #email {
+	background: url('../img/icons-login.png') no-repeat #FFF;
+	background-position: 330px 15px;
+}
+form #password {
+	background: url('../img/icons-login.png') no-repeat #FFF;
+	background-position: 330px -47px;
 }
 .validation-error {
 	color: #D8000C;
@@ -174,7 +224,7 @@ label {
 }
 .validation-errors {
 	margin: 0 auto;
-	width: 500px;
+	width: 410px;
 }
 
 /*----- Frontpage Table Style -----*/
@@ -220,12 +270,13 @@ table .cat {
 		padding: 10px;
 		float: left;		
 		text-align: center;
-		margin-right: 40px;
+		margin-right: 46px;
 		list-style: none;
 		background: #323232;
 		border: 1px solid lightgrey;
 		margin-bottom: 20px;
 		color: #FFF;
+		position: relative;
 	}
 	.entry-item img {
 		max-width: 180px;
@@ -248,10 +299,22 @@ table .cat {
 		background: #FFF;
 		margin-bottom: 10px;
 	}
+	.delete-entry {
+		right: 15px;
+		top: 15px;
+		height: 16px;
+		width: 16px;
+		position: absolute;
+		z-index: 50;
+		background: url('../img/delete-icon.gif');
+		cursor: pointer;
+	}
 	#preview {
 		position:absolute;
 		background:#000;
 		padding:5px;
+		/*- fixes the preview bottom padding bug -*/
+		padding-bottom: 1px;
 		display:none;
 		color:#fff;
 		z-index: 2;
@@ -286,10 +349,8 @@ table .cat {
 
 #contest-details, #contest-briefing {
 	background: #f5f5f5;
-	padding: 10px;
-	border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
+	padding: 20px;
+	color: #777;
 }
 #contest-briefing {
 	margin-top: 20px;

@@ -43,8 +43,11 @@ Route::post('contacts/new', 'contacts@new');
 // Contactform confirmation
 Route::get('contacts', array('as' => 'contacts', 'uses' => 'contacts@index'));
 
-// Entry updated
+// Entry updaten
 Route::post('contests/(:any)', 'entry@update');
+
+// Entry deleten
+Route::delete('contests/(:any)', 'entry@destroy');
 
 // Testroute
 Route::get('test', function() {

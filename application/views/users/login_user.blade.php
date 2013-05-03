@@ -1,18 +1,20 @@
 @layout('master')
 
 @section('content')
-	<h1>Login</h1>
+
+	<div id="form-header">Login</div>
+
 	{{ Form::open() }}
 
-		{{ Form::label('email', 'Uw email')}}
-		{{ Form::text('email', '', array('placeholder' => 'Uw email')) }}
+		{{ Form::text('email', '', array('placeholder' => 'Uw email', 'id' => 'email')) }}
 
-		{{ Form::label('password', 'Uw password') }}
-		{{ Form::password('password', array('placeholder' => 'Uw wachtwoord')) }}
+		{{ Form::password('password', array('placeholder' => 'Uw wachtwoord', 'id' => 'password')) }}
 
 		{{ Form::submit('login') }}
 
 	{{ Form::close() }}
+
+	<div id="register-now">Geen registreerde gebruiker? {{ HTML::link_to_route('new_user', 'Schrijf je nu in!') }}</div>
 
 	<ul class="validation-errors">
 		@foreach($errors->all() as $error)
