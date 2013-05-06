@@ -15,9 +15,11 @@
 	</section>
 
 	<section id="entries">
+		
 		<div class="entries-header">
 			<h2>Inzendingen</h2>
 		</div>
+
 		<!-- ul class om alle entries te laten -->
 		<ul class="contest-entries">
 			<?php $i = 1; ?>		

@@ -6,6 +6,7 @@
 	{{ HTML::style('css/style.css') }}	
 	{{ HTML::style('css/slider.css') }}	
 	{{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js') }}
+	{{ HTML::script('//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js') }}
 	{{ HTML::script('js/hover-preview.js') }}
 	{{ HTML::script('js/update-rating.js') }}
 </head>

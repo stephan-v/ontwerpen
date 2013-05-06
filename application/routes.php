@@ -19,8 +19,14 @@ Route::post('contests/new', 'contests@create');
 Route::get('contests/(:any)/edit', array('as' => 'edit_contest', 'uses' => 'contests@edit'));
 
 // Maak een nieuwe entry aan
-Route::get('contests/(:any)/add', array('as' => 'new_entry', 'uses' => 'entry@new'));
-Route::post('contests/(:any)/add', 'entry@create');
+Route::get('contests/(:any)/entries/new', array('as' => 'new_entry', 'uses' => 'entry@new'));
+Route::post('contests/(:any)/entries/new', 'entry@create');
+
+// Entry updaten
+Route::post('contests/(:any)/entries/(:any)', 'entry@update');
+
+// Entry deleten
+Route::delete('contests/(:any)/entries/(:any)', 'entry@destroy');
 
 // Maak een nieuw account aan
 Route::get('users/new', array('as' => 'new_user', 'uses' => 'users@new'));
@@ -43,11 +49,7 @@ Route::post('contacts/new', 'contacts@new');
 // Contactform confirmation
 Route::get('contacts', array('as' => 'contacts', 'uses' => 'contacts@index'));
 
-// Entry updaten
-Route::post('contests/(:any)', 'entry@update');
 
-// Entry deleten
-Route::delete('contests/(:any)', 'entry@destroy');
 
 // Testroute
 Route::get('test', function() {
