@@ -15,6 +15,7 @@ class Create_Entries_Table {
 			$table->integer('contest_id');
 			$table->string('filename');
 			$table->integer('rating');
+			$table->boolean('winning_design');
 			$table->timestamps();
 		});
 	}

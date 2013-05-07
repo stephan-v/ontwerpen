@@ -336,6 +336,15 @@ table .cat {
 		background: white;
 		display: inline-block;
 	}
+	.winning-design {
+		background: url('../img/ribbon.png');
+		width: 50px;
+		height: 105px;
+		position: absolute;
+		z-index: 1;
+		right: 10px;
+		top: -5px;
+	}
 
 
 /*----- Single Contest Styles -----*/
