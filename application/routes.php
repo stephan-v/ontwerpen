@@ -11,6 +11,9 @@ Route::get('contests', array('as' => 'contests', 'uses' => 'contests@index'));
 // Een single wedstrijd laten zien
 Route::get('contests/(:any)', array('as' => 'contest', 'uses' => 'contests@show'));
 
+// Comment aanmaken
+Route::post('contests/(:any)', 'comments@create');
+
 // Nieuwe Wedstrijd maken
 Route::get('contests/new', array('as' => 'new_contest', 'uses' => 'contests@new'));
 Route::post('contests/new', 'contests@create');

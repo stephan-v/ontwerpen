@@ -72,10 +72,50 @@
 				<?php $i++; ?>
 			@endforeach
 		</ul>
+
+		@if(Auth::check())
+			{{ HTML::link_to_route('new_entry', 'Voeg een inzending toe', $contest_id, array('class' => 'btn btn-entry')) }}
+		@endif
+
 	</section>
 
-	@if(Auth::check())
-		{{ HTML::link_to_route('new_entry', 'Voeg een inzending toe', $contest_id, array('class' => 'btn btn-entry')) }}
-	@endif
+	<section class="comments">
+		<div class="entries-header">
+			<h2>Commentaar</h2>
+		</div>
+
+		<!-- alleen commentform laten zien als user ingelogd is -->
+		@if(Auth::check())
+			{{ Form::open() }}
+				{{ Form::textarea('comment') }}
+				{{ Form::submit('Toevoegen')}}
+			{{ Form::close() }}
+		@endif
+
+		@foreach($comments as $comment)
+			<div class="comment">
+				<div class="comment-header">
+					<div class="avatar">
+						<img src="../img/default-avatar.png" style="width: 100%;">
+					</div>
+					<div class="user-info">
+						<span class="author">
+							{{ HTML::link_to_route('user', User::find($comment->user_id)->username, array(User::find($comment->user_id)->id)) }}
+						</span>
+						<span class="timestamp">
+							{{ $comment->created_at }}
+						</span>
+					</div>
+				</div>
+				<div class="comment-body">
+					<!-- Eventueel nl2br func toevoegen om de regels op te breken -->
+					<p>{{ $comment->comment }}</p>
+				</div>
+			</div>
+		@endforeach
+
+	</section>
+
+	
 
 @endsection

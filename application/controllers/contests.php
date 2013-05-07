@@ -15,6 +15,9 @@ class Contests_Controller extends Base_Controller {
 		$contest = Contest::find((int)$id);
 		$entries = Contest::find((int)$id)->entries;
 
+		// Pak de comments die bij de wedstrijd horen waarbij de laatste comments bovenaan komen.
+		$comments = Contest::find((int)$id)->comments()->order_by('created_at', 'desc')->get();
+
 		// Timestamp date conversion for startdate
 		$original_date = $contest->created_at;
 		$startdate = date("d-m-Y", strtotime($original_date));
@@ -30,7 +33,8 @@ class Contests_Controller extends Base_Controller {
 			->with('contest_owner', $contest->owner)
 			->with('entries', $entries)
 			->with('startdate', $startdate)
-			->with('enddate', $enddate);
+			->with('enddate', $enddate)
+			->with('comments', $comments);
 	}
 
 	public function get_new()
