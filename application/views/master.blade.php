@@ -9,6 +9,7 @@
 	{{ HTML::script('//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js') }}
 	{{ HTML::script('js/hover-preview.js') }}
 	{{ HTML::script('js/update-rating.js') }}
+	{{ HTML::script('js/html5shiv.js') }}
 </head>
 <body>
 	<header class="header-navigation">
@@ -55,7 +56,47 @@
 	</div>
 
 	<footer>
-		
+		<div class="container">
+			<div class="footer-column">
+				<h2>Algemeen</h2>
+					<ul>
+						<li>Algemene Voorwaarden</li>
+						<li>Over Ons</li>
+						<li>Help</li>
+						<li>Contact</li>
+					</ul>
+			</div>
+			<div class="footer-column">
+				<h2>Website</h2>
+					<ul>
+						<li>Voorbeeld list item</li>
+						<li>Voorbeeld list item</li>
+						<li>Voorbeeld list item</li>
+						<li>Voorbeeld list item</li>
+						<li>Voorbeeld list item</li>
+					</ul>
+			</div>
+			<div class="footer-column">
+				<h2>Producten en Diensten</h2>
+					<ul>
+						<li>Voorbeeld list item</li>
+						<li>Voorbeeld list item</li>
+						<li>Voorbeeld list item</li>
+						<li>Voorbeeld list item</li>
+						<li>Voorbeeld list item</li>
+					</ul>				
+			</div>
+			<div class="footer-column last">
+				<h2>Statistieken</h2>
+					<ul>
+						<li>Voorbeeld list item</li>
+						<li>Voorbeeld list item</li>
+						<li>Voorbeeld list item</li>
+						<li>Voorbeeld list item</li>
+						<li>Voorbeeld list item</li>
+					</ul>
+			</div>
+		</div>
 	</footer>
 
 </body>

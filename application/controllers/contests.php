@@ -15,6 +15,9 @@ class Contests_Controller extends Base_Controller {
 		$contest = Contest::find((int)$id);
 		$entries = Contest::find((int)$id)->entries;
 
+		// Contest winner
+		$winner = Entry::where('winning_design', '=', 1)->where('contest_id', '=', $id)->first();
+
 		// Pak de comments die bij de wedstrijd horen waarbij de laatste comments bovenaan komen.
 		$comments = Contest::find((int)$id)->comments()->order_by('created_at', 'desc')->get();
 
@@ -26,7 +29,9 @@ class Contests_Controller extends Base_Controller {
 		$original_date = $contest->expires_at;
 		$enddate = date("d-m-Y", strtotime($original_date));
 
+		// moet opgeschoond worden $contest->title etc verwijderen!
 		return View::make('contests.show_contest')
+			->with('contest', $contest)
 			->with('title', $contest->title)
 			->with('description', $contest->description)
 			->with('contest_id', $contest->id)
@@ -34,7 +39,8 @@ class Contests_Controller extends Base_Controller {
 			->with('entries', $entries)
 			->with('startdate', $startdate)
 			->with('enddate', $enddate)
-			->with('comments', $comments);
+			->with('comments', $comments)
+			->with('winner', $winner);
 	}
 
 	public function get_new()

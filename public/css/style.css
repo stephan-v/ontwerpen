@@ -13,10 +13,10 @@ body {
 	font-family: Arial;
 	color: #454545;
 	font-size: 12px;
-	line-height: 160%;
-	margin: 0 0 250px; /* bottom = footer height + 50px margin*/
+	line-height: 1.6;
+	margin: 0 0 325px; /* bottom = footer height + 50px margin*/
 }
-a {
+a, .blue {
 	text-decoration: none;
 	color: #19aacf;
 }
@@ -43,36 +43,87 @@ h1, h2, h3, h4, h5, h6 {
 }
 #main-banner {
 	height: 300px;
-	padding-top: 90px;
+	padding-top: 50px;
 	background: url('../img/bg-image.jpg') center center no-repeat;
 	background-size: cover;
 	width: 100%;	
 	color: #FFF;
 }
+.proces-steps {
+	background: url('../img/steps.png');
+	width: 960px;
+	height: 453px;
+	color: #FFF;
+	margin-top: 50px;
+}
+.proces-steps h1 {
+	margin-bottom: 0;
+}
+.proces-steps p {
+	font-size: 10px;
+}
+.proces-steps #step1 {
+	width: 300px;
+	margin-left: 380px;
+	padding-top: 30px;
+}
+.proces-steps #step2 {
+	float: right;
+	width: 250px;
+	padding-top: 100px;
+	margin-right: 100px;
+}
+.proces-steps #step3 {
+	float: left;
+	width: 250px;
+	padding-top: 100px;
+	margin-left: 200px;
+}
+.proces-steps #step4 {
+	float: left;
+	width: 500px;
+	padding-top: 75px;
+	margin-left: 250px;
+}
 
 /*----- Button Styles -----*/
 
 .btn {
-	background: #9fc343;
-	padding: 10px;
-	border-radius: 3px;
-	color: white;
-	moz-box-shadow: 0 1px 1px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.75);
-	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.75);
-	box-shadow: 0 1px 1px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.75);
-	text-shadow: 0px 1px 1px #555555;
-	border: 1px solid #538301;
-	font-size: 14px;
-}
-.btn.left {
-	margin-right: 10px;
+	background: url('../img/button.png') no-repeat center top;
+	background-size: 160px 210px;
+	width: 25%;	
+	height: 105px;
+	line-height: 80px;
 }
 .btn:hover {
-	background: #8eb932;
+	background-position: bottom;
+}
+.second-btn {
+	background: url('../img/button2.png') no-repeat center top;
+	background-size: 160px 240px;
+	height: 120px;
+}
+.btn.left {
+	float: left;
+	margin-left: 25%;
+}
+.btn.right {
+	float: right;
+	margin-right: 25%;
+}
+.btn a {
+	color: #FFF;
+	width: 100%;
+	height: 100%;
+	display: block;
 }
 .btn-entry {
 	width: 100%;
 	margin-top: 10px;
+	background: #2daacd;
+	color: #FFF;
+	height: 40px;
+	line-height: 40px;
 	text-align: center;	
 	display: inline-block;
 }
@@ -128,16 +179,16 @@ header {
 }
 .homepage-marketing-heading {
 	font-size: 2.5em;
+	font-weight: bold;
 	text-align: center;
 	margin-top: 0.75em;
-	text-shadow: 0 1px 0px #151515;
 }
-.homepage-marketing-heading a{
+.homepage-marketing-heading a {
 	color: #FFF;
+	text-decoration: underline;
 }
 .homepage-mast-actions {
 	text-align: center;
-	padding-top: 1.5em;
 }
 
 /*----- Form Styles -----*/
@@ -278,7 +329,7 @@ table .cat {
 		color: #FFF;
 		position: relative;
 	}
-	.entry-item img {
+	.entry-item img, #contest-winner img {
 		max-width: 180px;
 		max-height: 140px;
 		position: absolute;
@@ -286,12 +337,13 @@ table .cat {
 		bottom: 0;
 		left: 0;
 		right: 0;
-		margin: auto;		
+		margin: auto;
+		border: none;		
 	}
 	.entry-item.last {
 		margin-right: 0; 
 	}
-	.entry-item .preview {
+	.entry-item .preview, #contest-winner .preview {
 		position: relative;
 		float: left;
 		width: 180px;
@@ -355,16 +407,40 @@ table .cat {
 .enddate {
 	color: red;
 }
-#contest-details, #contest-briefing {
-	background: #f5f5f5;
+.section-box {
+	background: #FFF;
 	padding: 20px;
+	margin-bottom: 20px;
 	color: #777;
-}
-#contest-briefing {
-	margin-top: 20px;
+	border: 1px solid #DDD;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
 }
 .contest-entries {
+	overflow: hidden;
+}
+#contest-winner {
+	overflow: hidden;
+}
+#contest-winner .left {
+	width: 50%;
 	float: left;
+}
+#contest-winner .right {
+	width: 50%;
+	float: right;
+}
+#contest-winner .preview {
+	border: 1px solid #DDD;
+	width: 430px;
+	height: 160px;
+	margin-left: 20px;
+}
+#contest-winner img {
+	padding: 10px;
+	max-width: 430px;
+	max-height: 160px;
 }
 
 /*----- Comments -----*/
@@ -420,8 +496,23 @@ footer {
 	position: absolute;
     left: 0;
     bottom: 0;
-    height: 200px;
+    height: 275px;
     width: 100%;
     background: #f5f8f9;
     border-top: 1px dashed grey;
+    padding-top: 25px;
+}
+.footer-column {
+	width: 25%;
+	float: left;
+}
+.footer-column h2 {
+	font-size: 12px;
+	font-weight: bold;
+}
+.footer-column ul {
+	margin-left: 15px;
+}
+.footer-column ul li {
+	padding: 2px 0;
 }

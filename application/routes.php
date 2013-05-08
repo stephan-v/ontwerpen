@@ -52,6 +52,10 @@ Route::post('contacts/new', 'contacts@new');
 // Contactform confirmation
 Route::get('contacts', array('as' => 'contacts', 'uses' => 'contacts@index'));
 
+// Hoe werkt het?
+Route::get('hoe-werkt-het', function() {
+	return View::make('process.index');
+});
 
 
 // Testroute
