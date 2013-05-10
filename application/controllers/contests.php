@@ -13,7 +13,9 @@ class Contests_Controller extends Base_Controller {
 	public function get_show($id)
 	{
 		$contest = Contest::find((int)$id);
-		$entries = Contest::find((int)$id)->entries;
+
+		// Pak de entries uit de table en sorteer ze op aflopende rating
+		$entries = Contest::find((int)$id)->entries()->order_by('rating', 'desc')->get();
 
 		// Contest winner
 		$winner = Entry::where('winning_design', '=', 1)->where('contest_id', '=', $id)->first();
