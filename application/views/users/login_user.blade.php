@@ -12,6 +12,12 @@
 
 		{{ Form::submit('login') }}
 
+		<div class="remember-me">
+			{{	Form::checkbox('remember', 'remember me') }}
+			{{ Form::label('remember', 'Laat mij ingelogd blijven.')}}
+		</div>
+
+
 	{{ Form::close() }}
 
 	<div id="register-now">Geen registreerde gebruiker? {{ HTML::link_to_route('new_user', 'Schrijf je nu in!') }}</div>

@@ -76,11 +76,16 @@ class Users_Controller extends Base_Controller {
 		} else {
 			$credentials = array(
 				'username' => Input::get('email'),
-				'password' => Input::get('password')
+				'password' => Input::get('password'),
+				'remember' => Input::get('remember')
 			);
 
-			if(Auth::attempt($credentials)) 
+			if (Auth::attempt($credentials)) 
 			{
+				if ( !empty($remember))
+				{
+					Auth::login(Auth::user()->id, true);
+				}
 				if ( Auth::check() ) return Redirect::home();
 			} else {
 				return Redirect::to_route('login_user')

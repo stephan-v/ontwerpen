@@ -63,7 +63,7 @@
 					<li>Algemene Voorwaarden</li>
 					<li>Over Ons</li>
 					<li>Help</li>
-					<li>Contact</li>
+					<li>{{ HTML::link_to_route('new_contact', 'Contact') }}</li>
 				</ul>
 			</div>
 			<div class="footer-column">

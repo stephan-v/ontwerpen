@@ -54,6 +54,11 @@ class Contests_Controller extends Base_Controller {
 		return View::make('contests.new_contest');
 	}
 
+	public function get_new2()
+	{	
+		return View::make('contests.step2');
+	}
+
 	public function get_edit()
 	{
 		return 'Wedstrijd bewerken';
@@ -72,11 +77,18 @@ class Contests_Controller extends Base_Controller {
 			'enddate' => 'required'
 		);
 
-		$validation = Validator::make($input, $rules);
+		$messages = array(
+			'title_required' => 'Geef een titel op voor uw wedstrijd.',
+			'description_required' => 'Geef een omschrijving op voor uw wedstrijd.',
+		    'budget_required' => 'Geef een budget op voor uw wedstrijd.',
+		    'budget_numeric' => 'Het budget moet een getal zijn.',
+		);
+
+		$validation = Validator::make($input, $rules, $messages);
 
 		if ($validation->fails()) {
 			return Redirect::to_route('new_contest')
-				->with_errors($validation->errors);
+				->with_errors($validation->errors)->with_input();
 		}
 
 		// Get enddate input
@@ -106,17 +118,65 @@ class Contests_Controller extends Base_Controller {
 		}
 
 		// Get inputdata for the creation of the contest and insert into table contest
-		$new_contest = Contest::create(array(
+		$step1 = array(
 			'category' => Input::get('category'), 
 			'title' => Input::get('title'), 
 			'description' => Input::get('description'),
 			'budget' => Input::get('budget'),
 			'owner' => Auth::user()->username,
 			'expires_at' => $enddate
-		));
+		);
 
-		if ( $new_contest ) {
-			return Redirect::to_route('contest', $new_contest->id);
+		if ( $step1 ) {
+			Session::put('step1_inputdata', $step1);
+			return Redirect::to_route('new_contest2');
+		}
+	}
+
+	public function post_create2() 
+	{
+		// Validate
+		$input = Input::all();
+
+		$rules = array(
+			'firstname' => 'required',
+			'lastname' => 'required',
+			'company' => 'required',
+			'address' => 'required',
+			'postalcode' => 'required',
+			'city' => 'required',
+			'phonenumber' => 'required',
+			'taxnumber' => 'required',
+		);
+
+		$validation = Validator::make($input, $rules);
+
+		if ($validation->fails()) {
+			return Redirect::to_route('new_contest2')
+				->with_errors($validation->errors)->with_input();
+		}
+
+		// Get inputdata for the creation of the contest and insert into table contest
+		$step2 = array(
+			'user_id' => Auth::user()->id,
+			'firstname' => Input::get('firstname'), 
+			'lastname' => Input::get('lastname'), 
+			'company' => Input::get('company'),
+			'address' => Input::get('address'),
+			'postalcode' => Input::get('postalcode'),
+			'city' => Input::get('city'),
+			'phonenumber' => Input::get('phonenumber'),
+			'taxnumber' => Input::get('taxnumber'),
+		);
+
+		if ( $step2 ) {
+			$step1 = Session::get('step1_inputdata');
+			$step1 = Contest::create($step1);
+
+			// Moet uiteindelijk ook session worden in stap3
+			Address::create($step2);
+
+			return Redirect::to_route('contest', $step1->id);
 		}
 	}
 }

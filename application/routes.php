@@ -14,9 +14,17 @@ Route::get('contests/(:any)', array('as' => 'contest', 'uses' => 'contests@show'
 // Comment aanmaken
 Route::post('contests/(:any)', 'comments@create');
 
-// Nieuwe Wedstrijd maken
+// Nieuwe Wedstrijd maken - Stap-1
 Route::get('contests/new', array('as' => 'new_contest', 'uses' => 'contests@new'));
 Route::post('contests/new', 'contests@create');
+
+// Nieuwe Wedstrijd maken - Stap-2
+Route::get('contests/new/step-2', array('as' => 'new_contest2', 'uses' => 'contests@new2'));
+Route::post('contests/new/step-2', 'contests@create2');
+
+// Nieuwe Wedstrijd maken - Stap-3
+Route::get('contests/new/step-3', array('as' => 'new_contest3', 'uses' => 'contests@new3'));
+Route::post('contests/new/step-3', 'contests@create3');
 
 // Wedstrijd bewerken
 Route::get('contests/(:any)/edit', array('as' => 'edit_contest', 'uses' => 'contests@edit'));
