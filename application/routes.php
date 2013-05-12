@@ -46,6 +46,9 @@ Route::post('users/new', 'users@create');
 // Laat een single user zien
 Route::get('users/(:any)', array('as' => 'user', 'uses' => 'users@show'));
 
+// Edit een user
+Route::get('users/(:any)/edit', array('as' => 'edit_user', 'uses' => 'users@edit'));
+
 // User Login
 Route::get('users/login', array('as' => 'login_user', 'uses' => 'users@login'));
 Route::post('users/login', 'users@login');

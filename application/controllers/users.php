@@ -14,8 +14,7 @@ class Users_Controller extends Base_Controller {
 		$contests = Contest::where('owner', '=', $user->username)->get();
 
 		return View::make('users.show_user')
-			->with('username', $user->username)
-			->with('email', $user->email)
+			->with('user', $user)
 			->with('entries', $user_entries)
 			->with('contests', $contests);
 	}
@@ -51,6 +50,13 @@ class Users_Controller extends Base_Controller {
 		if ( $new_user ) {
 			return Redirect::to_route('user', $new_user->id);
 		}
+	}
+
+	public function get_edit($id) {
+		$user = User::find((int)$id);
+
+		return View::make('users.edit_user')
+			->with('user', $user);
 	}
 
 	public function get_login()

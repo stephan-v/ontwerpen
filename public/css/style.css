@@ -14,7 +14,8 @@ body {
 	color: #454545;
 	font-size: 12px;
 	line-height: 1.6;
-	margin: 0 0 325px; /* bottom = footer height + 50px margin*/
+	margin: 0 0 275px; /* bottom = footer height + 50px margin*/
+	background: #f1f1f1;
 }
 a, .blue {
 	text-decoration: none;
@@ -39,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 	clear: both;
 }
 #main-content {	
-	padding-top: 25px;
+	padding: 75px 0;
 }
 #main-banner {
 	height: 300px;
@@ -193,7 +194,7 @@ header {
 
 /*----- Form Styles -----*/
 form, #register-now, #form-header {
-	margin: 75px auto 0 auto;
+	margin: 0 auto;
 	width: 400px;
 	padding-top: 30px;
 	padding-bottom: 30px;
@@ -300,6 +301,7 @@ aside ul li {
 /*----- Frontpage Table Style -----*/
 
 table {
+	background: #FFF;
 	width: 100%;
 	font-size: 12px;
 	border-collapse: collapse;
@@ -398,13 +400,12 @@ table .cat {
 		border-bottom: 1px solid #dae3e3;
 		margin-bottom: 25px;
 		text-align: center;
-		position: relative;
 	}
 	.entries-header h2 {
 		position: relative;
 		top: 20px;
 		padding: 0 20px;
-		background: white;
+		background: #f1f1f1;
 		display: inline-block;
 	}
 	.winning-design {
@@ -532,4 +533,95 @@ footer {
 .footer-column ul li {
 	padding: 2px 0;
 	margin-left: 15px;
+}
+
+/*----- User Styles -----*/
+
+#user-navigation {
+	font-weight: bold;
+	float: left;
+	width: 25%;
+	background: #fcfbf7;
+	padding-top: 35px;
+	padding-bottom: 35px;
+	color: #6c6d75;
+}
+#user-navigation h1 {
+	padding-left: 35px;
+}
+#user-navigation .active {
+	background: #36b1b9;
+}
+#user-navigation .active a {
+	color: #FFF;
+}
+#user-navigation .active a:hover {
+	color: #FFF;
+}
+#user-navigation li {
+	margin: 0;
+	height: 60px;
+	line-height: 60px;
+	list-style: none;
+	border-top: 1px solid #ebeae5;
+}
+#user-navigation li a {
+	position: relative;
+	padding-left: 55px;
+	display: block;
+	color: #6c6d75;
+}
+#user-navigation li a:hover {
+	color: #19aacf;
+}
+#user-navigation li:last-child {
+	border-bottom: 1px solid #ebeae5;
+}
+#user-navigation .profile, #user-navigation .settings, #user-navigation .messages, #user-navigation .payments {
+	width: 16px;
+	height: 16px;
+	background: url('../img/user-nav-icons.png');
+	position: absolute;
+	top: 21px;
+	left: 25px;
+}
+#user-navigation .settings {
+	background-position: 0px 48px;
+}
+#user-navigation .messages {
+	background-position: 0px 32px;
+}
+#user-navigation .payments {
+	background-position: 0px 16px;
+}
+.testcontent {
+	float: left;
+	width: 75%;
+	margin-bottom: 50px;
+	background: #FFF;
+	padding: 35px;
+	min-height: 472px;
+	box-shadow: -5px 0px 15px -5px lightgrey;
+	-webkit-box-shadow: -5px 0px 15px -5px lightgrey;
+	-moz-box-shadow: -5px 0px 15px -5px lightgrey;
+}
+.user-info {
+	overflow: hidden;
+}
+.user-info .profile-picture {
+	float: left;
+	padding: 5px;
+	width: 85px;
+	height: 85px;
+	border: 1px solid #dbdcdc;
+	margin: 0px 0px 35px 35px;
+}
+.user-info .profile-picture img {
+	width: 100%;
+	height: 100%;
+}
+.user-info .profile-info {
+	width: 105px;
+	float: left;
+	padding: 25px 0 0 10px;
 }
