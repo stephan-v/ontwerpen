@@ -16,7 +16,7 @@
 		<div class="container">
 			<ul class="primary-nav">
 				<li>{{ HTML::link('/', 'Home') }}</li>
-				<li><a href="#">Help</a></li>
+				<li>{{ HTML::link('help', 'Help') }}</li>
 				<li>{{ HTML::link_to_route('new_contact', 'Contact') }}</li>
 			</ul>
 			<nav class="nav-user">
@@ -60,7 +60,7 @@
 			<div class="footer-column">
 				<h2>Algemeen</h2>
 				<ul>
-					<li>Algemene Voorwaarden</li>
+					<li>{{ HTML::link('algemene-voorwaarden', 'Algemene voorwaarden') }}</li>
 					<li>Over Ons</li>
 					<li>Help</li>
 					<li>{{ HTML::link_to_route('new_contact', 'Contact') }}</li>

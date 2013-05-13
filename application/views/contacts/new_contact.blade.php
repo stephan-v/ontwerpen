@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<h1>Neem contact met ons op</h1>
+	<div id="form-header">Neem contact met ons op.</div>
 	{{ Form::open() }}
 
 		{{ Form::label('name', 'Naam') }}

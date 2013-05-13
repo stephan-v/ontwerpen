@@ -96,7 +96,7 @@
 		</ul>
 
 		@if(Auth::check())
-			{{ HTML::link_to_route('new_entry', 'Voeg een inzending toe', $contest_id, array('class' => 'btn-entry')) }}
+			{{ HTML::link_to_route('new_entry', 'Voeg een inzending toe', $contest_id, array('class' => 'btn-entry upload')) }}
 		@endif
 
 	</section>

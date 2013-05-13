@@ -55,8 +55,37 @@ class Users_Controller extends Base_Controller {
 	public function get_edit($id) {
 		$user = User::find((int)$id);
 
+		$address = Address::where_user_id($id)->first();
+
 		return View::make('users.edit_user')
-			->with('user', $user);
+			->with('user', $user)
+			->with('address', $address);
+	}
+
+	public function post_edit($id) {
+		$address = Address::where_user_id($id)->first();
+
+		Input::get();
+
+		$address->firstname = Input::get('firstname');
+		$address->lastname = Input::get('lastname');
+		$address->company = Input::get('company');
+		$address->address = Input::get('address');
+		$address->postalcode = Input::get('postalcode');
+		$address->city = Input::get('city');
+		$address->phonenumber = Input::get('phonenumber');
+		$address->taxnumber = Input::get('taxnumber');
+
+		$address->save();
+
+		return Redirect::to_route('edit_user', $id)->with('message', 'Uw gegevens succesvol bijgewerkt!');
+	}
+
+	public function get_messages($id) {
+		$user = User::find((int)$id);
+		
+		return View::make('users.messages_user')
+		->with('user', $user);
 	}
 
 	public function get_login()

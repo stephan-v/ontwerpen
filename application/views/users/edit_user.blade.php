@@ -2,29 +2,45 @@
 
 @section('content')
 
-	<aside id="user-navigation">
-		<div class="user-info">
-			<div class="profile-picture">
-				<img src="http://www.seducingwithstyle.com/wp-content/uploads/2013/01/ryan-gosling-bp__span-100x100.jpeg" alt="">
-			</div>
-			<div class="profile-info">
-				<p>{{ $user->username }}</p>
-			</div>
-		</div>
-		<h1>Gebruiker</h1>
-		<ul>
-			<li><a href="{{ URL::to_route('user', $user->id) }}"><div class="profile"></div>Profiel</a></li>
-			<li><a href="{{ URL::to_route('edit_user', $user->id) }}"><div class="settings"></div>Settings</a></li>
-			<li><a href="#"><div class="messages"></div>Berichten</a></li>
-			<li><a href="#"><div class="payments"></div>Betalingen</a></li>
-		</ul>
-	</aside>
+	@include('profile')
 
 	<section class="testcontent">
 		<h1>Instelingen</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, incidunt deleniti asperiores tempore error architecto! Vitae, veritatis, cumque labore in autem numquam cum dolore consectetur et officiis quis repellendus error.</p>
+		<p>{{ Session::get('message') }}</p>
 
-		<p>	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, laudantium, doloribus delectus qui dignissimos alias ipsam ut id excepturi officiis minima eius autem veniam necessitatibus maiores inventore blanditiis aliquid expedita.</p>
+		{{ Form::open() }}
+
+			{{ Form::label('firstname', 'Voornaam') }}
+			{{ Form::text('firstname', $address->firstname, array('placeholder' => 'Geef uw voornaam op')) }}
+
+			{{ Form::label('lastname', 'Achternaam') }}
+			{{ Form::text('lastname', $address->lastname, array('placeholder' => 'Geef uw achternaam op')) }}
+
+			{{ Form::label('company', 'Bedrijfsnaam') }}
+			{{ Form::text('company', $address->company, array('placeholder' => 'Uw bedrijfsnaam')) }}
+
+			{{ Form::label('address', 'Adres') }}
+			{{ Form::text('address', $address->address, array('placeholder' => 'Geef uw adres op')) }}
+
+			{{ Form::label('postalcode', 'Postcode') }}
+			{{ Form::text('postalcode', $address->postalcode, array('placeholder' => 'Geef uw postcode op')) }}
+
+			{{ Form::label('city', 'Stad') }}
+			{{ Form::text('city', $address->city, array('placeholder' => 'Geef uw stad op')) }}
+
+			{{ Form::label('phonenumber', 'Telefoonnummer') }}
+			{{ Form::text('phonenumber', $address->phonenumber, array('placeholder' => 'Geef uw telefoonnummer op')) }}
+
+			{{ Form::label('taxnumber', 'BTW nummer') }}
+			{{ Form::text('taxnumber', $address->taxnumber, array('placeholder' => 'Geef uw BTW. nummer op')) }}
+
+			{{ Form::submit('Update mijn gegevens') }}
+
+			@foreach($errors->all('<span class="validation-error">:message</span>') as $error)
+				{{ $error }}
+			@endforeach
+
+		{{ Form::close() }}
 	</section>
 
 @endsection

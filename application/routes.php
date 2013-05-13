@@ -48,6 +48,10 @@ Route::get('users/(:any)', array('as' => 'user', 'uses' => 'users@show'));
 
 // Edit een user
 Route::get('users/(:any)/edit', array('as' => 'edit_user', 'uses' => 'users@edit'));
+Route::post('users/(:any)/edit', 'users@edit');
+
+// User Messages
+Route::get('users/(:any)/messages', array('as' => 'messages_user', 'uses' => 'users@messages'));
 
 // User Login
 Route::get('users/login', array('as' => 'login_user', 'uses' => 'users@login'));
@@ -63,11 +67,30 @@ Route::post('contacts/new', 'contacts@new');
 // Contactform confirmation
 Route::get('contacts', array('as' => 'contacts', 'uses' => 'contacts@index'));
 
+
+/*
+|--------------------------------------------------------------------------
+| Single pages
+|--------------------------------------------------------------------------
+|
+| Alle single static pages.
+|
+*/
+
 // Hoe werkt het?
 Route::get('hoe-werkt-het', function() {
-	return View::make('process.index');
+	return View::make('single-pages.proces');
 });
 
+// Algemene voorwaarden
+Route::get('algemene-voorwaarden', function() {
+	return View::make('single-pages.terms');
+});
+
+// FAQ
+Route::get('help', function() {
+	return View::make('single-pages.help');
+});
 
 // Testroute
 Route::get('test', function() {
