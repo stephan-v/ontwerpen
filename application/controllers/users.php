@@ -57,6 +57,10 @@ class Users_Controller extends Base_Controller {
 
 		$address = Address::where_user_id($id)->first();
 
+		if(empty($address)) {
+			$address = new Address();
+		}
+
 		return View::make('users.edit_user')
 			->with('user', $user)
 			->with('address', $address);
@@ -65,8 +69,18 @@ class Users_Controller extends Base_Controller {
 	public function post_edit($id) {
 		$address = Address::where_user_id($id)->first();
 
+		if(empty($address)) {
+			$address = new Address();
+		}
+
+		$user = User::find((int)$id);
+
 		Input::get();
 
+		$user->username = Input::get('username');
+		$user->email = Input::get('email');
+		
+		$address->user_id = Auth::user()->id;
 		$address->firstname = Input::get('firstname');
 		$address->lastname = Input::get('lastname');
 		$address->company = Input::get('company');
@@ -76,6 +90,7 @@ class Users_Controller extends Base_Controller {
 		$address->phonenumber = Input::get('phonenumber');
 		$address->taxnumber = Input::get('taxnumber');
 
+		$user->save();
 		$address->save();
 
 		return Redirect::to_route('edit_user', $id)->with('message', 'Uw gegevens succesvol bijgewerkt!');

@@ -1,13 +1,18 @@
 @layout('master')
 
 @section('banner')
-	<div id="main-banner">
+	<div class="main-banner">
 		<div class="container">
 			<h1 class="homepage-marketing-heading">Snelle en Goedkope Creative Diensten - {{ HTML::link('hoe-werkt-het', 'bekijk hoe het werkt') }}</h1>
 			<div class="homepage-mast-actions">
-				<div class="btn left">{{ HTML::link_to_route('contests', 'Bekijk de wedstrijden') }}</div>
-				<div class="btn right second-btn">{{ HTML::link_to_route('new_contest', 'Maak een wedstrijd aan') }}</div>
+				{{ HTML::link_to_route('contests', 'Bekijk de wedstrijden', '', array('class' => 'btn-entry')) }} - 
+				{{ HTML::link_to_route('new_contest', 'Maak een wedstrijd aan', '', array('class' => 'btn-entry')) }}
 			</div>
+			<section class="homepage-process">
+				<div class="circle briefing"></div>
+				<div class="circle compete"></div>
+				<div class="circle winner"></div>
+			</section>
 		</div>
 	</div>
 @endsection

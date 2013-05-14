@@ -42,7 +42,7 @@
 
 		{{ Form::close() }}
 
-		<aside>
+		<aside class="contest-help">
 			<p>Geef een duidelijk omschrijving van uw wedstrijd. In uw titel kunt u nogmaals aangeven welke categorie de wedstrijd betreft en om wat voor specifieke dienst het gaat.</p>
 			<p>In uw omschrijving is het vaak handig een aantal zaken bijlangs te gaan:</p>
 			<ul>

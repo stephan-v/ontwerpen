@@ -11,8 +11,10 @@
 		<ul>
 			<!-- <li class="active"> voor activering van actieve link -->
 			<li><a href="{{ URL::to_route('user', $user->id) }}"><div class="profile"></div>Profiel</a></li>
-			<li><a href="{{ URL::to_route('edit_user', $user->id) }}"><div class="settings"></div>Settings</a></li>
-			<li><a href="{{ URL::to_route('messages_user', $user->id) }}"><div class="messages"></div>Messages</a></li>
-			<li><a href="#"><div class="payments"></div>Betalingen</a></li>
+			@if( Auth::user()->username === $user->username)
+				<li><a href="{{ URL::to_route('edit_user', $user->id) }}"><div class="settings"></div>Instellingen</a></li>
+				<li><a href="{{ URL::to_route('messages_user', $user->id) }}"><div class="messages"></div>Berichten</a></li>
+				<li><a href="#"><div class="payments"></div>Betalingen</a></li>
+			@endif
 		</ul>
 	</aside>

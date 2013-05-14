@@ -28,6 +28,11 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 0.75em;
 	font-weight: normal;
 }
+ul li {
+	padding: 2px 0;
+	margin-left: 17px;
+}
+
 .container {
 	margin: 0 auto;
 	width: 960px;
@@ -42,89 +47,123 @@ h1, h2, h3, h4, h5, h6 {
 #main-content {	
 	padding: 75px 0;
 }
-#main-banner {
-	height: 300px;
+
+/*----- Slider Styles -----*/
+
+.main-banner {
+	height: 350px;
 	padding-top: 50px;
-	background: url('../img/bg-image.jpg') center center no-repeat;
+	background: url('../img/main_slider_svoy.jpg') center center no-repeat;
 	background-size: cover;
 	width: 100%;	
 	color: #FFF;
+	margin-bottom: 25px;
+	position: relative;
 }
-.proces-steps {
-	background: url('../img/steps.png');
-	width: 960px;
-	height: 453px;
+.header-branding {
+	background: url('../img/background.png') #2daacd;;
 	color: #FFF;
-	margin-top: 50px;
+	padding: 1.5em 0;
 }
-.proces-steps h1 {
+.header-branding h1 {
+	margin: 0;
+}
+.homepage-marketing-heading {
+	width: 400px;
+	font-family: 'Open sans';
+}
+.homepage-marketing-heading a {
+	color: #FFF;
+	text-decoration: underline;
+}
+.homepage-mast-actions .btn-entry {
+	width: auto;
+}
+.homepage-process {
+	position: absolute;
+	bottom: -75px;
+}
+.homepage-process .circle {
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	float: left;
+	margin-left: 120px;
+	margin-top: 10px;
+	width: 150px;
+	height: 150px;
+	border: 5px solid #FFF;	
+}
+.homepage-process .compete {
+	background: url('../img/compete.jpg');	
+	background-size: cover;
+}
+.homepage-process .briefing {
+	background: url('../img/typing.jpg');
+	background-size: cover;
+}
+.homepage-process .winner {
+	background: url('../img/winner.jpg');
+	background-size: cover;
+}
+
+/*----- Process pages styles -----*/
+
+.process-banner {
+	background: url('../img/softfacade_slide.jpg');
 	margin-bottom: 0;
+	font-family: 'Open Sans';
+	text-align: center;
+	padding-top: 125px;
 }
-.proces-steps p {
-	font-size: 10px;
+.process-banner h1 {
+	width: 400px;
+	margin: 0 auto;
 }
-.proces-steps #step1 {
-	width: 300px;
-	margin-left: 380px;
-	padding-top: 30px;
+.tomato-banner {
+	background: #ff6664;
+	height: 350px;
+	padding: 35px 0;
 }
-.proces-steps #step2 {
-	float: right;
-	width: 250px;
-	padding-top: 100px;
-	margin-right: 100px;
-}
-.proces-steps #step3 {
+.tomato-banner .twentyfive-width {
 	float: left;
-	width: 250px;
-	padding-top: 100px;
-	margin-left: 200px;
+	width: 25%;
+	text-align: center;
+	color: #FFF;
+	font-family: 'Open Sans';
+	padding: 20px;
 }
-.proces-steps #step4 {
-	float: left;
-	width: 500px;
-	padding-top: 75px;
-	margin-left: 250px;
+.tomato-banner .process {
+	width: 99px;
+	height: 110px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+.tomato-banner .briefing {
+	background: url('../img/icons-proces.png');
+	background-position: left;
+}
+.tomato-banner .creatief {
+	background: url('../img/icons-proces.png');
+	background-position: -134px;
+}
+.tomato-banner .beheer {
+	background: url('../img/icons-proces.png');
+	background-position: -267px;
+}
+.tomato-banner .winnaar {
+	background: url('../img/icons-proces.png');
+	background-position: right;
 }
 
 /*----- Button Styles -----*/
 
-.btn {
-	background: url('../img/button.png') no-repeat center top;
-	background-size: 160px 210px;
-	width: 25%;	
-	height: 105px;
-	line-height: 80px;
-}
-.btn:hover {
-	background-position: bottom;
-}
-.second-btn {
-	background: url('../img/button2.png') no-repeat center top;
-	background-size: 160px 240px;
-	height: 120px;
-}
-.btn.left {
-	float: left;
-	margin-left: 25%;
-}
-.btn.right {
-	float: right;
-	margin-right: 25%;
-}
-.btn a {
-	color: #FFF;
-	width: 100%;
-	height: 100%;
-	display: block;
-}
 .btn-entry {
 	width: 100%;
 	margin-top: 10px;
 	background: #2daacd;
 	color: #FFF;
-	height: 40px;
-	line-height: 40px;
+	padding: 10px;
 	text-align: center;	
 	display: inline-block;
 }
@@ -174,27 +213,6 @@ header {
 .primary-nav li, .nav-user li {
 	padding: 1em 0;
 }
-.header-branding {
-	background: url('../img/background.png') #2daacd;;
-	color: #FFF;
-	padding: 1.5em 0;
-}
-.header-branding h1 {
-	margin: 0;
-}
-.homepage-marketing-heading {
-	font-size: 2.5em;
-	font-weight: bold;
-	text-align: center;
-	margin-top: 0.75em;
-}
-.homepage-marketing-heading a {
-	color: #FFF;
-	text-decoration: underline;
-}
-.homepage-mast-actions {
-	text-align: center;
-}
 
 /*----- Form Styles -----*/
 form, #register-now, #form-header {
@@ -203,7 +221,6 @@ form, #register-now, #form-header {
 	padding-top: 30px;
 	padding-bottom: 30px;
 	background: #FFF;
-	text-align: center;
 }
 form {
 	margin-top: 0;
@@ -252,25 +269,24 @@ form label {
 form input[type=checkbox] {
 	margin-top: 10px;
 }
-.remember-me, .remember-me label {
-	margin: 10px 100px 0 0;
+.remember-me {
+	margin-top: 10px;
 }
 .remember-me label {
-	margin: 7px 0 0 100px;
+	margin: 7px 10px 0 85px;
 }
 #form-header {
 	border-radius: 3px 3px 0 0;
 	-webkit-border-radius: 3px 3px 0 0;
 	-moz-border-radius: 3px 3px 0 0;
 	background: #2daacd;
-	text-align: left;
 	padding-left: 20px;
 	color: #FFF;
 	padding: 20px;
 }
 #register-now {
-	margin-top: 10px;
-	padding: 10px;	
+	margin-top: 20px;
+	padding: 20px;	
 }
 form #email {
 	background: url('../img/icons-login.png') no-repeat #FFF;
@@ -293,22 +309,28 @@ form #password {
 	float: left;
 	clear: left;
 }
-aside {
+.contest-help {
 	float: right;
 	width: 500px;
-}
-aside ul li {
-	margin-left: 15px;
-	padding: 2px 0;
 }
 
 /*----- Frontpage Table Style -----*/
 
+.contests {
+	float: left;
+	width: 80%;
+}
+.category-filter {
+	float: right;
+	width: 15%;
+}
 table {
 	background: #FFF;
-	width: 100%;
 	font-size: 12px;
 	border-collapse: collapse;
+	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,.05);
+	-moz-box-shadow: 0px 0px 3px rgba(0,0,0,.05);
+	box-shadow: 0px 0px 3px rgba(0,0,0,.05);
 }
 table th {
 	background: #868E9D;
@@ -416,6 +438,9 @@ table .cat {
 		z-index: 1;
 		right: 10px;
 		top: -5px;
+	}
+	.submit-entry {
+		margin-top: 10px !important;
 	}
 
 
@@ -532,10 +557,7 @@ footer {
 	font-size: 12px;
 	font-weight: bold;
 }
-.footer-column ul li {
-	padding: 2px 0;
-	margin-left: 15px;
-}
+
 
 /*----- User Styles -----*/
 

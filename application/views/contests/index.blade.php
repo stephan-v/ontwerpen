@@ -1,8 +1,9 @@
 @layout('master')
 
 @section('content')
-	<h1>Wedstrijden</h1>
-	<section id="contests">
+	
+	<section class="contests">
+		<h1>Wedstrijden</h1>
 		<table>
 			<thead>
 				<tr>
@@ -43,6 +44,17 @@
 			</tbody>
 		</table>
 	</section>
+	
+	<aside class="category-filter">
+		<h1>Categorieen</h1>
+		<ul>
+			<li><a href="#">Logo Design</a></li>
+			<li><a href="#">Logo Design</a></li>
+			<li><a href="#">Logo Design</a></li>
+			<li><a href="#">Logo Design</a></li>
+			<li><a href="#">Logo Design</a></li>
+		</ul>
+	</aside>
 @endsection
 
 
