@@ -10,6 +10,13 @@ class Contests_Controller extends Base_Controller {
 			->with('contests', $contests);
 	}
 
+	//----- Alle Categorie Filters
+	public function get_filter($category) {
+		$contests = Contest::where_category($category)->get();		
+		return View::make('contests.index')
+			->with('contests', $contests);
+	}
+
 	public function get_show($id)
 	{
 		$contest = Contest::find((int)$id);
@@ -34,10 +41,6 @@ class Contests_Controller extends Base_Controller {
 		// moet opgeschoond worden $contest->title etc verwijderen!
 		return View::make('contests.show_contest')
 			->with('contest', $contest)
-			->with('title', $contest->title)
-			->with('description', $contest->description)
-			->with('contest_id', $contest->id)
-			->with('contest_owner', $contest->owner)
 			->with('entries', $entries)
 			->with('startdate', $startdate)
 			->with('enddate', $enddate)

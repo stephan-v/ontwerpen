@@ -47,12 +47,12 @@
 	
 	<aside class="category-filter">
 		<h1>Categorieen</h1>
-		<ul>
-			<li><a href="#">Logo Design</a></li>
-			<li><a href="#">Logo Design</a></li>
-			<li><a href="#">Logo Design</a></li>
-			<li><a href="#">Logo Design</a></li>
-			<li><a href="#">Logo Design</a></li>
+		<ul class="section-box">
+			<!-- categoriefilter, geef als derde argument de database category naam aan -->
+			<li>{{ HTML::link_to_route('contests', 'Alle Designs') }}</li>
+			<li>{{ HTML::link_to_route('filter', 'Logo Designs', 'logo') }}</li>
+			<li>{{ HTML::link_to_route('filter', 'Website Designs', 'website') }}</li>
+			<li>{{ HTML::link_to_route('filter', 'Huisstijl Designs', 'huisstijl') }}</li>
 		</ul>
 	</aside>
 @endsection

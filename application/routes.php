@@ -8,6 +8,9 @@ Route::get('/', function() {
 // Wedstrijden index
 Route::get('contests', array('as' => 'contests', 'uses' => 'contests@index'));
 
+//----- Website Filter
+Route::get('contests/filter/(:any)', array('as' => 'filter', 'uses' => 'contests@filter'));
+
 // Een single wedstrijd laten zien
 Route::get('contests/(:any)', array('as' => 'contest', 'uses' => 'contests@show'));
 

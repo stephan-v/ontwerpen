@@ -25,7 +25,7 @@ p {
 	margin-bottom: 1em;
 }
 h1, h2, h3, h4, h5, h6 {
-	margin-bottom: 0.75em;
+	margin-bottom: 1em;
 	font-weight: normal;
 }
 ul li {
@@ -119,6 +119,7 @@ ul li {
 .process-banner h1 {
 	width: 400px;
 	margin: 0 auto;
+	text-shadow: 1px 1px black;
 }
 .tomato-banner {
 	background: #ff6664;
@@ -182,6 +183,7 @@ header {
 	float: left;
 	list-style: none;
 	margin-right: 10px;	
+	margin-left: 0;
 }
 .nav-user li {
 	margin-right: 0;
@@ -318,11 +320,11 @@ form #password {
 
 .contests {
 	float: left;
-	width: 80%;
+	width: 78%;
 }
 .category-filter {
 	float: right;
-	width: 15%;
+	width: 20%;
 }
 table {
 	background: #FFF;
@@ -351,6 +353,7 @@ table .column-20 {
 	text-align: center;
 	width: 20%;
 	font-weight: bold;
+	padding: 0 20px;
 }
 table .column-10 {
 	text-align: center;
@@ -466,6 +469,9 @@ table .cat {
 }
 .contest-entries {
 	overflow: hidden;
+}
+.contest-entries li {
+	margin-left: 0;
 }
 #contest-winner {
 	overflow: hidden;
