@@ -36,8 +36,6 @@ ul li {
 .container {
 	margin: 0 auto;
 	width: 960px;
-	padding-left: 10px;
-	padding-right: 10px;
 }
 .container:after {
 	content: "";
@@ -320,11 +318,55 @@ form #password {
 
 .contests {
 	float: left;
-	width: 78%;
+	width: 720px;
 }
 .category-filter {
 	float: right;
-	width: 20%;
+	width: 220px;
+}
+.category-filter .section-box {
+	padding: 10px;
+}
+.category-filter ul li {
+	overflow: hidden;
+	list-style: none;	
+	margin-left: 0;
+	margin-bottom: 10px;
+}
+.category-filter ul li a {
+	display: block;
+	overflow: hidden;
+}
+.category-filter ul li a, .filter-icon {
+	padding: 10px;
+	background: #f6fafd;
+	border: 1px solid #e9eef2;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.category-filter ul li a:hover {
+	background: #eff3f4;
+}
+.filter-icon {
+	float: left;
+	margin-right: 10px;
+	width: 16px;
+	height: 16px;
+	padding: 19px;
+	background: url('../img/icons-categorie-filter.png') no-repeat #f6fafd;
+}
+.filter-icon.all {
+	background-position: top;
+}
+.filter-icon.logo {
+	background-position: 0 -41px;
+}
+.filter-icon.website {
+	background-position: 0 -82px;
+}
+.filter-icon.corporate {
+	background-position: 0 -123px;
 }
 table {
 	background: #FFF;

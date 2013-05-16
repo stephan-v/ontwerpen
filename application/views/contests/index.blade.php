@@ -49,10 +49,10 @@
 		<h1>Categorieen</h1>
 		<ul class="section-box">
 			<!-- categoriefilter, geef als derde argument de database category naam aan -->
-			<li>{{ HTML::link_to_route('contests', 'Alle Designs') }}</li>
-			<li>{{ HTML::link_to_route('filter', 'Logo Designs', 'logo') }}</li>
-			<li>{{ HTML::link_to_route('filter', 'Website Designs', 'website') }}</li>
-			<li>{{ HTML::link_to_route('filter', 'Huisstijl Designs', 'huisstijl') }}</li>
+			<li><div class="filter-icon all"></div>{{ HTML::link_to_route('contests', 'Alle Designs') }}</li>
+			<li><div class="filter-icon logo"></div>{{ HTML::link_to_route('filter', 'Logo Designs', 'logo') }}</li>
+			<li><div class="filter-icon website"></div>{{ HTML::link_to_route('filter', 'Website Designs', 'website') }}</li>
+			<li><div class="filter-icon corporate"></div>{{ HTML::link_to_route('filter', 'Huisstijl Designs', 'huisstijl') }}</li>
 		</ul>
 	</aside>
 @endsection
