@@ -24,8 +24,8 @@
 		<p>Wedstrijd aangemaakt door: {{ $contest->owner }}</p>
 	</section>
 
+	<div class="contest-header"><h1>Briefing</h1></div>
 	<section id="contest-briefing" class="section-box">
-		<h2>Briefing:</h2>
 		<p>{{ nl2br($contest->description) }}</p>
 	</section>
 
@@ -48,9 +48,13 @@
 
 					@if( isset(Auth::user()->username) )
 						@if( Auth::user()->username === User::find($entry->user_id)->username)
-							@if($entry->winning_design === 0)
-								<div class="delete-entry"></div>
-							@endif
+								<div class="delete-entry">
+									<ul class="options-entry">
+										<li><p class="delete">Verwijder inzending</p></li>
+										<li><p>Bewerk inzending</p></li>
+										<li><p>Rapporteer inzending</p></li>
+									</ul>	
+								</div>
 						@endif
 					@endif
 

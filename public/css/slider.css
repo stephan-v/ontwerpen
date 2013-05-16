@@ -1,4 +1,6 @@
-
+.rating {
+  margin-bottom: 10px;
+}
 .rating .progress {
   margin: 0 auto;
   width: 170px;

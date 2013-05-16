@@ -51,7 +51,7 @@ ul li {
 .main-banner {
 	height: 350px;
 	padding-top: 50px;
-	background: url('../img/main_slider_svoy.jpg') center center no-repeat;
+	background: url('../img/main_slider_svoy.jpg') center center;
 	background-size: cover;
 	width: 100%;	
 	color: #FFF;
@@ -228,7 +228,7 @@ form {
 }
 form input[type=text], form input[type=password], form textarea {
 	height: 50px;
-	padding-left: 10px;
+	padding: 15px;
 	width: 360px;
 	margin-bottom: 15px;
 	border: 1px solid #cdd9de;
@@ -245,7 +245,7 @@ form select {
 	margin-bottom: 15px;
 	border: 1px solid #cdd9de;
 	width: 360px;
-	padding-left: 10px;
+	padding: 15px;
 	border-radius: 3px;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
@@ -417,37 +417,52 @@ table .cat {
 		list-style: none;
 		background: #323232;
 		border: 1px solid lightgrey;
-		margin-bottom: 20px;
 		color: #FFF;
 		position: relative;
 	}
 	.entry-item img, #contest-winner img {
 		max-width: 180px;
-		max-height: 140px;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		margin: auto;
-		border: none;		
+		max-height: 140px;		
+		border: none;
+		display: block;		
 	}
 	.entry-item.last {
 		margin-right: 0; 
 	}
 	.entry-item .preview, #contest-winner .preview {
 		position: relative;
-		float: left;
 		width: 180px;
 		height: 140px;
-		margin-bottom: 10px;
+		display: table-cell;
+    	vertical-align: middle;  
 	}
 	.delete-entry {
 		float: right;
 		height: 16px;
 		width: 16px;
-		background: url('../img/delete-icon.png');
+		background: url('../img/delete-icon.png') no-repeat;
 		cursor: pointer;
+	}
+	.options-entry {
+		background: rgba(0, 0, 0, 0.5); 
+		text-align: center;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 3;
+		position: absolute;
+		display: none;
+		padding-top: 20px;
+		list-style: none;
+	}
+	.options-entry li {
+		background: rgba(49, 173, 207, 0.5);
+		padding: 10px;
+		margin-top: 10px;
+	}
+	.options-entry li p {
+		margin: 0;
 	}
 	#preview {
 		position:absolute;
@@ -481,7 +496,7 @@ table .cat {
 		height: 105px;
 		position: absolute;
 		z-index: 1;
-		right: 10px;
+		right: 0;
 		top: -5px;
 	}
 	.submit-entry {
@@ -491,6 +506,15 @@ table .cat {
 
 /*----- Single Contest Styles -----*/
 
+.contest-header h1 {
+	text-align: center;
+	font-size: 1.2em;
+	background-color: #2daacd;
+	border-radius: 5px 5px 0 0;
+	padding: .75em;
+	color: #fff;
+	margin: 0;
+}
 .startdate {
 	color: #6abe59;
 }
@@ -511,6 +535,7 @@ table .cat {
 }
 .contest-entries {
 	overflow: hidden;
+	margin-bottom: 20px;
 }
 .contest-entries li {
 	margin-left: 0;
@@ -523,14 +548,11 @@ table .cat {
 	float: left;
 }
 #contest-winner .right {
-	width: 50%;
+	margin-right: 100px;
 	float: right;
 }
 #contest-winner .preview {
 	border: 1px solid #DDD;
-	width: 430px;
-	height: 160px;
-	margin-left: 20px;
 }
 #contest-winner img {
 	padding: 10px;

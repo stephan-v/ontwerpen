@@ -10,10 +10,18 @@ $(function() {
         });
     }); 
 
+    $(".delete-entry").on("mouseover",function(e) {
+        $(".options-entry", this).stop().slideDown(100);
+    });
+
+    $(".options-entry").on("mouseleave",function(e) {
+        $(this).stop().slideUp(100);
+    });
+
     // Delete an entry-item without refresh
-    $(".delete-entry").on("click",function(e) {
+    $(".delete-entry .delete").on("click",function(e) {
       	// Entry id
-    	  var entry_id = $(this).closest(".entry-item").attr("id");
+    	var entry_id = $(this).closest(".entry-item").attr("id");
 
         // Popup dialog to confirm deletion of entry-item
         var answer = confirm('Weet u zeker dat u deze inzending wilt verwijderen?');
