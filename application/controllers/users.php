@@ -122,7 +122,7 @@ class Users_Controller extends Base_Controller {
 		if ($validation->fails())
 		{
 		    return Redirect::to_route('login_user')
-		    	->with_errors($validation->errors);
+		    	->with_errors($validation->errors)->with_input();
 		} else {
 			$credentials = array(
 				'username' => Input::get('email'),

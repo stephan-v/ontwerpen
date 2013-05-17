@@ -35,8 +35,8 @@
 		{{ Form::close() }}
 
 		<aside class="contest-help">
-			<p>Geef een duidelijk omschrijving van uw wedstrijd. In uw titel kunt u nogmaals aangeven welke categorie de wedstrijd betreft en om wat voor specifieke dienst het gaat.</p>
-			<p>In uw omschrijving is het vaak handig een aantal zaken bijlangs te gaan:</p>
+			<p>Geef een duidelijk omschrijving van uw wedstrijd. In uw titel kunt u nogmaals aangeven om welke categorie het gaat en om wat voor specifieke dienst het gaat.</p>
+			<p>In uw omschrijving is het vaak handig de volgende items te noteren voor de ontwerpers.</p>
 			<ul>
 				<li>Beschrijf uw wensen</li>
 				<li>Omschrijf uw doelgroep</li>

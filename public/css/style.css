@@ -420,6 +420,9 @@ table .cat {
 		color: #FFF;
 		position: relative;
 	}
+	.entry-item p {
+		margin: 0.5em 0;
+	}
 	.entry-item img, #contest-winner img {
 		max-width: 180px;
 		max-height: 140px;		
@@ -434,7 +437,9 @@ table .cat {
 		width: 180px;
 		height: 140px;
 		display: table-cell;
-    	vertical-align: middle;  
+    	vertical-align: middle; 
+    	margin: 10px 0;
+    	background: #FFF;
 	}
 	.delete-entry {
 		float: right;
@@ -442,6 +447,7 @@ table .cat {
 		width: 16px;
 		background: url('../img/delete-icon.png') no-repeat;
 		cursor: pointer;
+		margin-bottom: 10px;
 	}
 	.options-entry {
 		background: rgba(0, 0, 0, 0.5); 
