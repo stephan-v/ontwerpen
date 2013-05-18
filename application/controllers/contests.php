@@ -5,14 +5,16 @@ class Contests_Controller extends Base_Controller {
 
 	public function get_index() 
 	{
-		$contests = Contest::all();		
+		$contests = Contest::all();	
+
 		return View::make('contests.index')
 			->with('contests', $contests);
 	}
 
 	//----- Alle Categorie Filters
 	public function get_filter($category) {
-		$contests = Contest::where_category($category)->get();		
+		$contests = Contest::where_category($category)->get();	
+
 		return View::make('contests.index')
 			->with('contests', $contests);
 	}
@@ -32,11 +34,11 @@ class Contests_Controller extends Base_Controller {
 
 		// Timestamp date conversion for startdate
 		$original_date = $contest->created_at;
-		$startdate = date("d-m-Y", strtotime($original_date));
+		$startdate = date("d-m-Y H:i:s", strtotime($original_date));
 
 		// Timestamp date conversion for enddate
 		$original_date = $contest->expires_at;
-		$enddate = date("d-m-Y", strtotime($original_date));
+		$enddate = date("d-m-Y H:i:s", strtotime($original_date));
 
 		// moet opgeschoond worden $contest->title etc verwijderen!
 		return View::make('contests.show_contest')

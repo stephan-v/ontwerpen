@@ -7,31 +7,34 @@
 		<table>
 			<thead>
 				<tr>
-					<th class="column-40">WEDSTRIJDNAAM</th>
-					<th class="column-20">EINDIGT OVER</th>
-					<th class="column-10">CATEGORIE</th>
-					<th class="column-10">INZENDINGEN</th>
-					<th class="column-10">BEDRAG</th>
+					<th class="column-40">Wedstrijdnaam</th>
+					<th class="column-20">Eindigt over</th>
+					<th class="column-10">Categorie</th>
+					<th class="column-10">Inzendingen</th>
+					<th class="column-10">Bedrag</th>
 				</tr>
 			</thead>
 
 			<tbody>
 				@foreach($contests as $contest)
-				<?php 
-					// Compares expires_at with the current time
-					$now = new DateTime();
-					$future_date = new DateTime($contest->expires_at);
+					<?php 
+						// Compares expires_at with the current time
+						$now = new DateTime();
+						$future_date = new DateTime($contest->expires_at);
 
-					$interval = $future_date->diff($now);
+						$interval = $future_date->diff($now);					
 
-					$enddate = $interval->format("%a dagen, %h uren, %i minuten");
-
-					// if current time is higher than expiration date set contest to finished.
-					if($now > $future_date) {
-						$enddate = 'Beëindigd';
-					}
-
-				?>
+						// if current time is higher than expiration date set contest to finished.
+						if($now > $future_date) {
+							$enddate = 'Beëindigd';
+						} elseif($interval->m >= 1) {
+							$enddate = $interval->format("%a dagen");
+						} elseif($interval->d >= 1) {
+							$enddate = $interval->format("%a dagen, %i minuten");
+						} elseif($interval->h <= 23) {
+							$enddate = $interval->format("%h uur, %i minuten");
+						}
+					?>
 					<tr>
 						<!-- link naar single page met de id van deze contest -->
 						<td class="column-40">{{ HTML::link_to_route('contest', $contest->title, $contest->id, array('class' => 'cat')) }}</td>
