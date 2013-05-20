@@ -30,14 +30,15 @@ class Users_Controller extends Base_Controller {
 
 		$rules = array(
 			'username' => 'required|unique:users',
-			'email' => 'required|email|unique:users'
+			'email' => 'required|email|unique:users',
+			'password' => 'same:password2'
 		);
 
 		$validation = Validator::make($input, $rules);
 
 		if ($validation->fails()) {
 			return Redirect::to_route('new_user')
-				->with_errors($validation->errors);
+				->with_errors($validation->errors)->with_input();
 		}
 
 		// Get inputdata and insert into table users

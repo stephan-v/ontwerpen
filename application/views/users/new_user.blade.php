@@ -6,11 +6,13 @@
 
 	{{ Form::open() }}
 
-		{{ Form::text('username', '', array('placeholder' => 'Uw gebruikersnaam', 'id' => 'email')) }}
+		{{ Form::text('username', Input::old('username'), array('placeholder' => 'Uw gebruikersnaam', 'id' => 'email')) }}
 
-		{{ Form::text('email', '', array('placeholder' => 'Uw email', 'id' => 'email')) }}
+		{{ Form::text('email', Input::old('email'), array('placeholder' => 'Uw email', 'id' => 'email')) }}
 
 		{{ Form::password('password', array('placeholder' => 'Uw wachtwoord', 'id' => 'password')) }}
+
+		{{ Form::password('password2', array('placeholder' => 'Herhaal uw wachtwoord', 'id' => 'password')) }}
 
 		{{ Form::submit('Maak uw account aan!') }}
 
