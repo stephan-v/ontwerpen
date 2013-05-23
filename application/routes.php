@@ -46,6 +46,9 @@ Route::delete('contests/(:any)/entries/(:any)', 'entry@destroy');
 Route::get('users/new', array('as' => 'new_user', 'uses' => 'users@new'));
 Route::post('users/new', 'users@create');
 
+// Registreer een account
+Route::get('users/register', array('as' => 'register_user', 'uses' => 'users@register'));
+
 // Laat een single user zien
 Route::get('users/(:any)', array('as' => 'user', 'uses' => 'users@show'));
 

@@ -48,6 +48,26 @@ class Users_Controller extends Base_Controller {
 			'password' => Hash::make(Input::get('password')) 
 		));
 
+		Message::send(function($message)
+		{
+		    $message->to('stephan-v@hotmail.com');
+		    $message->from(Input::get('email'), Input::get('username'));
+
+		    $message->subject('Microlancer.nl new account');
+		    $message->body('
+
+		    	Bedankt voor het registreren!
+
+				Uw account is aangemaakt, u kan inloggen met de volgende gegevens nadat u u account heeft geactiveerd met de url hier beneden.
+
+				------------------------
+				Username: '.Input::get('username').'
+				Password: '.Input::get('password').'
+				------------------------
+
+			');
+		});
+
 		if ( $new_user ) {
 			return Redirect::to_route('user', $new_user->id);
 		}
@@ -150,5 +170,9 @@ class Users_Controller extends Base_Controller {
 	{
 		Auth::logout();
 		return Redirect::home();
+	}
+
+	public function get_register() {
+		return Input::get('email');
 	}
 }
