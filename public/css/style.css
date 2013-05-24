@@ -302,7 +302,8 @@ form #password {
 	list-style: none;
 	padding: 10px;
 	border: 1px solid;
-	margin: 5px 0;
+	margin-top: 5px;
+	margin-bottom: 20px;
 	display: block;
 }
 .describe-contest {

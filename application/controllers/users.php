@@ -62,19 +62,22 @@ class Users_Controller extends Base_Controller {
 				Uw account is aangemaakt, u kan inloggen met de volgende gegevens nadat u u account heeft geactiveerd met de url hier beneden.
 
 				------------------------
-				Username: '.$new_user->username.'
-				Password: '.Input::get('password').'
+				Gebruikersnaam: '.$new_user->username.'
+				Wachtwoord: '.Input::get('password').'
 				------------------------
 
 				Klik op deze link om uw account te activeren.
  
 				http://ontwerpwedstrijden.dev/users/verify?email='.$new_user->email.'&hash='.$new_user->hash.' 
 
+				Microlancer.nl
+
 			');
 		});
 
 		if ( $new_user ) {
-			return Redirect::to_route('user', $new_user->id);
+			return View::make('single-pages.message')
+				->with('message', 'Bedankt uw account is aangemaakt. We hebben uw een email gestuurd met uw accountgegevens en een link om uw account activeren.');
 		}
 	}
 
@@ -119,7 +122,8 @@ class Users_Controller extends Base_Controller {
 		$user->save();
 		$address->save();
 
-		return Redirect::to_route('edit_user', $id)->with('message', 'Uw gegevens succesvol bijgewerkt!');
+		return Redirect::to_route('edit_user', $id)
+			->with('message', 'Uw gegevens succesvol bijgewerkt!');
 	}
 
 	public function get_messages($id) {
@@ -140,10 +144,16 @@ class Users_Controller extends Base_Controller {
 
 		$rules = array(
 			'email' => 'required|email',
-			'password' => 'required'
+			'password' => 'required',
 		);	
 
-		$validation = Validator::make($input, $rules);
+		$messages = array(
+			'email_required' => 'Uw email is verplicht.',
+			'email_email' => 'Dit is geen geldig email adres.',
+		    'password_required' => 'Uw wachtwoord is verplicht.',
+		);
+
+		$validation = Validator::make($input, $rules, $messages);
 
 		if ($validation->fails())
 		{
@@ -151,24 +161,26 @@ class Users_Controller extends Base_Controller {
 		    	->with_errors($validation->errors)->with_input();
 		} else {
 			$credentials = array(
-				'username' => Input::get('email'),
-				'password' => Input::get('password'),
-				'remember' => Input::get('remember')
+				'username' => $input['email'],
+				'password' => $input['password'],
 			);
 
 			if (Auth::attempt($credentials)) 
 			{
-				if ( !empty($remember))
+				// Set remember me cookie if the user checks the box
+				$remember = Input::get('remember');
+				if ( !empty($remember) )
 				{
 					Auth::login(Auth::user()->id, true);
 				}
-				if ( Auth::check() ) return Redirect::home();
+
+				return Redirect::home();
+
 			} else {
 				return Redirect::to_route('login_user')
 		    	->with('login_errors', true);
 			}
-		}	
-
+		}
 	}
 
 	public function get_logout() 
@@ -183,7 +195,8 @@ class Users_Controller extends Base_Controller {
 			$user->active = true;
 			$user->save();
 
-			return View::make('single-pages.verify');
+			return View::make('single-pages.message')
+				->with('message', 'Bedankt uw account is geactiveerd!');
 		}
 	}
 }
