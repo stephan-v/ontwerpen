@@ -45,13 +45,14 @@ class Users_Controller extends Base_Controller {
 		$new_user = User::create(array(
 			'username' => Input::get('username'), 
 			'email' => Input::get('email'), 
-			'password' => Hash::make(Input::get('password')) 
+			'password' => Hash::make(Input::get('password')),
+			'hash' => hash('sha512', uniqid()) 
 		));
 
-		Message::send(function($message)
+		Message::send(function($message) use ($new_user)
 		{
 		    $message->to('stephan-v@hotmail.com');
-		    $message->from(Input::get('email'), Input::get('username'));
+		    $message->from($new_user->email, $new_user->username);
 
 		    $message->subject('Microlancer.nl new account');
 		    $message->body('
@@ -61,9 +62,13 @@ class Users_Controller extends Base_Controller {
 				Uw account is aangemaakt, u kan inloggen met de volgende gegevens nadat u u account heeft geactiveerd met de url hier beneden.
 
 				------------------------
-				Username: '.Input::get('username').'
+				Username: '.$new_user->username.'
 				Password: '.Input::get('password').'
 				------------------------
+
+				Klik op deze link om uw account te activeren.
+ 
+				http://ontwerpwedstrijden.dev/users/verify?email='.$new_user->email.'&hash='.$new_user->hash.' 
 
 			');
 		});
@@ -172,7 +177,13 @@ class Users_Controller extends Base_Controller {
 		return Redirect::home();
 	}
 
-	public function get_register() {
-		return Input::get('email');
+	public function get_verify() {
+		$user = User::where('email', '=', Input::get('email'))->first();
+		if($user->hash === Input::get('hash')) {
+			$user->active = true;
+			$user->save();
+
+			return View::make('single-pages.verify');
+		}
 	}
 }

@@ -14,7 +14,8 @@ class Create_Users_Table {
 			$table->string('username');
 			$table->string('email');
 			$table->string('password');
-			$table->boolean('activated')->default(0);
+			$table->string('hash');
+			$table->boolean('active')->default(0);
 			$table->timestamps();
 		});
 	}
