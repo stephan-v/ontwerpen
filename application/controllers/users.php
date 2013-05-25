@@ -70,6 +70,8 @@ class Users_Controller extends Base_Controller {
  
 				http://ontwerpwedstrijden.dev/users/verify?email='.$new_user->email.'&hash='.$new_user->hash.' 
 
+				Met vriendelijke groet,
+
 				Microlancer.nl
 
 			');
@@ -159,27 +161,36 @@ class Users_Controller extends Base_Controller {
 		{
 		    return Redirect::to_route('login_user')
 		    	->with_errors($validation->errors)->with_input();
-		} else {
-			$credentials = array(
-				'username' => $input['email'],
-				'password' => $input['password'],
-			);
+		}
 
-			if (Auth::attempt($credentials)) 
+		$credentials = array(
+			'username' => $input['email'],
+			'password' => $input['password'],
+		);
+
+		if (Auth::attempt($credentials)) 
+		{
+			// Set remember me cookie if the user checks the box
+			$remember = Input::get('remember');
+			if ( !empty($remember) )
 			{
-				// Set remember me cookie if the user checks the box
-				$remember = Input::get('remember');
-				if ( !empty($remember) )
-				{
-					Auth::login(Auth::user()->id, true);
-				}
-
-				return Redirect::home();
-
-			} else {
-				return Redirect::to_route('login_user')
-		    	->with('login_errors', true);
+				Auth::login(Auth::user()->id, true);
 			}
+
+			// Check if account is active or not
+			if(Auth::user()->active) {
+		        return Redirect::home();
+		    } else {
+		    	Auth::logout();
+		    	return Redirect::to_route('login_user')
+	    			->with('login_errors', 'U heeft uw account nog niet geactiveerd.')
+	    			->with_input();
+		    }
+
+		} else {
+			return Redirect::to_route('login_user')
+	    		->with('login_errors', 'Gebruikersnaam of wachtwoord incorrect.')
+	    		->with_input();
 		}
 	}
 

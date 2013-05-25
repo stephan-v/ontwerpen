@@ -17,7 +17,7 @@
 		{{ $errors->has('active') ? '<span class="validation-error">' . $errors->first('active') . '</span>' : '' }}
 
 		@if(Session::has('login_errors'))
-			<li class="validation-error">Username or password incorrect</li>
+			<li class="validation-error">{{ Session::get('login_errors') }}</li>
 		@endif
 
 		<div class="remember-me">

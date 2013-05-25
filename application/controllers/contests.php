@@ -154,7 +154,18 @@ class Contests_Controller extends Base_Controller {
 			'taxnumber' => 'required',
 		);
 
-		$validation = Validator::make($input, $rules);
+		$messages = array(
+			'firstname_required' => 'Uw voornaam is verplicht.',
+			'lastname_required' => 'Uw achternaam is verplicht.',
+			'company_required' => 'Uw bedrijfsnaam is verplicht.',
+			'address_required' => 'Uw adres is verplicht.',
+			'postalcode_required' => 'Uw postcode is verplicht.',
+			'city_required' => 'Uw stad is verplicht.',
+			'phonenumber_required' => 'Uw telefoonnummber is verplicht.',
+			'taxnumber_required' => 'Uw btw nummer is verplicht.',
+		);
+
+		$validation = Validator::make($input, $rules, $messages);
 
 		if ($validation->fails()) {
 			return Redirect::to_route('new_contest2')
