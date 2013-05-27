@@ -2,9 +2,7 @@
 
 @section('banner')
 	<div class="main-banner process-banner">
-		<div class="container">
-			<h1>Een vloeiende samenwerking tussen bedrijven en ontwerpers in vier simpele stappen.</h1>
-		</div>
+		<h1>Een vloeiende samenwerking tussen bedrijven en ontwerpers in vier simpele stappen.</h1>
 	</div>
 	<div class="tomato-banner">
 		<div class="container">

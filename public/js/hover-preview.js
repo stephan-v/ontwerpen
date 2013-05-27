@@ -5,8 +5,8 @@ $(document).ready(function(){
 
 // Configuration of the x and y offsets
 this.imagePreview = function(){	
-		xOffset = -20;
-		yOffset = 20;		
+		xOffset = 130;
+		yOffset = 30;		
 		
     $("a.preview").hover(function(e){
         this.t = this.title;

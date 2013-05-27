@@ -63,7 +63,7 @@
 				<ul>
 					<li>{{ HTML::link('algemene-voorwaarden', 'Algemene voorwaarden') }}</li>
 					<li>Over Ons</li>
-					<li>Help</li>
+					<li>{{ HTML::link('help', 'Help') }}</li>
 					<li>{{ HTML::link_to_route('new_contact', 'Contact') }}</li>
 				</ul>
 			</div>

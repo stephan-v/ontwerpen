@@ -98,6 +98,16 @@ Route::get('help', function() {
 	return View::make('single-pages.help');
 });
 
+// Bedrijven
+Route::get('bedrijf', function() {
+	return View::make('single-pages.bedrijf');
+});
+
+// Ontwerpers
+Route::get('ontwerper', function() {
+	return View::make('single-pages.ontwerper');
+});
+
 // Testroute
 Route::get('test', function() {
 	$user_address = User::find(1)->address()->first();

@@ -56,7 +56,11 @@
 									</ul>	
 								</div>
 						@endif
+					@else
+						<div class="delete-entry"></div>
 					@endif
+
+					<p class="id-number">#{{ $entry->id }}</p>
 
 					@if( $entry->winning_design )
 						<div class="winning-design"></div>
