@@ -4,8 +4,8 @@ $(function() {
         // Entry id
       	var entry_id = $(this).closest(".entry-item").attr("id");
 
-        	// Ajax call 
-        $.post('/contests/any/entries/1',{ rating: this.value, entry_id : entry_id}, function(data) {
+        // Ajax call 
+        $.post(BASE+'/contests/any/entries/1',{ rating: this.value, entry_id : entry_id}, function(data) {
             console.log(data);
         });
     }); 
@@ -29,7 +29,7 @@ $(function() {
         if (answer){
             // Ajax call 
             $.ajax({
-                url: '/contests/any/entries/1',
+                url: BASE+'/contests/any/entries/1',
                 type: 'DELETE',
                 data: { entry_id : entry_id },
                 success: function(data) {

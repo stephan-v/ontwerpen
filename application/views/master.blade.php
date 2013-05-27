@@ -11,6 +11,7 @@
 	{{ HTML::script('js/hover-preview.js') }}
 	{{ HTML::script('js/update-rating.js') }}
 	{{ HTML::script('js/html5shiv.js') }}
+	<script type="text/javascript">var BASE = "<?php echo URL::base(); ?>";</script>
 </head>
 <body>
 	<header class="header-navigation">

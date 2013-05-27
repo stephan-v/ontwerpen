@@ -66,7 +66,7 @@
 						<div class="winning-design"></div>
 					@endif
 
-					<a href="http://ontwerpwedstrijden.dev/uploads/{{ $entry->filename }}" class="preview"><img src="http://ontwerpwedstrijden.dev/uploads/{{ $entry->filename }}" /></a>
+					<a href="{{ URL::base() }}/uploads/{{ $entry->filename }}" class="preview"><img src="{{ URL::base() }}/uploads/{{ $entry->filename }}" /></a>
 
 					<p>Ontwerper: {{ HTML::link_to_route('user', User::find($entry->user_id)->username, array(User::find($entry->user_id)->id)) }}</p>
 					
