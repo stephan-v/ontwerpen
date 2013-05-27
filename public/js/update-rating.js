@@ -5,7 +5,10 @@ $(function() {
       	var entry_id = $(this).closest(".entry-item").attr("id");
 
         // Ajax call 
-        $.post(BASE+'/contests/any/entries/1',{ rating: this.value, entry_id : entry_id}, function(data) {
+        $.post(BASE+'/contests/any/entries/any',{ 
+            rating: this.value, 
+            entry_id : entry_id
+        }, function(data) {
             console.log(data);
         });
     }); 
@@ -29,10 +32,12 @@ $(function() {
         if (answer){
             // Ajax call 
             $.ajax({
-                url: BASE+'/contests/any/entries/1',
+                url: BASE+'/contests/any/entries/any',
                 type: 'DELETE',
-                data: { entry_id : entry_id },
-                success: function(data) {
+                data: { 
+                    entry_id : entry_id 
+                },
+                success: function() {
                     // Selecteer entryitem with corresponding idnumber and remove it without refresh
                     $(".entry-item#"+entry_id).remove();
                 }     
