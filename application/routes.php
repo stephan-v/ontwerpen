@@ -1,9 +1,7 @@
 <?php
 
-// Home view
-Route::get('/', function() {
-	return View::make('home.index');
-});
+// Home index
+Route::get('/', array('as' => 'home', 'uses' => 'home@index'));
 
 // Wedstrijden index
 Route::get('contests', array('as' => 'contests', 'uses' => 'contests@index'));

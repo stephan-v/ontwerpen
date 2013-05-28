@@ -18,6 +18,7 @@
 		<div class="container">
 			<ul class="primary-nav">
 				<li>{{ HTML::link('/', 'Home') }}</li>
+				<li>{{ HTML::link('contests', 'Wedstrijden') }}</li>
 				<li>{{ HTML::link('help', 'Help') }}</li>
 				<li>{{ HTML::link_to_route('new_contact', 'Contact') }}</li>
 			</ul>
@@ -72,7 +73,7 @@
 				<h2>Website</h2>
 				<ul>
 					<li>{{ HTML::link('hoe-werkt-het', 'hoe werkt het?') }}</li>
-					<li>Nieuws</li>
+					<li>{{ HTML::link('contests', 'Wedstrijden') }}</li>
 					<li>Tutorials</li>
 					<li>Wat klanten zeggen</li>
 					<li>Betalingen</li>

@@ -32,16 +32,24 @@
 
 @section('content')
 	<section class="section-box">
-		<h1>Tips voor bedrijven</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, tempore consequuntur incidunt iusto id sapiente placeat quae ut quaerat doloremque. Illo, consequuntur, at alias sed laudantium quam dolor officiis repellendus.</p>
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, pariatur, sunt magni dolor nesciunt inventore molestiae hic corporis asperiores libero laboriosam dignissimos incidunt natus voluptatum animi iste quidem voluptate tempora?</p>
+		<h1>Bedrijven/Instellingen</h1>
+		<ul class="large-list">
+			<li>Bepaal zelf uw prijs.</li>
+			<li>Niet goed, geld terug garantie.</li>
+			<li>Makkelijke communicatie met ontwerpers</li>
+			<li>Keuze uit groot scala van ontwerpen</li>
+			<li>Ontvang de bestanden en de bijbehorende rechten.</li>
+			<li>Geen kosten achteraf.</li>
+		</ul>
 	</section>
 
 	<section class="section-box">
-		<h1>Tips voor ontwerpers</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, tempore consequuntur incidunt iusto id sapiente placeat quae ut quaerat doloremque. Illo, consequuntur, at alias sed laudantium quam dolor officiis repellendus.</p>
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, pariatur, sunt magni dolor nesciunt inventore molestiae hic corporis asperiores libero laboriosam dignissimos incidunt natus voluptatum animi iste quidem voluptate tempora?</p>
+		<h1>Ontwerpers</h1>
+		<ul class="large-list">
+			<li>Praktijkervaring verkrijgen op een constructieve manier.</li>
+			<li>Makkelijk portfolio opbouwen.</li>
+			<li>Communiceren met echte opdrachtgevers.</li>
+			<li>Mooie manier om geld te verdienen.</li>
+		</ul>
 	</section>
 @endsection
