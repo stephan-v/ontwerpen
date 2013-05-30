@@ -49,7 +49,7 @@ ul li {
 	padding: 50px 0;
 }
 
-/*----- Slider Styles -----*/
+/*----- Homepage Styles -----*/
 
 .main-banner {
 	height: 350px;
@@ -78,6 +78,14 @@ ul li {
 }
 .homepage-mast-actions .btn-entry {
 	width: auto;
+}
+.welcome.section-box {
+	margin-bottom: 50px;
+}
+.header {
+	background: url('../img/header.jpg');
+	width: 100%;
+	height: 200px;
 }
 
 /*----- Hoe werkt het page styles -----*/
@@ -458,22 +466,22 @@ table .cat {
 	/*----- Tempory placeholder for contest entry image -----*/
 	.entry-item {
 		width: 200px;
-		padding: 10px;
 		float: left;		
 		text-align: center;
-		margin-right: 46px;
+		margin: 20px 46px 20px 0;
 		list-style: none;
 		background: #323232;
-		border: 1px solid lightgrey;
 		color: #FFF;
 		position: relative;
+		border-radius: 0 0 5px 5px;
 	}
 	.entry-item p {
 		margin: 1em 0;
+		clear: both;
 	}
 	.entry-item img, #contest-winner img {
-		max-width: 180px;
-		max-height: 140px;		
+		max-width: 200px;
+		max-height: 150px;		
 		border: none;
 		display: block;	
 		margin: 0 auto;	
@@ -483,12 +491,15 @@ table .cat {
 	}
 	.entry-item .preview, #contest-winner .preview {
 		position: relative;
-		width: 180px;
-		height: 140px;
+		width: 200px;
+		height: 150px;
 		display: table-cell;
     	vertical-align: middle; 
-    	margin: 10px 0;
     	background: #252525;
+    	border-radius: 5px;
+	}
+	.entry-info {
+		padding: 10px;
 	}
 	.delete-entry {
 		height: 16px;
@@ -496,30 +507,33 @@ table .cat {
 		background: url('../img/delete-icon.png') no-repeat;
 		cursor: pointer;
 		margin-bottom: 10px;
+		float: left;
 	}
 	.id-number {
-		position: absolute;
-		top: -2px;
-		right: 15px;
+		float: right;
 	}
 	.options-entry {
-		background: rgba(0, 0, 0, 0.5); 
+		background: #fff; 
 		text-align: center;
 		top: 0;
-		right: 0;
-		width: 100%;
-		height: 100%;
+		right: 5px;
+		width: 190px;
+		border-radius: 5px;
+		border-bottom: 5px solid #ff6664;
 		z-index: 3;
 		position: absolute;
 		display: none;
-		padding-top: 20px;
 		list-style: none;
+		margin-top: 95px;
+		padding: 10px;
+		-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+		-moz-box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+		box-shadow: 0px 0px 10px rgba(0,0,0,.5);
 	}
 	.options-entry li {
-		background: rgba(255, 255, 255, 0.1);
-		padding: 10px;
-		margin-top: 15px;
-		text-shadow: 1px 1px black;
+		display: inline-block;
+		color: grey;
+		margin-right: 5px;
 	}
 	.options-entry li p {
 		margin: 0;
@@ -784,30 +798,28 @@ footer {
 	margin-bottom: 50px;
 	background: #FFF;
 	padding: 35px;
-	min-height: 472px;
+	min-height: 490px;
 	box-shadow: -5px 0px 15px -5px lightgrey;
 	-webkit-box-shadow: -5px 0px 15px -5px lightgrey;
 	-moz-box-shadow: -5px 0px 15px -5px lightgrey;
 }
 .user-info {
 	overflow: hidden;
+	margin: 0 auto;
 }
 .user-info .profile-picture {
-	float: left;
-	padding: 5px;
-	width: 85px;
-	height: 85px;
-	border: 1px solid #dbdcdc;
-	margin: 0px 0px 35px 35px;
+	margin: 0 auto;
+	width: 120px;
+	height: 120px;
 }
 .user-info .profile-picture img {
 	width: 100%;
 	height: 100%;
+	border-radius: 100%;
 }
 .user-info .profile-info {
-	width: 105px;
-	float: left;
-	padding: 25px 0 0 10px;
+	margin: 20px 0;
+	text-align: center;
 }
 .message-box {
 	border: 1px solid #e7e7e7;

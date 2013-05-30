@@ -7,7 +7,6 @@
 				<p>{{ $user->username }}</p>
 			</div>
 		</div>
-		<h1>Gebruiker</h1>
 		<ul>
 			<!-- <li class="active"> voor activering van actieve link -->
 			<li><a href="{{ URL::to_route('user', $user->id) }}"><div class="profile"></div>Profiel</a></li>

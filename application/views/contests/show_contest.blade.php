@@ -41,64 +41,68 @@
 			@foreach($entries as $entry)
 			<?php $num = Entry::find($entry->id)->rating; ?>
 				@if($i % 4 == 0)
-				<li class="entry-item last" id="{{ $entry->id }}">
+				<div class="entry-item last" id="{{ $entry->id }}">
 				@else
-				<li class="entry-item" id="{{ $entry->id }}">
+				<div class="entry-item" id="{{ $entry->id }}">
 				@endif
 
-					@if( isset(Auth::user()->username) )
-						@if( Auth::user()->username === User::find($entry->user_id)->username)
-								<div class="delete-entry">
-									<ul class="options-entry">
-										<li><p class="delete">Verwijder inzending</p></li>
-										<li><p>Bewerk inzending</p></li>
-										<li><p>Rapporteer inzending</p></li>
-									</ul>	
-								</div>
-						@endif
-					@else
-						<div class="delete-entry"></div>
-					@endif
+				<a href="{{ URL::base() }}/uploads/{{ $entry->filename }}" class="preview"><img src="{{ URL::base() }}/uploads/{{ $entry->filename }}" /></a>
 
-					<p class="id-number">#{{ $entry->id }}</p>
+					<div class="entry-info">						
+						<div class="delete-entry">
+							<!-- laat alleen de mogelijkheden deleten, bewerken en rapporteren van entries zien wanneer ingelogd. -->
+							@if(Auth::check())
+								<ul class="options-entry">
+									<!-- laat alleen de mogelijkheden deleten en bewerken zien wanneer de eigenaar van deze entry is ingelogd -->
+									@if( isset(Auth::user()->username) )
+										@if( Auth::user()->username === User::find($entry->user_id)->username)
+											<li><p class="delete">Delete</p></li>
+											<li><p>Bewerk</p></li>
+										@endif
+											<li><p>Rapporteer</p></li>
+									@endif
+								</ul>
+							@endif
+						</div>					
 
-					@if( $entry->winning_design )
-						<div class="winning-design"></div>
-					@endif
+						<span class="id-number">#{{ $entry->id }}</span>
 
-					<a href="{{ URL::base() }}/uploads/{{ $entry->filename }}" class="preview"><img src="{{ URL::base() }}/uploads/{{ $entry->filename }}" /></a>
+						@if( $entry->winning_design )
+							<div class="winning-design"></div>
+						@endif					
 
-					<p>Ontwerper: {{ HTML::link_to_route('user', User::find($entry->user_id)->username, array(User::find($entry->user_id)->id)) }}</p>
-					
-					<section class="rating">
-						{{-- If the logged in user is not the owner of the contest hide the ratinglabels --}}
-						@if( isset(Auth::user()->username) != $contest->owner)
-							<?php $displaystatus = 'display:none'; ?>
-						@else
-							<?php $displaystatus = 'display:inline-block'; ?>
-						@endif
+						<p>Ontwerper: {{ HTML::link_to_route('user', User::find($entry->user_id)->username, array(User::find($entry->user_id)->id)) }}</p>
+						
+						<section class="rating">
+							{{-- If the logged in user is not the owner of the contest hide the ratinglabels --}}
+							@if( isset(Auth::user()->username) != $contest->owner)
+								<?php $displaystatus = 'display:none'; ?>
+							@else
+								<?php $displaystatus = 'display:inline-block'; ?>
+							@endif
 
-						<input type="radio" class="radio twenty" name="progress-{{ $i }}" value="1" id="twenty-{{ $i }}" <?php if($num == 1) { echo 'checked'; } ?>>
-						<label for="twenty-<?php echo $i; ?>" class="label" style="{{ $displaystatus }}">1</label>
+							<input type="radio" class="radio twenty" name="progress-{{ $i }}" value="1" id="twenty-{{ $i }}" <?php if($num == 1) { echo 'checked'; } ?>>
+							<label for="twenty-<?php echo $i; ?>" class="label" style="{{ $displaystatus }}">1</label>
 
-						<input type="radio" class="radio fourty" name="progress-{{ $i }}" value="2" id="fourty-{{ $i }}" <?php if($num == 2) { echo 'checked'; } ?>>
-						<label for="fourty-<?php echo $i; ?>" class="label" style="{{ $displaystatus }}">2</label>
+							<input type="radio" class="radio fourty" name="progress-{{ $i }}" value="2" id="fourty-{{ $i }}" <?php if($num == 2) { echo 'checked'; } ?>>
+							<label for="fourty-<?php echo $i; ?>" class="label" style="{{ $displaystatus }}">2</label>
 
-						<input type="radio" class="radio sixty" name="progress-{{ $i }}" value="3" id="sixty-{{ $i }}" <?php if($num == 3) { echo 'checked'; } ?>>
-						<label for="sixty-<?php echo $i; ?>" class="label" style="{{ $displaystatus }}">3</label>
+							<input type="radio" class="radio sixty" name="progress-{{ $i }}" value="3" id="sixty-{{ $i }}" <?php if($num == 3) { echo 'checked'; } ?>>
+							<label for="sixty-<?php echo $i; ?>" class="label" style="{{ $displaystatus }}">3</label>
 
-						<input type="radio" class="radio eighty" name="progress-{{ $i }}" value="4" id="eighty-{{ $i }}"<?php if($num == 4) { echo 'checked'; } ?>>
-						<label for="eighty-<?php echo $i; ?>" class="label" style="{{ $displaystatus }}">4</label>
+							<input type="radio" class="radio eighty" name="progress-{{ $i }}" value="4" id="eighty-{{ $i }}"<?php if($num == 4) { echo 'checked'; } ?>>
+							<label for="eighty-<?php echo $i; ?>" class="label" style="{{ $displaystatus }}">4</label>
 
-						<input type="radio" class="radio onehundred" name="progress-{{ $i }}" value="5" id="onehundred-{{ $i }}" <?php if($num == 5) { echo 'checked'; } ?>>
-						<label for="onehundred-<?php echo $i; ?>" class="label" style="{{ $displaystatus }}">5</label>
+							<input type="radio" class="radio onehundred" name="progress-{{ $i }}" value="5" id="onehundred-{{ $i }}" <?php if($num == 5) { echo 'checked'; } ?>>
+							<label for="onehundred-<?php echo $i; ?>" class="label" style="{{ $displaystatus }}">5</label>
 
-						<div class="progress">
-						 	<div class="progress-bar"></div>
-						</div>
-					</section>
+							<div class="progress">
+							 	<div class="progress-bar"></div>
+							</div>
+						</section>
+					</div><!-- end entry-info -->
 
-				</li>
+				</div>
 				<?php $i++; ?>
 			@endforeach
 		</ul>

@@ -14,11 +14,15 @@ $(function() {
     }); 
 
     $(".delete-entry").on("mouseover",function(e) {
-        $(".options-entry", this).stop().slideDown(100);
+        $(".options-entry", this).stop().fadeIn('fast');
     });
 
     $(".options-entry").on("mouseleave",function(e) {
-        $(this).stop().slideUp(100);
+        $(this).stop().fadeOut('fast');
+    });
+
+    $(".delete-entry").on("mouseleave",function(e) {
+        $(".options-entry").stop().fadeOut('slow');
     });
 
     // Delete an entry-item without refresh

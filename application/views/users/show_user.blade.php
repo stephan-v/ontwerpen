@@ -20,20 +20,20 @@
 	@if( !empty($entries) )
 		<section id="entries">
 			<div class="entries-header">
-				<h2>Inzendingen</h2>
+				<h2>Mijn inzendingen</h2>
 			</div>
 			<!-- ul class om alle entries te laten -->
 			<ul class="contest-entries">
 				<?php $i = 1; ?>
 				@foreach($entries as $entry)
 					@if($i % 4 == 0)
-					<li class="entry-item last">
+					<div class="entry-item last">
 					@else
-					<li class="entry-item">
+					<div class="entry-item">
 					@endif
-						<a href="http://ontwerpwedstrijden.dev/uploads/{{ $entry->filename }}" class="preview"><img src="http://ontwerpwedstrijden.dev/uploads/{{ $entry->filename }}" /></a>
+						<a href="http://ontwerpwedstrijden.dev/contests/{{ $entry->contest_id }}" class="preview"><img src="http://ontwerpwedstrijden.dev/uploads/{{ $entry->filename }}" /></a>
 						<p>Ontwerper: {{ HTML::link_to_route('user', User::find($entry->user_id)->username, array(User::find($entry->user_id)->id)) }}</p>
-					</li>
+					</div>
 					<?php $i++; ?>
 				@endforeach
 			</ul>

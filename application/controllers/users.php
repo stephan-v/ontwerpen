@@ -8,7 +8,7 @@ class Users_Controller extends Base_Controller {
 	}
 
 	public function get_show($id) {
-		$user_entries = User::find((int)$id)->entries;
+		$user_entries = Entry::where('user_id', '=', (int)$id)->get();
 		$user = User::find((int)$id);
 
 		$contests = Contest::where('owner', '=', $user->username)->get();

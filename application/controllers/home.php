@@ -6,7 +6,8 @@ class Home_Controller extends Base_Controller {
 
 	public function get_index()
 	{
-		$contests = Contest::all();
+		// Limit contests on the frontpage to 5
+		$contests = Contest::take(5)->get();
 
 		return View::make('home.index')
 			->with('contests', $contests);

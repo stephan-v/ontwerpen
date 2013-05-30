@@ -3,8 +3,13 @@
 @section('content')
 	<div id="form-header">Voeg een inzending toe</div>
 	{{ Form::open_for_files() }}
-
-		<p>Het bestand dat u upload moet JPEG, PNG of GIF formaat in RGB modus zijn. Maximum bestandsgrootte is 2MB.</p>
+		
+		<ul>
+			<li>Optimale afbeeldingsformaat is 1024×768</li>
+			<li>Het bestand dat u upload moet JPEG, PNG of GIF formaat in RGB modus zijn.</li>
+			<li>Maximum bestandsgrootte is 2MB.</li>
+		</ul>
+		
 		{{ Form::label('file', 'Upload uw afbeelding') }}
 		{{ Form::file('image') }}
 

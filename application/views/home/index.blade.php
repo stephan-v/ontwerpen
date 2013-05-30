@@ -13,12 +13,15 @@
 @endsection
 
 @section('content')
-	<h1>Welkom op microlancer.nl</h1>
-	<p>Microlancer is het platform voor creatieve content.</p>
+	<div class="header"></div>
+	<section class="welcome section-box">	
+	<h1>Heeft u een logo of ander grafisch ontwerp nodig?</h1>
+		<p>Creatief talent is overal. Via ons platform geven we creatieven van allerlei disciplines en achtergronden de kans om aansprekende content te maken voor hun favoriete merken.</p>
 
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in auctor mi. Morbi luctus purus elit. In porta nunc id dui hendrerit egestas. Donec nisl dui, dapibus at facilisis id, egestas ut lectus. Vivamus tristique mattis viverra. Quisque eu nunc quis tortor egestas pretium at quis tellus. Integer congue adipiscing tellus eu lacinia. Aenean id orci id tortor pretium viverra. Phasellus suscipit consectetur sapien. Nullam tortor neque, volutpat at aliquet sit amet, feugiat quis est. Morbi nec nisi in libero fringilla tincidunt.</p>
+		<p>Op ons platform zetten we creatieve opdrachten van merken uit waar jij als creatief talent je gratis op in kunt schrijven. Je bepaalt zelf aan welke opdrachten je meedoet, wat je instuurt en met wie je samenwerkt. Door mee te doen doe je ervaring op, bouw je aan een steengoed portfolio, vergroot je je netwerk en verdien je geld.</p>
 
-	<p>Duis congue scelerisque varius. Curabitur sit amet libero id risus ultricies sodales. Sed ac diam felis, at tristique urna. Etiam sem lectus, porttitor sit amet egestas sit amet, pretium ac diam. Donec tellus felis, volutpat eget rutrum et, rutrum ut diam. Ut urna libero, lobortis pretium tincidunt a, aliquam at massa. Phasellus nec eros eget nibh accumsan iaculis. Suspendisse nec condimentum libero. Duis eu magna ut nibh blandit pellentesque. In auctor lectus non eros aliquet suscipit. Nunc euismod urna sed eros congue consectetur. In nulla risus, adipiscing at dictum et, imperdiet vel velit. Donec nunc ante, malesuada sed eleifend id, ornare et magna. Maecenas rhoncus semper risus, et tincidunt felis ultrices eget.</p>
+		<p>Brandfighters is dé plek om jezelf te profileren als creatieve specialist, je professionele netwerk te vergroten en door te groeien als creatieve professional. Zo geef je je creatieve carrière een flinke boost! Lees hier hoe het werkt.</p>
+	</section>
 
 	@include('table')
 
