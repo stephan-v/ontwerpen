@@ -46,7 +46,9 @@
 				<div class="entry-item" id="{{ $entry->id }}">
 				@endif
 
-				<a href="{{ URL::base() }}/uploads/{{ $entry->filename }}" class="preview"><img src="{{ URL::base() }}/uploads/{{ $entry->filename }}" /></a>
+				<a href="{{ URL::base() }}/uploads/{{ $entry->filename }}" class="preview">
+					<img src="{{ URL::base() }}/uploads/{{ $entry->filename }}" />
+				</a>
 
 					<div class="entry-info">						
 						<div class="delete-entry">

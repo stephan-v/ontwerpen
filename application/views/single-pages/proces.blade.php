@@ -41,6 +41,7 @@
 			<li>Ontvang de bestanden en de bijbehorende rechten.</li>
 			<li>Geen kosten achteraf.</li>
 		</ul>
+		{{ HTML::link_to_route('new_contest', 'Maak een wedstrijd aan', '', array('class' => 'btn-entry')) }}
 	</section>
 
 	<section class="section-box">
@@ -51,5 +52,6 @@
 			<li>Communiceren met echte opdrachtgevers.</li>
 			<li>Mooie manier om geld te verdienen.</li>
 		</ul>
+		{{ HTML::link_to_route('contests', 'Bekijk de wedstrijden', '', array('class' => 'btn-entry')) }}
 	</section>
 @endsection

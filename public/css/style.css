@@ -486,6 +486,14 @@ table .cat {
 		display: block;	
 		margin: 0 auto;	
 	}
+	.entry-item .cover {
+		background: #fff;
+		width: 200px;
+		height: 150px;
+		position: absolute;
+		z-index: 1;
+		opacity: 0.5;
+	}
 	.entry-item.last {
 		margin-right: 0; 
 	}
