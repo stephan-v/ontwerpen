@@ -29,6 +29,7 @@ Route::post('contests/new/step-3', 'contests@create3');
 
 // Wedstrijd bewerken
 Route::get('contests/(:any)/edit', array('as' => 'edit_contest', 'uses' => 'contests@edit'));
+Route::post('contests/(:any)/edit', 'contests@edit');
 
 // Maak een nieuwe entry aan
 Route::get('contests/(:any)/entries/new', array('as' => 'new_entry', 'uses' => 'entry@new'));
@@ -104,6 +105,11 @@ Route::get('bedrijf', function() {
 // Ontwerpers
 Route::get('ontwerper', function() {
 	return View::make('single-pages.ontwerper');
+});
+
+// Over Ons
+Route::get('about', function() {
+	return View::make('single-pages.about');
 });
 
 // Testroute

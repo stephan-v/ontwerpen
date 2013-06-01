@@ -392,6 +392,7 @@ table {
 	-moz-box-shadow: 0px 0px 3px rgba(0,0,0,.05);
 	box-shadow: 0px 0px 3px rgba(0,0,0,.05);
 	width: 100%;
+	margin-bottom: 50px;
 }
 table th {
 	background: #ff6664;
@@ -427,6 +428,10 @@ table .column-10 {
 }
 table .cat {
 	font-size: 12px;
+}
+table .btn-entry {
+	width: 90%;
+	margin: 0;
 }
 .contests-actions {
 	width: 100%;

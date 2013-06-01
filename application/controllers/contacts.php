@@ -24,6 +24,6 @@ class Contacts_Controller extends Base_Controller {
 		    $message->body(Input::get('body'));
 		});
 
-		return 'mail send';
+		return View::make('contacts.index');
 	}
 }

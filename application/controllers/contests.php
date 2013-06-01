@@ -64,9 +64,25 @@ class Contests_Controller extends Base_Controller {
 		return View::make('contests.step2');
 	}
 
-	public function get_edit()
+	public function get_edit($id)
 	{
-		return 'Wedstrijd bewerken';
+		$contest = Contest::find((int)$id);
+
+		return View::make('contests.edit_contest')
+			->with('contest', $contest);
+	}
+
+	public function post_edit($id)
+	{
+		$contest = Contest::find((int)$id);
+
+		$contest->title = Input::get('title');
+		$contest->description = Input::get('description');
+
+		$contest->save();
+
+		return Redirect::to_route('edit_contest', $id)
+			->with('message', 'Uw wedstrijd is succesvol bijgewerkt!');
 	}
 
 	public function post_create() 

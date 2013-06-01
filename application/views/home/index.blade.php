@@ -20,7 +20,7 @@
 
 		<p>Op ons platform zetten we creatieve opdrachten van merken uit waar jij als creatief talent je gratis op in kunt schrijven. Je bepaalt zelf aan welke opdrachten je meedoet, wat je instuurt en met wie je samenwerkt. Door mee te doen doe je ervaring op, bouw je aan een steengoed portfolio, vergroot je je netwerk en verdien je geld.</p>
 
-		<p>Brandfighters is dé plek om jezelf te profileren als creatieve specialist, je professionele netwerk te vergroten en door te groeien als creatieve professional. Zo geef je je creatieve carrière een flinke boost! Lees hier hoe het werkt.</p>
+		<p>Brandfighters is dé plek om jezelf te profileren als creatieve specialist, je professionele netwerk te vergroten en door te groeien als creatieve professional. Zo geef je je creatieve carrière een flinke boost! {{ HTML::link('hoe-werkt-het', 'Lees hier hoe het werkt.')}}</p>
 	</section>
 
 	@include('table')

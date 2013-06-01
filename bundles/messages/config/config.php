@@ -38,9 +38,9 @@ return array(
 	'transports' => array(
 
 		'smtp' => array(
-			'host'       => 'smtp.gmail.com',
+			'host'       => 'mail.antagonist.nl',
 			'port'       => 465,
-			'username'   => 'stephandevrieschristiaan@gmail.com',
+			'username'   => 'info@microlancer.nl',
 			'password'   => 'jak7daxter',
 			'encryption' => 'ssl',
 		),
