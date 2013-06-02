@@ -23,11 +23,11 @@
 					// if current time is higher than expiration date set contest to finished.
 					if($now > $future_date) {
 						$enddate = 'Beëindigd';
-					} elseif($interval->m <= 1) {
+					} elseif($interval->m >= 1) {
 						$enddate = $interval->format("%a dagen");
-					} elseif($interval->d <= 1) {
-						$enddate = $interval->format("%a dagen, %i minuten");
-					} elseif($interval->h <= 23) {
+					} elseif($interval->d >= 1) {
+						$enddate = $interval->format("%a dagen");
+					} elseif($interval->h <= 24) {
 						$enddate = $interval->format("%h uur, %i minuten");
 					}
 				?>

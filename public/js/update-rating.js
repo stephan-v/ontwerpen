@@ -48,4 +48,9 @@ $(function() {
             });
         }        
     }); 
+
+    $(function() {
+        $("#tabs").tabs();
+    });
+
 });
