@@ -26,7 +26,7 @@
 				<ul class="nav-userlist">
 					@if(Auth::check())
 						<li class="item1">
-							{{ HTML::link_to_route('user', 'Mijn Account', array(Auth::user()->id)) }}
+							{{ HTML::link_to_route('user', Auth::user()->username, array(Auth::user()->id)) }}
 						</li>				
 						<li>
 							{{ HTML::link_to_route('logout_user', 'Uitloggen') }}

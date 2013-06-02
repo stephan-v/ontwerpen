@@ -30,8 +30,8 @@
 			{{ Form::text('postalcode', Input::old('postalcode'), array('placeholder' => 'Geef uw postcode op')) }}
 			{{ $errors->has('postalcode') ? '<span class="validation-error">' . $errors->first('postalcode') . '</span>' : '' }}
 
-			{{ Form::label('city', 'Stad') }}
-			{{ Form::text('city', Input::old('city'), array('placeholder' => 'Geef uw stad op')) }}
+			{{ Form::label('city', 'Woonplaats') }}
+			{{ Form::text('city', Input::old('city'), array('placeholder' => 'Geef uw woonplaats op')) }}
 			{{ $errors->has('city') ? '<span class="validation-error">' . $errors->first('city') . '</span>' : '' }}
 
 			{{ Form::label('phonenumber', 'Telefoonnummer') }}

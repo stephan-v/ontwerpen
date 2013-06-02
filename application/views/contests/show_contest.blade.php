@@ -4,11 +4,27 @@
 
 	<div id="tabs">
 		<ul>
-			<li><a href="#briefing">Briefing</a></li>
-			<li><a href="#entries">Inzendingen</a></li>
-			<li><a href="#comments">Commentaar</a></li>
+			<li>
+				<div class="circle icon-briefing"></div>
+				<a href="#briefing">Briefing</a>	
+				<div class="arrow-down"></div>			
+			</li>
+			<li>
+				<div class="circle icon-entries"></div>
+				<a href="#entries">Inzendingen</a>
+				<div class="arrow-down"></div>
+			</li>
+			<li>
+				<div class="circle icon-comments"></div>
+				<a href="#comments">Commentaar</a>
+				<div class="arrow-down"></div>
+			</li>
 		</ul>
 		<div id="briefing">
+				<div class="entries-header">
+					<h2>Wedstrijd</h2>
+				</div>
+
 				@if( isset($winner) )
 				<section id="contest-winner" class="section-box">	
 					<div class="left">
