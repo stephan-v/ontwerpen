@@ -179,7 +179,7 @@ class Users_Controller extends Base_Controller {
 
 			// Check if account is active or not
 			if(Auth::user()->active) {
-		        return Redirect::home();
+		        return Redirect::to_route('user', Auth::user()->id);
 		    } else {
 		    	Auth::logout();
 		    	return Redirect::to_route('login_user')
