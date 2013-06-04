@@ -176,6 +176,8 @@ ul li {
 	padding: 10px;
 	text-align: center;	
 	display: inline-block;
+	outline: none;
+	border: none;
 }
 .btn-entry.upload {
 	width: 100%;
@@ -675,10 +677,19 @@ table .btn-entry {
 	list-style: none;
 	border-top: 6px solid #afb4c8;
 	position: relative;
-	line-height: 100px;
-	text-align: center;
 }
-#tabs ul .ui-state-active {
+#tabs ul li .bold {
+	color: #777;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 11px;
+	margin-bottom: 5px;
+}
+#tabs ul li p {
+	color: #A3A3A3;
+	font-size: 11px;
+}
+#tabs ul .ui-state-active, #tabs ul li:hover {
 	border-top: 6px solid #2daacd;
 }
 #tabs ul li a {
@@ -686,6 +697,8 @@ table .btn-entry {
 	width: 100%;
 	height: 100%;	
 	outline: none;	
+	padding-top: 20px;
+	padding-left: 100px;
 }
 #tabs ul li .circle {
 	width: 50px;
@@ -706,6 +719,14 @@ table .btn-entry {
 	background: url('../img/icons-contest.png') #2daacd 0 -100px;
 }
 #tabs ul .ui-state-active .arrow-down {
+	width: 0; 
+	height: 0; 
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;	
+	border-top: 15px solid #fff;
+	margin: 0 auto;
+}
+#tabs ul .ui-state-hover .arrow-down {
 	width: 0; 
 	height: 0; 
 	border-left: 15px solid transparent;
@@ -907,3 +928,61 @@ footer {
 	height: 30px;
 	border-top: 1px solid #e7e7e7;	
 }
+
+	/*----- user modal popup ----*/
+
+	.ui-widget-overlay {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		/* transparency for different browsers */
+	    filter:alpha(opacity=50); 
+	    -moz-opacity:0.5; 
+	    -khtml-opacity: 0.5; 
+	    opacity: 0.5; 
+	    background:#000; 
+	}
+	.ui-dialog {
+		background: #fff;		
+		outline: none;
+		position: fixed;
+		z-index: 2;
+		padding: 20px;		
+	}
+	.ui-dialog-titlebar-close {
+		border: none;
+		position: absolute;
+		top: 0;
+		right: 0;
+		cursor: pointer;
+		width: 30px;
+		height: 30px;
+		text-indent: -9999px;
+		outline: none;
+		background: url('../img/del-icon.png') darkgrey;
+	}
+	.ui-dialog h2, .ui-dialog p {
+		text-align: center;
+	}
+	.ui-dialog p:last-child {
+		padding-bottom: 20px;
+	}
+	.ui-dialog .checkmark {
+		background: url('../img/checkmark.png') no-repeat center center;
+		width: 50px;
+		height: 50px;
+		border-radius: 100%;
+		margin: 0 auto;
+		border: 3px solid darkgrey;
+		margin-bottom: 25px;
+	}
+	.ui-dialog-buttonset {
+		text-align: center;
+		margin: 10px 0;
+	}
+	.ui-dialog .btn-entry {
+		width: 150px;		
+	}

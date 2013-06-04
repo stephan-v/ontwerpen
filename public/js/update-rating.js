@@ -49,8 +49,29 @@ $(function() {
         }        
     }); 
 
+    // UI function single contest tabs
     $(function() {
-        $("#tabs").tabs();
+        $("#tabs").tabs({ active: tab_index });
+    });
+
+    // UI function modal windows
+    $(function() {
+        $( "#dialog" ).dialog({
+            width: 500,
+            modal: true,
+            buttons: [ 
+                { 
+                    class: 'btn-entry',
+                    text: "Ok", click: function() { 
+                        $( this ).dialog( "close" ); 
+                    } 
+                } 
+            ]
+        });
+    });
+
+    $(window).resize(function() {
+        $("#dialog").dialog("option", "position", "center");
     });
 
 });

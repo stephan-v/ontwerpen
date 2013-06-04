@@ -2,6 +2,25 @@
 
 @section('content')
 
+	<!-- Check if it's the users first time logging in, if so display modal window. Change to 0 to view and test the modal window. -->
+	@if($user->firsttime == 1)
+		<div id="dialog">
+			<div class="checkmark"></div>
+			<h2>Geweldig!</h2>
+			<p>Je bent ingelogd en klaar om microlancer voor het eerst te gebruiken.</p>
+			<p>Voordat we beginnen is het misschien handig om nog even wat dingen te weten.</p> 
+			<ul>
+				<li>Wanneer u ingelogd bent kunt u toegang krijgen tot u profiel(deze pagina) door rechtsbovenin op uw gebruikersnaam te klikken.</li>
+				<li>Zodra u een wedstrijd heeft aangemaakt zal deze op uw profielpagina te zien zijn, hier kunt u de wedstrijdinformatie tevens ook bijwerken.</li>
+				<li>Zodra u een inzending voor een wedstrijd heeft geplaatst zal deze hier ook te vinden zijn, samen met al u andere eventuele inzendingen..</li>
+			</ul>
+		</div>
+
+		<!-- Set the firsttime var to 0 indicating that the user has logged in for the first time -->
+		<?php $user->firsttime = 0; ?>
+		<?php $user->save(); ?>
+	@endif
+
 	@include('profile')
 
 	<section class="testcontent">

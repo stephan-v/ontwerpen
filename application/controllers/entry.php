@@ -37,7 +37,8 @@ class Entry_Controller extends Base_Controller {
 				'user_id' => Auth::user()->id
 			));
 
-			return Redirect::to_route('contest', $id);
+			return Redirect::to_route('contest', $id)
+				->with('tab_index', 1);
 		}	
 	}
 

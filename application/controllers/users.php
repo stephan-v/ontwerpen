@@ -51,10 +51,10 @@ class Users_Controller extends Base_Controller {
 
 		Message::send(function($message) use ($new_user)
 		{
-		    $message->to('stephan-v@hotmail.com');
-		    $message->from($new_user->email, $new_user->username);
+		    $message->to($new_user->email);
+		    $message->from('info@microlancer.nl', 'Microlancer.nl');
 
-		    $message->subject('Microlancer.nl new account');
+		    $message->subject('Microlancer.nl nieuw account');
 		    $message->body('
 
 		    	Bedankt voor het registreren!

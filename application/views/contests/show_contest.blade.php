@@ -6,17 +6,26 @@
 		<ul>
 			<li>
 				<div class="circle icon-briefing"></div>
-				<a href="#briefing">Briefing</a>	
+				<a href="#briefing">
+					<span class="bold">Briefing</span>
+					<p>Bestudeer de briefing en bekijk de bijbehorende bestanden.</p>	
+				</a>				
 				<div class="arrow-down"></div>			
 			</li>
 			<li>
 				<div class="circle icon-entries"></div>
-				<a href="#entries">Inzendingen</a>
+				<a href="#entries">
+					<span class="bold">Inzendingen</span>
+					<p>Bezichtig de inzendingen of stuur een eigen inzending in.</p>
+				</a>
 				<div class="arrow-down"></div>
 			</li>
 			<li>
 				<div class="circle icon-comments"></div>
-				<a href="#comments">Commentaar</a>
+				<a href="#comments">
+					<span class="bold">Commentaar</span>
+					<p>Post commentaar, vragen, opmerkingen of bekijk de discussie.</p>
+				</a>
 				<div class="arrow-down"></div>
 			</li>
 		</ul>
