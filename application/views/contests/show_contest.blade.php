@@ -18,7 +18,7 @@
 	@endif
 
 	<div id="tabs">
-		<ul class="tab-links">
+		<ul class="tab-links cf">
 			<li>
 				<div class="circle icon-briefing"></div>
 				<a href="#briefing">
@@ -64,6 +64,14 @@
 
 		<div id="entries">
 			<section id="entries">
+
+				@if( isset(Auth::user()->username) == $contest->owner)
+					<div id="form-header">Kies het winnend ontwerp.</div>
+					{{ Form::open(URL::to_route('winner', array($contest->id)), 'POST') }}
+						{{ Form::text('winner-id', '', array('placeholder' => 'Geef hier het winnend id nummer op.')) }}
+						{{ Form::submit('Kies winnaar')}}
+					{{ Form::close() }}
+				@endif
 				
 				<div class="entries-header">
 					<h2>Inzendingen</h2>

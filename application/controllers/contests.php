@@ -215,4 +215,16 @@ class Contests_Controller extends Base_Controller {
 			return Redirect::to_route('contest', $step1->id);
 		}
 	}
+
+	public function post_winner($id) 
+	{
+		$winner = Input::get('winner-id');
+
+		$winning_entry = Entry::where('id', '=', $winner)->where('contest_id', '=', $id)->first();
+
+		$winning_entry->winning_design = 1;
+		$winning_entry->save();
+
+		return Redirect::to_route('contest', array($id));
+	}
 }

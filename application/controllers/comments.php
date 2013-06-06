@@ -13,7 +13,8 @@ class Comments_controller extends Base_Controller {
 		));
 
 		if ( $new_comment ) {
-			return Redirect::to_route('contest', $new_comment->contest_id);
+			return Redirect::to_route('contest', $new_comment->contest_id)
+			->with('tab_index', 2);
 		}
 	}
 }

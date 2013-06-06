@@ -15,6 +15,9 @@ Route::get('contests/(:any)', array('as' => 'contest', 'uses' => 'contests@show'
 // Comment aanmaken
 Route::post('contests/(:any)', 'comments@create');
 
+//Winnaar kiezen
+Route::post('contests/(:any)/winner', array('as' => 'winner', 'uses' => 'contests@winner'));
+
 // Nieuwe Wedstrijd maken - Stap-1
 Route::get('contests/new', array('as' => 'new_contest', 'uses' => 'contests@new'));
 Route::post('contests/new', 'contests@create');
@@ -143,11 +146,6 @@ Event::listen('404', function()
 Event::listen('500', function($exception)
 {
 	return Response::error('500');
-});
-
-Event::listen('laravel.query', function($sql) 
-{
-	
 });
 
 
