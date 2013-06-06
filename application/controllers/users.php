@@ -11,7 +11,7 @@ class Users_Controller extends Base_Controller {
 		$user_entries = Entry::where('user_id', '=', (int)$id)->get();
 		$user = User::find((int)$id);
 
-		$contests = Contest::where('owner', '=', $user->username)->get();
+		$contests = Contest::where('owner', '=', $user->username)->get();		
 
 		return View::make('users.show_user')
 			->with('user', $user)

@@ -29,6 +29,9 @@ class Contests_Controller extends Base_Controller {
 		// Contest winner
 		$winner = Entry::where('winning_design', '=', 1)->where('contest_id', '=', $id)->first();
 
+		// Tel alle wedstrijdinzendingen
+		$total = Entry::where('contest_id', '=', (int)$id)->count();
+
 		// Pak de comments die bij de wedstrijd horen waarbij de laatste comments bovenaan komen.
 		$comments = Contest::find((int)$id)->comments()->order_by('created_at', 'desc')->get();
 
@@ -47,7 +50,8 @@ class Contests_Controller extends Base_Controller {
 			->with('startdate', $startdate)
 			->with('enddate', $enddate)
 			->with('comments', $comments)
-			->with('winner', $winner);
+			->with('winner', $winner)
+			->with('total', $total);
 	}
 
 	public function get_new()

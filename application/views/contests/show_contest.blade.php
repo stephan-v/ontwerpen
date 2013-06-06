@@ -2,8 +2,23 @@
 
 @section('content')
 
+	@if( isset($winner) )
+		<section id="contest-winner" class="section-box">	
+			<div class="left">
+				<h2>Wedstrijd eigenaar {{ $contest->owner }} heeft <span class="blue">{{ $contest->budget }}</span> euro betaald, 
+				heeft <span class="blue"> {{ $total }}</span> ontwerpen ontvangen
+				van <span class="blue">4</span> gekwalificeerde ontwerpers.</h2>
+
+				<h2>Wij willen graag de ontwerper {{ HTML::link_to_route('user', User::find($winner->user_id)->username, array(User::find($winner->user_id)->id)) }} feliciteren met het winnen van de eerste prijs!</h2>				
+			</div>	
+			<div class="right">
+				<a href="http://ontwerpwedstrijden.dev/uploads/{{ $winner->filename }}" class="preview"><img src="http://ontwerpwedstrijden.dev/uploads/{{ $winner->filename }}" /></a>
+			</div>
+		</section>
+	@endif
+
 	<div id="tabs">
-		<ul>
+		<ul class="tab-links">
 			<li>
 				<div class="circle icon-briefing"></div>
 				<a href="#briefing">
@@ -16,7 +31,7 @@
 				<div class="circle icon-entries"></div>
 				<a href="#entries">
 					<span class="bold">Inzendingen</span>
-					<p>Bezichtig de inzendingen of stuur een eigen inzending in.</p>
+					<p>Bekijk de inzendingen of stuur een eigen inzending in.</p>
 				</a>
 				<div class="arrow-down"></div>
 			</li>
@@ -30,24 +45,9 @@
 			</li>
 		</ul>
 		<div id="briefing">
-				<div class="entries-header">
-					<h2>Wedstrijd</h2>
-				</div>
-
-				@if( isset($winner) )
-				<section id="contest-winner" class="section-box">	
-					<div class="left">
-						<h2>Wedstrijd eigenaar {{ $contest->owner }} heeft <span class="blue">{{ $contest->budget }}</span> euro betaald, 
-						heeft <span class="blue">10</span> ontwerpen ontvangen
-						van <span class="blue">4</span> gekwalificeerde ontwerpers.</h2>
-
-						<h2>Wij willen graag de ontwerper {{ HTML::link_to_route('user', User::find($winner->user_id)->username, array(User::find($winner->user_id)->id)) }} feliciteren met het winnen van de eerste prijs!</h2>				
-					</div>	
-					<div class="right">
-						<a href="http://ontwerpwedstrijden.dev/uploads/{{ $winner->filename }}" class="preview"><img src="http://ontwerpwedstrijden.dev/uploads/{{ $winner->filename }}" /></a>
-					</div>
-				</section>
-			@endif
+			<div class="entries-header">
+				<h2>Wedstrijd</h2>
+			</div>			
 
 			<section id="contest-details" class="section-box">
 				<h1>{{ $contest->title }}</h1>
@@ -186,6 +186,6 @@
 				@endforeach
 			</section>	
 		</div><!--end comments -->
-	</div>
+	</div><!-- end tabs -->
 
 @endsection
