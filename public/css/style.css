@@ -487,7 +487,7 @@ table .btn-entry {
 		background: #323232;
 		color: #FFF;
 		position: relative;
-		border-radius: 0 0 5px 5px;
+		border-radius: 5px;
 	}
 	.entry-item p {
 		margin: 1em 0;
@@ -499,6 +499,9 @@ table .btn-entry {
 		border: none;
 		display: block;	
 		margin: 0 auto;	
+	}
+	.entry-item img {
+		border-radius: 5px 5px 0 0;
 	}
 	.entry-item .cover {
 		background: #fff;
@@ -517,7 +520,7 @@ table .btn-entry {
 		height: 150px;
 		display: table-cell;
     	vertical-align: middle; 
-    	background: #252525;
+    	background: #FFF;
     	border-radius: 5px;
 	}
 	.entry-info {

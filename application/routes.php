@@ -38,6 +38,10 @@ Route::post('contests/(:any)/edit', 'contests@edit');
 Route::get('contests/(:any)/entries/new', array('as' => 'new_entry', 'uses' => 'entry@new'));
 Route::post('contests/(:any)/entries/new', 'entry@create');
 
+// Crop nieuwe entry
+Route::get('contests/(:any)/entries/crop', array('as' => 'crop_entry', 'uses' => 'entry@crop'));
+Route::post('contests/(:any)/entries/crop', 'entry@crop');
+
 // Entry updaten
 Route::post('contests/(:any)/entries/(:any)', 'entry@update');
 

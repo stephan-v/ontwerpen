@@ -88,7 +88,7 @@
 						@endif
 
 						<a href="{{ URL::base() }}/uploads/{{ $entry->filename }}" class="preview">
-							<img src="{{ URL::base() }}/uploads/{{ $entry->filename }}" />
+							<img src="{{ URL::base() }}/thumbnails/{{ $entry->filename }}" />
 						</a>
 
 							<div class="entry-info">						
@@ -150,7 +150,7 @@
 					@endforeach
 				</ul>
 
-				@if(Auth::check())
+				@if(Auth::check() && !isset($winner))
 					{{ HTML::link_to_route('new_entry', 'Voeg een inzending toe', $contest->id, array('class' => 'btn-entry upload')) }}
 				@endif
 

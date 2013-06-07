@@ -5,12 +5,15 @@
 	<title>Microlancer.nl | Snelle en Goedkope Creative Diensten</title>
 	{{ HTML::style('css/style.css') }}	
 	{{ HTML::style('css/slider.css') }}	
+	{{ HTML::style('css/jquery.Jcrop.css') }}	
 	{{ HTML::style('//fonts.googleapis.com/css?family=Open+Sans:300,400') }}	
 	{{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js') }}
 	{{ HTML::script('//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js') }}
 	{{ HTML::script('js/hover-preview.js') }}
 	{{ HTML::script('js/update-rating.js') }}
 	{{ HTML::script('js/html5shiv.js') }}	
+	{{ HTML::script('js/jcrop-config.js') }}	
+	{{ HTML::script('js/jquery.Jcrop.js') }}	
 	<script type="text/javascript">
 		// JS Variables
 		var tab_index = "<?php echo Session::get('tab_index'); ?>";
