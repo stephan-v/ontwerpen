@@ -67,7 +67,7 @@
 
 				@if( isset(Auth::user()->username) == $contest->owner && !isset($winner))
 					<div id="form-header">Kies het winnend ontwerp.</div>
-					{{ Form::open(URL::to_route('winner', array($contest->id)), 'POST') }}
+					{{ Form::open(URL::to_route('winner', array($contest->id)), 'POST', array('onsubmit' => "return confirm('Weet u zeker dat u deze inzending tot winnaar wilt benoemen?');")) }}
 						{{ Form::text('winner-id', '', array('placeholder' => 'Geef hier het winnend id nummer op.')) }}
 						{{ Form::submit('Kies winnaar')}}
 					{{ Form::close() }}
