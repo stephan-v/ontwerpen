@@ -93,7 +93,9 @@
 					<div class="entry-item">
 					@endif
 
-						<a href="http://ontwerpwedstrijden.dev/contests/{{ $entry->contest_id }}" class="preview"><img src="http://ontwerpwedstrijden.dev/uploads/{{ $entry->filename }}" /></a>
+						<a href="http://ontwerpwedstrijden.dev/contests/{{ $entry->contest_id }}" class="preview">
+							<img src="http://ontwerpwedstrijden.dev/thumbnails/{{ $entry->filename }}" />
+						</a>
 						
 						<div class="entry-info">
 							<div class="delete-entry">

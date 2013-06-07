@@ -565,13 +565,14 @@ table .btn-entry {
 	}
 	#preview {
 		position:absolute;
-		background:#000;
+		background:#fff;
 		padding:5px;
 		/*- fixes the preview bottom padding bug -*/
 		padding-bottom: 1px;
 		display:none;
 		color:#fff;
 		z-index: 2;
+		border: 1px solid #DDD;
 	}
 	#preview img {
 		max-width: 500px;
