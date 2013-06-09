@@ -29,7 +29,7 @@ class Entry_Controller extends Base_Controller {
 			$filename = Input::file('image.name');
 
 			// Upload the file
-			Input::upload('image', 'public/uploads', $filename);
+			Input::upload('image', path('public') . 'uploads', $filename);
 
 			$entry = Entry::create(array(
 				'filename' => $filename,
@@ -63,7 +63,7 @@ class Entry_Controller extends Base_Controller {
 	public function post_crop($id) {
 		$targ_w = 200; 
 		$targ_h = 150;
-		$jpeg_quality = 90;
+		$jpeg_quality = 80;
 
 		$x = Input::get('x');
 		$y = Input::get('y');
