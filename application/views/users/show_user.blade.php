@@ -93,8 +93,8 @@
 					<div class="entry-item">
 					@endif
 
-						<a href="http://ontwerpwedstrijden.dev/contests/{{ $entry->contest_id }}" class="preview">
-							<img src="http://ontwerpwedstrijden.dev/thumbnails/{{ $entry->filename }}" />
+						<a href="{{ URL::base() }}/contests/{{ $entry->contest_id }}" class="preview">
+							<img src="{{ URL::base() }}/thumbnails/{{ $entry->filename }}" />
 						</a>
 						
 						<div class="entry-info">

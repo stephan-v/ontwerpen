@@ -23,8 +23,8 @@
 
 $environments = array(
 
-	'local' => array('http://localhost*', '*.dev'),
-  'production' => array('http://www.microlancer', '*.nl'),
+	'development' => array('http://localhost*', '*.dev'),
+  'production' => array('http://microlancer', '*.nl'),
 
 );
 

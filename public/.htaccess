@@ -1,3 +1,7 @@
+<Limit PUT DELETE>
+Allow from all
+</Limit>
+
 # Apache configuration file
 # http://httpd.apache.org/docs/2.2/mod/quickreference.html
 

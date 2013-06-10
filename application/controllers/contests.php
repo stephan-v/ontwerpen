@@ -58,7 +58,8 @@ class Contests_Controller extends Base_Controller {
 	{	
 		if (!Auth::check())
 		{
-		     return View::make('contests.new_contest')->with('login_status', 'Je moet ingelogd zijn om een wedstrijd aan te maken');
+		     return View::make('contests.new_contest')
+		     	->with('login_status', 'Je moet ingelogd zijn om een wedstrijd aan te maken');
 		}
 		return View::make('contests.new_contest');
 	}
@@ -218,13 +219,32 @@ class Contests_Controller extends Base_Controller {
 
 	public function post_winner($id) 
 	{
-		$winner = Input::get('winner-id');
+		// Validate
+		$input = Input::all();
 
-		$winning_entry = Entry::where('id', '=', $winner)->where('contest_id', '=', $id)->first();
+		$rules = array(
+			'winner' => 'required|numeric|exists:entries,id',
+		);
+
+		$messages = array(
+			'winner_required' => 'Het winnend ontwerp veld is verplicht',
+			'winner_numeric' => 'Geef een getal op zonder #',
+			'winner_exists' => 'Deze inzending is niet gevonden'
+		);
+
+		$validation = Validator::make($input, $rules, $messages);
+
+		if ($validation->fails()) {
+			return Redirect::to_route('contest',array($id))->with_errors($validation->errors)
+				->with('tab_index', 1);
+		}
+
+		$winning_entry = Entry::where('id', '=', $input['winner'])->where('contest_id', '=', $id)->first();
 
 		$winning_entry->winning_design = 1;
 		$winning_entry->save();
 
+		// Veranderen naar een uitleg pagina wat zal er gebeuren nadat de wedstrijdwinnaar is gekozen?
 		return Redirect::to_route('contest', array($id));
 	}
 }

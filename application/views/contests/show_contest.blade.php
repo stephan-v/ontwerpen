@@ -12,7 +12,7 @@
 				<h2>Wij willen graag de ontwerper {{ HTML::link_to_route('user', User::find($winner->user_id)->username, array(User::find($winner->user_id)->id)) }} feliciteren met het winnen van de eerste prijs!</h2>				
 			</div>	
 			<div class="right">
-				<a href="http://ontwerpwedstrijden.dev/uploads/{{ $winner->filename }}" class="preview"><img src="http://ontwerpwedstrijden.dev/uploads/{{ $winner->filename }}" /></a>
+				<a href="{{ URL::base() }}/uploads/{{ $winner->filename }}" class="preview"><img src="{{ URL::base() }}/uploads/{{ $winner->filename }}" /></a>
 			</div>
 		</section>
 	@endif
@@ -68,8 +68,11 @@
 				@if( isset(Auth::user()->username) == $contest->owner && !isset($winner))
 					<div id="form-header">Kies het winnend ontwerp.</div>
 					{{ Form::open(URL::to_route('winner', array($contest->id)), 'POST', array('onsubmit' => "return confirm('Weet u zeker dat u deze inzending tot winnaar wilt benoemen?');")) }}
-						{{ Form::text('winner-id', '', array('placeholder' => 'Geef hier het winnend id nummer op.')) }}
+						{{ Form::text('winner', '', array('placeholder' => 'Geef hier het winnend id nummer op.')) }}
 						{{ Form::submit('Kies winnaar')}}
+						@foreach($errors->get('winner', '<span class="validation-error">:message</span>') as $error)
+							{{ $error }}
+						@endforeach
 					{{ Form::close() }}
 				@endif
 				

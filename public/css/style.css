@@ -642,12 +642,10 @@ table .btn-entry {
 	z-index: 2;	
 }
 .header-company {
-	background: url('http://dribbble.s3.amazonaws.com/users/14268/screenshots/187166/attachments/2672/workflow.jpg');
-	background-size: cover;
+	background: url('../img/bedrijf-tips.jpg');
 }
 .header-designer {
-	background: url('http://dribbble.s3.amazonaws.com/users/14268/screenshots/673186/attachments/59698/map-hd.jpg') 0 -100px;
-	background-size: cover;	
+	background: url('../img/ontwerper-tips.jpg');
 }
 .no-border {
 	border: none;
@@ -749,6 +747,10 @@ table .btn-entry {
 }
 #entries #form-header {
 	margin-top: 35px;
+}
+#entries .validation-error {
+	margin-top: 10px;
+	margin-bottom: 0;
 }
 
 /*----- Comments -----*/
@@ -1002,3 +1004,30 @@ footer {
 	.ui-dialog .btn-entry {
 		width: 150px;		
 	}
+
+/*----- Crop Styles -----*/
+
+/* Apply these styles only when #preview-pane has
+been placed within the Jcrop widget */
+.jcrop-holder #preview-pane {
+  display: block;
+  position: absolute;
+  z-index: 2000;
+  right: -280px;
+  padding: 6px;
+  background-color: white;
+}
+.jcrop-holder {
+	margin-bottom: 20px;
+}
+/* The Javascript code will set the aspect ratio of the crop
+   area based on the size of the thumbnail preview,
+   specified here */
+#preview-pane .preview-container {
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+}
+.jc-demo-box .description {
+	margin-top: 20px;
+}
