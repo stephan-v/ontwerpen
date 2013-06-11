@@ -829,7 +829,6 @@ footer {
 	float: left;
 	width: 25%;
 	background: #fcfbf7;
-	padding-top: 35px;
 	padding-bottom: 35px;
 	color: #6c6d75;
 }
@@ -899,28 +898,26 @@ footer {
 	margin-bottom: 50px;
 	background: #FFF;
 	padding: 35px;
-	min-height: 490px;
-	box-shadow: -5px 0px 15px -5px lightgrey;
-	-webkit-box-shadow: -5px 0px 15px -5px lightgrey;
-	-moz-box-shadow: -5px 0px 15px -5px lightgrey;
+	min-height: 493px;
+	border-left: 1px solid #ebeae5;
 }
 .user-info {
 	overflow: hidden;
 	margin: 0 auto;
 }
 .user-info .profile-picture {
-	margin: 0 auto;
-	width: 120px;
-	height: 120px;
-}
-.user-info .profile-picture img {
 	width: 100%;
 	height: 100%;
-	border-radius: 100%;
+	border-bottom: 5px solid #ff6664;
+	background: url('../img/profile.jpg');
+	height: 150px;
 }
 .user-info .profile-info {
-	margin: 20px 0;
+	padding: 20px;
 	text-align: center;
+}
+.user-info .profile-info h2{
+	margin-bottom: 0;
 }
 .message-box {
 	border: 1px solid #e7e7e7;
@@ -1030,4 +1027,25 @@ been placed within the Jcrop widget */
 }
 .jc-demo-box .description {
 	margin-top: 20px;
+}
+
+/*----- Create Contest -----*/
+#totalsum {
+	margin-bottom: 20px;
+}
+#totalsum tr td {
+	padding: 10px;
+}
+#totalsum tr .right {
+	text-align: right;
+}
+#totalsum .questionmark {
+	background: url('../img/questionmark.png') no-repeat 115px center;
+}
+.ui-tooltip {
+	background: #fff;
+	border: solid 1px #e2e2e2;
+	padding: 10px;
+	position: absolute;
+	max-width: 250px;
 }

@@ -23,6 +23,26 @@
 
 			{{ Form::label('budget', 'Wedstrijd budget')}}
 			{{ Form::text('budget', Input::old('budget'), array('placeholder' => 'Geef een budget op voor uw wedstrijd'))}}
+
+			<table id="totalsum">
+				<tr>
+					<td>Prijzengeld</td>
+					<td class="right" id="price">€ 0</td>
+				</tr>
+				<tr>
+					<td class="questionmark" title="Voor het plaatsen van een wedstrijd hebben wij een standaardbedrag van 25 euro">Plaatsingskosten</td>
+					<td class="right" id="placement">€ 25</td>
+				</tr>
+				<tr>
+					<td class="questionmark" title="Wij brengen 5% servicekosten in rekening voor onderhoud van de website, administratie en ideal kosten aan onze kant.">5% Servicekosten</td>
+					<td class="right" id="service">€ 0</td>
+				</tr>
+				<tr>
+					<td><strong>Totaal ex.BTW</strong></td>
+					<td class="right" id="total"><strong>€ 0</strong></td>
+				</tr>
+			</table>
+
 			@foreach($errors->get('budget', '<span class="validation-error">:message</span>') as $error)
 				{{ $error }}
 			@endforeach

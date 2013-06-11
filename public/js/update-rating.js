@@ -1,5 +1,22 @@
 $(function() {
 
+    // Initiate tooltips overal
+    $( document ).tooltip({
+        track: true
+    });
+
+    // Berekening voor totaalprijs in het "maak een wedstrijd aan" formulier
+    $('input[name="budget"]').keyup(function () {
+        var value = parseInt($(this).val());
+        var percentage = Math.ceil(value * 1.05 - value);
+
+        if(!isNaN(value)) {
+            $("#price").text('€ ' + value);
+            $("#service").text('€ ' + percentage);
+            $("#total").text('€ ' + (value + 25 + percentage));
+        }
+    }).keyup();
+
     $(".radio").on("click",function(e) {  
         // Entry id
       	var entry_id = $(this).closest(".entry-item").attr("id");

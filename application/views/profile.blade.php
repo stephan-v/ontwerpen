@@ -1,10 +1,8 @@
 	<aside id="user-navigation">
 		<div class="user-info">
-			<div class="profile-picture">
-				<img src="http://www.seducingwithstyle.com/wp-content/uploads/2013/01/ryan-gosling-bp__span-100x100.jpeg" alt="">
-			</div>
+			<div class="profile-picture"></div>
 			<div class="profile-info">
-				<p>{{ $user->username }}</p>
+				<h2>{{ $user->username }}</h2>
 			</div>
 		</div>
 		<ul>
