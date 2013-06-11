@@ -828,9 +828,9 @@ footer {
 	font-weight: bold;
 	float: left;
 	width: 25%;
-	background: #fcfbf7;
+	background: #363533;
 	padding-bottom: 35px;
-	color: #6c6d75;
+	color: #fff;
 }
 #user-navigation h1 {
 	padding-left: 35px;
@@ -849,19 +849,15 @@ footer {
 	height: 60px;
 	line-height: 60px;
 	list-style: none;
-	border-top: 1px solid #ebeae5;
 }
 #user-navigation li a {
 	position: relative;
 	padding-left: 55px;
 	display: block;
-	color: #6c6d75;
+	color: #fff;
 }
 #user-navigation li a:hover {
 	color: #19aacf;
-}
-#user-navigation li:last-child {
-	border-bottom: 1px solid #ebeae5;
 }
 #user-navigation .profile, #user-navigation .settings, #user-navigation .messages, #user-navigation .payments {
 	width: 16px;
@@ -914,7 +910,7 @@ footer {
 }
 .user-info .profile-info {
 	padding: 20px;
-	text-align: center;
+	background: #272727;
 }
 .user-info .profile-info h2{
 	margin-bottom: 0;
