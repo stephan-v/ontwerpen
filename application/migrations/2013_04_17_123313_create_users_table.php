@@ -18,6 +18,7 @@ class Create_Users_Table {
 			$table->boolean('active')->default(0);
 			$table->boolean('firsttime')->default(1);
 			$table->timestamps();
+			$table->timestamp('last_activity');
 		});
 	}
 

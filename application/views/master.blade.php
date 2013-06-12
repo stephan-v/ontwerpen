@@ -13,7 +13,7 @@
 	{{ HTML::script('js/update-rating.js') }}
 	{{ HTML::script('js/html5shiv.js') }}	
 	{{ HTML::script('js/jcrop-config.js') }}	
-	{{ HTML::script('js/jquery.Jcrop.js') }}	
+	{{ HTML::script('js/jquery.Jcrop.js') }}
 	<script type="text/javascript">
 		// JS Variables
 		var tab_index = "<?php echo Session::get('tab_index'); ?>";
@@ -72,7 +72,7 @@
 
 	<div id="main-content">
 		<div class="container">
-			@yield('content')
+			@yield('content')			
 		</div>
 	</div>
 

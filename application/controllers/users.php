@@ -11,12 +11,26 @@ class Users_Controller extends Base_Controller {
 		$user_entries = Entry::where('user_id', '=', (int)$id)->get();
 		$user = User::find((int)$id);
 
-		$contests = Contest::where('owner', '=', $user->username)->get();		
+		$contests = Contest::where('owner', '=', $user->username)->get();
+
+		// user online/offline functionality
+		$now = new DateTime();
+		$last_activity = new DateTime($user->last_activity);
+
+		$interval = $last_activity->diff($now);	
+
+		// na een 5 minuten interval zal de user op offline staan.
+		if($interval->i > 5) {
+			$status = 'background-position: 0 -16px';
+		}else {
+			$status = '';
+		}
 
 		return View::make('users.show_user')
 			->with('user', $user)
 			->with('entries', $user_entries)
-			->with('contests', $contests);
+			->with('contests', $contests)
+			->with('status', $status);
 	}
 
 	public function get_new() {
@@ -92,9 +106,23 @@ class Users_Controller extends Base_Controller {
 			$address = new Address();
 		}
 
+		// user online/offline functionality
+		$now = new DateTime();
+		$last_activity = new DateTime($user->last_activity);
+
+		$interval = $last_activity->diff($now);	
+
+		// na een 5 minuten interval zal de user op offline staan.
+		if($interval->i > 5) {
+			$status = 'background-position: 0 -16px';
+		}else {
+			$status = '';
+		}
+
 		return View::make('users.edit_user')
 			->with('user', $user)
-			->with('address', $address);
+			->with('address', $address)
+			->with('status', $status);
 	}
 
 	public function post_edit($id) {
@@ -130,9 +158,23 @@ class Users_Controller extends Base_Controller {
 
 	public function get_messages($id) {
 		$user = User::find((int)$id);
+
+		// user online/offline functionality
+		$now = new DateTime();
+		$last_activity = new DateTime($user->last_activity);
+
+		$interval = $last_activity->diff($now);	
+
+		// na een 5 minuten interval zal de user op offline staan.
+		if($interval->i > 5) {
+			$status = 'background-position: 0 -16px';
+		}else {
+			$status = '';
+		}
 		
 		return View::make('users.messages_user')
-		->with('user', $user);
+		->with('user', $user)
+		->with('status', $status);
 	}
 
 	public function get_login()

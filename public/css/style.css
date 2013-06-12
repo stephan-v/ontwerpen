@@ -829,7 +829,6 @@ footer {
 	float: left;
 	width: 25%;
 	background: #363533;
-	padding-bottom: 35px;
 	color: #fff;
 }
 #user-navigation h1 {
@@ -894,8 +893,7 @@ footer {
 	margin-bottom: 50px;
 	background: #FFF;
 	padding: 35px;
-	min-height: 493px;
-	border-left: 1px solid #ebeae5;
+	min-height: 458px;
 }
 .user-info {
 	overflow: hidden;
@@ -911,9 +909,18 @@ footer {
 .user-info .profile-info {
 	padding: 20px;
 	background: #272727;
+	overflow: hidden;
 }
 .user-info .profile-info h2{
 	margin-bottom: 0;
+	float: left;
+}
+.user-info .profile-info .status{
+	width: 16px;
+	height: 16px;
+	background: url('../img/online-offline.png');
+	float: right;
+	margin-top: 7px;
 }
 .message-box {
 	border: 1px solid #e7e7e7;

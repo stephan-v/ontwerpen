@@ -121,8 +121,7 @@ Route::get('about', function() {
 
 // Testroute
 Route::get('test', function() {
-	$user_address = User::find(1)->address()->first();
-	dd($user_address);
+	return Session::activity();
 });
 
 
@@ -151,7 +150,6 @@ Event::listen('500', function($exception)
 {
 	return Response::error('500');
 });
-
 
 /*
 |--------------------------------------------------------------------------
@@ -183,7 +181,17 @@ Event::listen('500', function($exception)
 
 Route::filter('before', function()
 {
-	// Do stuff before every request to your application...
+	// user online-offline script
+	if(isset($_SERVER["PHP_SELF"])) {
+		if(Auth::check()) {
+			$user = User::find(Auth::user()->id);
+
+			$user->last_activity = date('Y-m-d H:i:s', time());
+
+			$user->save();
+		}
+	}
+
 });
 
 Route::filter('after', function($response)

@@ -3,6 +3,7 @@
 			<div class="profile-picture"></div>
 			<div class="profile-info">
 				<h2>{{ $user->username }}</h2>
+				<div class="status" style="{{$status}}"></div>
 			</div>
 		</div>
 		<ul>
