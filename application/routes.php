@@ -13,7 +13,8 @@ Route::get('contests/filter/(:any)', array('as' => 'filter', 'uses' => 'contests
 Route::get('contests/(:any)', array('as' => 'contest', 'uses' => 'contests@show'));
 
 // Comment aanmaken
-Route::post('contests/(:any)', 'comments@create');
+Route::post('contests/(:any)', array('as' => 'new_comment', 'uses' => 'comments@create'));
+Route::delete('contests/(:any)/comments', 'comments@destroy');
 
 //Winnaar kiezen
 Route::post('contests/(:any)/winner', array('as' => 'winner', 'uses' => 'contests@winner'));

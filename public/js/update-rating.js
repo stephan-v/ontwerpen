@@ -66,6 +66,30 @@ $(function() {
         }        
     }); 
 
+    // Delete a comment without refresh
+    $("#comments .comment .user-info .delete").on("click",function(e) {
+        // Entry id
+        var comment_id = $(this).closest(".comment").attr("id");
+
+        // Popup dialog to confirm deletion of entry-item
+        var answer = confirm('Weet u zeker dat u uw commentaar wilt verwijderen?');
+
+        if (answer){
+            // Ajax call 
+            $.ajax({
+                url: BASE+'/contests/any/comments',
+                type: 'DELETE',
+                data: { 
+                    comment_id : comment_id
+                },
+                success: function() {
+                    // Selecteer comment with corresponding id number and remove it without refresh
+                    $(".comment#"+comment_id).hide('slow', function(){ $(".comment#"+comment_id).remove(); });
+                }     
+            });
+        }        
+    }); 
+
     // UI function single contest tabs
     $(function() {
         $("#tabs").tabs({ active: tab_index });

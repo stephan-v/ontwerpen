@@ -529,7 +529,7 @@ table .btn-entry {
 	.delete-entry {
 		height: 16px;
 		width: 16px;
-		background: url('../img/delete-icon.png') no-repeat;
+		background: url('../img/options-icon.png') no-repeat;
 		cursor: pointer;
 		margin-bottom: 10px;
 		float: left;
@@ -774,7 +774,7 @@ table .btn-entry {
 	padding-left: 20px;
 }
 .comment-body {
-	padding: 15px 0 15px 50px;
+	padding: 10px 50px;
 }
 .comments textarea {
 	width: 100%;
@@ -799,6 +799,14 @@ table .btn-entry {
 .comments .comment {
 	border-bottom: 1px solid #DDD;
 	padding-bottom: 15px;
+}
+.comments .delete {
+	background: url('../img/delete-icon.png');
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+	float: right;
+	margin-top: 25px;
 }
 
 /*----- Footer Styles -----*/

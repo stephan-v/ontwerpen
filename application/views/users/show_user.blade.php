@@ -11,8 +11,8 @@
 			<p>Voordat we beginnen is het misschien handig om nog even wat dingen te weten.</p> 
 			<ul>
 				<li>Wanneer u ingelogd bent kunt u toegang krijgen tot u profiel(deze pagina) door rechtsbovenin op uw gebruikersnaam te klikken.</li>
-				<li>Zodra u een wedstrijd heeft aangemaakt zal deze op uw profielpagina te zien zijn, hier kunt u de wedstrijdinformatie tevens ook bijwerken.</li>
-				<li>Zodra u een inzending voor een wedstrijd heeft geplaatst zal deze hier ook te vinden zijn, samen met al u andere eventuele inzendingen..</li>
+				<li>Zodra u een wedstrijd heeft aangemaakt zal deze op uw profielpagina te zien zijn. Hier kunt u de wedstrijdinformatie tevens ook bijwerken.</li>
+				<li>Zodra u een inzending voor een wedstrijd heeft geplaatst zal deze hier ook verschijnen, samen met al u andere eventuele inzendingen.</li>
 			</ul>
 		</div>
 

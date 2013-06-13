@@ -168,14 +168,14 @@
 
 				<!-- alleen commentform laten zien als user ingelogd is -->
 				@if(Auth::check())
-					{{ Form::open() }}
+					{{ Form::open(URL::to_route('new_comment', array($contest->id))) }}
 						{{ Form::textarea('comment') }}
 						{{ Form::submit('Toevoegen')}}
 					{{ Form::close() }}
 				@endif
 
 				@foreach($comments as $comment)
-					<div class="comment">
+					<div class="comment" id="{{$comment->id}}">
 						<div class="comment-header">
 							<div class="avatar">
 								<img src="../img/default-avatar.png" style="width: 100%;">
@@ -187,6 +187,7 @@
 								<span class="timestamp">
 									{{ $comment->created_at }}
 								</span>
+								<id class="delete"></id>
 							</div>
 						</div>
 						<div class="comment-body">

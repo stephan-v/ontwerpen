@@ -17,4 +17,9 @@ class Comments_controller extends Base_Controller {
 			->with('tab_index', 2);
 		}
 	}
+
+	public function delete_destroy() {
+		$comment_id = Input::get('comment_id');
+		Comment::find($comment_id)->delete();
+	}
 }
